@@ -4,7 +4,7 @@
 			<div class="row">
 				<div class="col-md-6 col-md-push-3 slogan text-center">
 					<p>
-						Bệnh viện thẩm mỹ đẳng cấp quốc tế đầu tiên tại Việt Nam
+						Nha khoa thẩm mỹ đẳng cấp quốc tế hàng đầu tại Việt Nam
 					</p>
 				</div>
 				<div class="col-md-3 col-md-pull-6 logo hidden-sm hidden-xs">

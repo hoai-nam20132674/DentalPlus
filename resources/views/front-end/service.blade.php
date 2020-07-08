@@ -1,4 +1,15 @@
 @extends('front-end.layout.default')
+@section('css')
+	<link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/bootstrap.scss.css?1593142743270" rel="stylesheet" type="text/css" />
+	<link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/plugin.scss.css?1593142743270" rel="stylesheet" type="text/css" />							
+	<link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/base.scss.css?1593142743270" rel="stylesheet" type="text/css" />	
+	<link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/evo-main.scss.css?1593142743270" rel="stylesheet" type="text/css" />
+	<link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/slick.scss.css?1593142743270" rel="stylesheet" type="text/css" />
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+	<link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/evo-index.scss.css?1593142743270" rel="stylesheet" type="text/css" />
+	<link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/evo-dich-vu.scss.css?1593142743270" rel="stylesheet" type="text/css" />
+	<!-- <link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/evo-blogs.scss.css?1593142743270" rel="stylesheet" type="text/css" /> -->
+@endsection
 @section('body_class')
 bg-body product-dich-vu
 @endsection
@@ -620,22 +631,6 @@ bg-body product-dich-vu
 			</div>
 		</div>
 	</div>
-	<script>
-		$(document).ready(function() {
-			$(".callmeback-form form#contact").submit( function(e){
-				if ($(".g-recaptcha").size()){
-					if(grecaptcha.getResponse() == "") {
-						e.preventDefault();
-						alert("Câu trả lời của bạn chưa đúng. Hãy thử lại.");
-					}
-					else{
-						alert("Cảm ơn bạn đã liên hệ với chúng tôi. Chúng tôi sẽ trả lời bạn sớm nhất có thể.");
-					}
-				}else{
-					alert("Cảm ơn bạn đã liên hệ với chúng tôi. Chúng tôi sẽ trả lời bạn sớm nhất có thể.");
-				}
-			});
-		});
-	</script>
+	
 
 @endsection
