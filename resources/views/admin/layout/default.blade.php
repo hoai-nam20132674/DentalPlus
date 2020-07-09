@@ -39,6 +39,9 @@
     <link media="all" type="text/css" rel="stylesheet" href="http://hasa.botble.com/vendor/core/css/core.css">
     <link media="all" type="text/css" rel="stylesheet" href="http://hasa.botble.com/vendor/core/css/table.css">
     <link media="all" type="text/css" rel="stylesheet" href="http://hasa.botble.com/vendor/core/css/themes/default.css">
+    <link media="all" type="text/css" rel="stylesheet" href="http://hasa.botble.com/vendor/core/css/dashboard.css">
+    <link media="all" type="text/css" rel="stylesheet" href="http://hasa.botble.com/vendor/core/plugins/analytics/libraries/jvectormap/jquery-jvectormap-1.2.2.css">
+    <link media="all" type="text/css" rel="stylesheet" href="http://hasa.botble.com/vendor/core/libraries/morris/morris.css">
 
     <script src="http://hasa.botble.com/vendor/core/js/app.js"></script>
     

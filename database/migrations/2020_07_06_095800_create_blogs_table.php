@@ -15,12 +15,12 @@ class CreateBlogsTable extends Migration
     {
         Schema::create('blogs', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->longText('content');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('cate_id')->unsigned();
             $table->foreign('cate_id')->references('id')->on('blog_cates')->onDelete('cascade');
+            $table->string('title');
+            $table->longText('content');
             $table->longText('seo_description');
             $table->string('seo_keyword');
             $table->string('url');
