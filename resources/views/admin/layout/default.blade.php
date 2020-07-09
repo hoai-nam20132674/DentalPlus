@@ -42,6 +42,8 @@
     <link media="all" type="text/css" rel="stylesheet" href="http://hasa.botble.com/vendor/core/css/dashboard.css">
     <link media="all" type="text/css" rel="stylesheet" href="http://hasa.botble.com/vendor/core/plugins/analytics/libraries/jvectormap/jquery-jvectormap-1.2.2.css">
     <link media="all" type="text/css" rel="stylesheet" href="http://hasa.botble.com/vendor/core/libraries/morris/morris.css">
+    <link media="all" type="text/css" rel="stylesheet" href="http://hasa.botble.com/vendor/core/packages/menu/libraries/jquery-nestable/jquery.nestable.css">
+    <link media="all" type="text/css" rel="stylesheet" href="http://hasa.botble.com/vendor/core/packages/menu/css/menu.css">
 
     <script src="http://hasa.botble.com/vendor/core/js/app.js"></script>
     
@@ -234,6 +236,8 @@
     <script src="http://hasa.botble.com/vendor/core/libraries/bootstrap3-typeahead.min.js"></script>
     <script src="http://hasa.botble.com/vendor/core/js/table.js"></script>
     <script src="http://hasa.botble.com/vendor/core/js/filter.js"></script>
+    <script src="http://hasa.botble.com/vendor/core/packages/menu/libraries/jquery-nestable/jquery.nestable.js"></script>
+    <script src="http://hasa.botble.com/vendor/core/packages/menu/js/menu.js"></script>
 
 
         <script type="text/javascript">(function(window,$){window.LaravelDataTables=window.LaravelDataTables||{};window.LaravelDataTables["table-posts"]=$("#table-posts").DataTable({"serverSide":true,"processing":true,"ajax":{"url":"http:\/\/hasa.botble.com\/admin\/posts?"},"columns":[{"name":"checkbox","data":"checkbox","width":"10px","class":"text-left no-sort","title":"<input class=\"table-check-all\" data-set=\".dataTable .checkboxes\" type=\"checkbox\">","orderable":false,"searchable":false},{"name":"posts.id","data":"id","title":"ID","width":"20px","class":" column-key-id","orderable":true,"searchable":true},{"name":"posts.image","data":"image","title":"H\u00ecnh \u1ea3nh","width":"70px","class":" column-key-image","orderable":true,"searchable":true},{"name":"posts.name","data":"name","title":"T\u00ean","class":"text-left column-key-name","orderable":true,"searchable":true},{"name":"posts.updated_at","data":"updated_at","title":"Categories","width":"150px","class":"no-sort column-key-updated_at","orderable":false,"searchable":true},{"name":"posts.author_id","data":"author_id","title":"T\u00e1c gi\u1ea3","width":"150px","class":"no-sort column-key-author_id","orderable":false,"searchable":true},{"name":"posts.created_at","data":"created_at","title":"Ng\u00e0y t\u1ea1o","width":"100px","class":" column-key-created_at","orderable":true,"searchable":true},{"name":"posts.status","data":"status","title":"Tr\u1ea1ng th\u00e1i","width":"100px","class":" column-key-status","orderable":true,"searchable":true},{"name":"operations","data":"operations","title":"T\u00e1c v\u1ee5","width":"134px","class":"text-center","orderable":false,"searchable":false}],"dom":"fBrt<'datatables__info_wrap'pli<'clearfix'>>","buttons":{"stateSave":true,"buttons":[{"className":"action-item","text":"<span data-action=\"create\" data-href=\"http:\/\/hasa.botble.com\/admin\/posts\/create\"><i class=\"fa fa-plus\"><\/i> T\u1ea1o m\u1edbi<\/span>"},"excel","reload"]},"initComplete":function () {
