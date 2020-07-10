@@ -48,7 +48,7 @@
                         <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="http://hasa.botble.com/admin/system/users/profile/1"><i class="icon-user"></i> Thông tin cá nhân</a></li>
+                        <li><a href="{{URL::route('editUser',Auth::user()->id)}}"><i class="icon-user"></i> Thông tin cá nhân</a></li>
                         <li><a href="{{URL::route('logout')}}" class="btn-logout"><i class="icon-key"></i> Đăng xuất</a></li>
                     </ul>
                 </li>

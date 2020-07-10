@@ -29,7 +29,7 @@
                                 </a>
                             </li>
                             <li class="nav-item " id="cms-plugins-blog-categories">
-                                <a href="http://hasa.botble.com/admin/categories" class="nav-link">
+                                <a href="{{URL::route('blogCategories')}}" class="nav-link">
                                     <i class=""></i>
                                     Danh mục
                                 </a>
@@ -263,7 +263,7 @@
                                 </a>
                             </li>
                             <li class="nav-item " id="cms-core-user">
-                                <a href="http://hasa.botble.com/admin/system/users" class="nav-link">
+                                <a href="{{URL::route('users')}}" class="nav-link">
                                     <i class=""></i>
                                     Quản trị viên
                                 </a>

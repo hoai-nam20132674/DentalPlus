@@ -53,4 +53,28 @@ class User extends Authenticatable
             return false;
         }
     }
+    public function edit($request, $id){
+        if(Auth::user()->id == $id){
+            $user = $this::where('id',$id)->get()->first();
+            $user->name = $request->name;
+            $user->phone = $request->phone;
+            $user->email = $request->email;
+            $user->save();
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    public function editPassword($request,$id){
+        if(Auth::user()->id == $id){
+            $user = $this::where('id',$id)->get()->first();
+            $user->password = Hash::make($request->password);
+            $user->save();
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }
