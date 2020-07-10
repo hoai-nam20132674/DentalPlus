@@ -14,5 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('admin.users');
+    return view('front-end.index');
 });
+
+Auth::routes();
+
+Route::get('admin', 'Auth\LoginController@login')->name('login');
+Route::post('login', 'Auth\LoginController@postLogin')->name('postLogin');
+Route::get('admin/index', 'HomeController@index')->name('home');
+Route::get('admin/logout', 'Auth\LoginController@logout')->name('logout');

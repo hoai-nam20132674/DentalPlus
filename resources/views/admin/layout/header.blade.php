@@ -15,22 +15,9 @@
         <div class="top-menu">
             <ul class="nav navbar-nav float-right">
                 <li class="dropdown">
-                    <a class="dropdown-toggle dropdown-header-name" style="padding-right: 10px" href="http://hasa.botble.com" target="_blank"><i class="fa fa-globe"></i> <span class="d-none d-sm-inline">Xem trang ngoài</span> </a>
+                    <a class="dropdown-toggle dropdown-header-name" style="padding-right: 10px" href="http://dentalplusvn.com" target="_blank"><i class="fa fa-globe"></i> <span class="d-none d-sm-inline">Xem trang ngoài</span> </a>
                 </li>
-                <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle dropdown-header-name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span>Giao diện</span>
-                        <i class="fa fa-angle-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-right icons-right">
-                    	<li><a href="http://hasa.botble.com/admin-theme/blue">Blue</a></li>
-                    	<li><a href="http://hasa.botble.com/admin-theme/darkblue">Darkblue</a></li>
-                        <li class="active"><a href="http://hasa.botble.com/admin-theme/default">Default</a></li>
-                        <li><a href="http://hasa.botble.com/admin-theme/grey">Grey</a></li>
-                        <li><a href="http://hasa.botble.com/admin-theme/light">Light</a></li>
-                                                                
-                    </ul>
-                </li>
+                
                     
                 <li class="language dropdown">
                     <a href="javascript:;" class="dropdown-toggle dropdown-header-name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -57,12 +44,12 @@
                 <li class="dropdown dropdown-user">
                     <a href="javascript:void(0)" class="dropdown-toggle dropdown-header-name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <img src="{{asset('upload/images/systems/lg-u.png')}}" />
-                        <span class="username username-hide-on-mobile"> System Admin </span>
+                        <span class="username username-hide-on-mobile"> {{Auth::user()->name}} </span>
                         <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="dropdown-menu">
                         <li><a href="http://hasa.botble.com/admin/system/users/profile/1"><i class="icon-user"></i> Thông tin cá nhân</a></li>
-                        <li><a href="http://hasa.botble.com/admin/logout" class="btn-logout"><i class="icon-key"></i> Đăng xuất</a></li>
+                        <li><a href="{{URL::route('logout')}}" class="btn-logout"><i class="icon-key"></i> Đăng xuất</a></li>
                     </ul>
                 </li>
             </ul>

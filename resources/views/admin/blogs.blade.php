@@ -1,4 +1,20 @@
 @extends('admin.layout.default')
+@section('css')
+	<link media="all" type="text/css" rel="stylesheet" href="http://hasa.botble.com/vendor/core/libraries/font-awesome/css/fontawesome.min.css">
+    <link media="all" type="text/css" rel="stylesheet" href="http://hasa.botble.com/vendor/core/libraries/simple-line-icons/css/simple-line-icons.css">
+    <link media="all" type="text/css" rel="stylesheet" href="http://hasa.botble.com/vendor/core/libraries/select2/css/select2.min.css">
+    <link media="all" type="text/css" rel="stylesheet" href="http://hasa.botble.com/vendor/core/libraries/select2/css/select2-bootstrap.min.css">
+    <link media="all" type="text/css" rel="stylesheet" href="http://hasa.botble.com/vendor/core/libraries/pace/pace-theme-minimal.css">
+    <link media="all" type="text/css" rel="stylesheet" href="http://hasa.botble.com/vendor/core/libraries/toastr/toastr.min.css">
+    <link media="all" type="text/css" rel="stylesheet" href="http://hasa.botble.com/vendor/core/libraries/mcustom-scrollbar/jquery.mCustomScrollbar.css">
+    <link media="all" type="text/css" rel="stylesheet" href="http://hasa.botble.com/vendor/core/libraries/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
+    <link media="all" type="text/css" rel="stylesheet" href="http://hasa.botble.com/vendor/core/libraries/spectrum/spectrum.css">
+    <link media="all" type="text/css" rel="stylesheet" href="http://hasa.botble.com/vendor/core/libraries/fancybox/jquery.fancybox.min.css">
+    <link media="all" type="text/css" rel="stylesheet" href="http://hasa.botble.com/vendor/core/libraries/datatables/media/css/dataTables.bootstrap.min.css">
+    <link media="all" type="text/css" rel="stylesheet" href="http://hasa.botble.com/vendor/core/css/core.css">
+    <link media="all" type="text/css" rel="stylesheet" href="http://hasa.botble.com/vendor/core/css/table.css">
+    <link media="all" type="text/css" rel="stylesheet" href="http://hasa.botble.com/vendor/core/css/themes/default.css">
+@endsection
 @section('content')
 	<div class="page-content ">
         <ol class="breadcrumb">
@@ -306,4 +322,29 @@
 			<!-- end Modal -->
 		</div>
 	</div>
+@endsection
+@section('js')
+	<script src="http://hasa.botble.com/vendor/core/libraries/respond.min.js"></script>
+    <script src="http://hasa.botble.com/vendor/core/libraries/excanvas.min.js"></script>
+    <script src="http://hasa.botble.com/vendor/core/libraries/ie8.fix.min.js"></script>
+    <script src="http://hasa.botble.com/vendor/core/libraries/modernizr/modernizr.min.js"></script>
+    <script src="http://hasa.botble.com/vendor/core/libraries/select2/js/select2.min.js"></script>
+    <script src="http://hasa.botble.com/vendor/core/libraries/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script src="http://hasa.botble.com/vendor/core/libraries/jquery-cookie/jquery.cookie.js"></script>
+    <script src="http://hasa.botble.com/vendor/core/js/core.js"></script>
+    <script src="http://hasa.botble.com/vendor/core/libraries/toastr/toastr.min.js"></script>
+    <script src="http://hasa.botble.com/vendor/core/libraries/pace/pace.min.js"></script>
+    <script src="http://hasa.botble.com/vendor/core/libraries/mcustom-scrollbar/jquery.mCustomScrollbar.js"></script>
+    <script src="http://hasa.botble.com/vendor/core/libraries/stickytableheaders/jquery.stickytableheaders.js"></script>
+    <script src="http://hasa.botble.com/vendor/core/libraries/jquery-waypoints/jquery.waypoints.min.js"></script>
+    <script src="http://hasa.botble.com/vendor/core/libraries/spectrum/spectrum.js"></script>
+    <script src="http://hasa.botble.com/vendor/core/libraries/fancybox/jquery.fancybox.min.js"></script>
+    <script src="http://hasa.botble.com/vendor/core/libraries/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="http://hasa.botble.com/vendor/core/libraries/datatables/media/js/dataTables.bootstrap.min.js"></script>
+    <script src="http://hasa.botble.com/vendor/core/libraries/datatables/extensions/Buttons/js/dataTables.buttons.min.js"></script>
+    <script src="http://hasa.botble.com/vendor/core/libraries/datatables/extensions/Buttons/js/buttons.bootstrap.min.js"></script>
+    <script src="http://hasa.botble.com/vendor/core/libraries/moment-with-locales.min.js"></script>
+    <script src="http://hasa.botble.com/vendor/core/libraries/bootstrap3-typeahead.min.js"></script>
+    <script src="http://hasa.botble.com/vendor/core/js/table.js"></script>
+    <script src="http://hasa.botble.com/vendor/core/js/filter.js"></script>
 @endsection
