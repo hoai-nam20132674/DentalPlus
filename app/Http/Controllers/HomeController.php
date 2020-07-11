@@ -6,7 +6,10 @@ use Illuminate\Http\Request;
 use App\Http\Requests\addUserRequest;
 use App\Http\Requests\editUserRequest;
 use App\Http\Requests\editPasswordRequest;
+use App\Http\Requests\addBlogCategorieRequest;
+use App\Http\Requests\editBlogCategorieRequest;
 use App\User;
+use App\BlogCate;
 
 class HomeController extends Controller
 {
@@ -79,7 +82,34 @@ class HomeController extends Controller
 
     // blog
     public function blogCategories(){
-        return view('admin.blogCategories');
+        $categories = BlogCate::select()->get();
+        return view('admin.blogCategories',['categories'=>$categories]);
+    }
+    public function addBlogCategorie(){
+        $categories = BlogCate::select()->get();
+        return view('admin.addBlogCategorie',['categories'=>$categories]);
+    }
+    public function postAddBlogCategorie(addBlogCategorieRequest $request){
+        $item = new BlogCate;
+        $item -> add($request);
+        return redirect()->route('blogCategories')->with(['flash_level'=>'success','flash_message'=>'Thêm thành công']); 
+    }
+    public function editBlogCategorie($id){
+        $categories = BlogCate::where('id','!=',$id)->get();
+        $cate = BlogCate::where('id',$id)->get()->first();
+        if($cate->parent_id != ''){
+            $parent = BlogCate::where('id',$cate->parent_id)->get()->first();
+            return view('admin.editBlogCategorie',['cate'=>$cate, 'categories'=>$categories,'parent'=>$parent]);
+        }
+        else{
+            return view('admin.editBlogCategorie',['cate'=>$cate, 'categories'=>$categories]);
+        }
+        
+    }
+    public function postEditBlogCategorie(editBlogCategorieRequest $request, $id){
+        $item = new BlogCate;
+        $item->edit($request,$id);
+        return redirect()->route('editBlogCategorie',$id)->with(['flash_level'=>'success','flash_message'=>'Sửa thành công']);
     }
     // end blog
 }

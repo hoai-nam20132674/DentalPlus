@@ -15,6 +15,7 @@ class CreateBlogCatesTable extends Migration
     {
         Schema::create('blog_cates', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('parent_id')->nullable();
             $table->string('name');
             $table->string('title');
             $table->longText('seo_description');

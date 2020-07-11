@@ -153,7 +153,7 @@
                             		<label><input type="search" class="form-control form-control-sm" placeholder="Search..." aria-controls="table-categories"></label>
                             	</div>
                             	<div class="dt-buttons btn-group"> 
-                            		<button class="btn btn-secondary action-item" tabindex="0" aria-controls="table-categories"><span><span data-action="create" data-href="http://hasa.botble.com/admin/categories/create"><i class="fa fa-plus"></i> Tạo mới</span></span></button> 
+                            		<button class="btn btn-secondary action-item" tabindex="0" aria-controls="table-categories"><span><span data-action="create" data-href="{{URL::route('addBlogCategorie')}}"><i class="fa fa-plus"></i> Tạo mới</span></span></button> 
                             		<button class="btn btn-secondary buttons-reload" tabindex="0" aria-controls="table-categories"><span><i class="fas fa-sync"></i> Tải lại</span></button> 
                             	</div>
                             	<div id="table-categories_processing" class="dataTables_processing card" style="display: none;"></div>
@@ -170,39 +170,38 @@
                             			</tr>
                             		</thead>
                             		<tbody>
-                            			<tr role="row" class="odd">
-                            				<td class=" text-left no-sort">
-	                            				<div class="text-left">
-												    <div class="checkbox checkbox-primary table-checkbox">
-												        <input type="checkbox" class="checkboxes" name="id[]" value="1">
-												    </div>
-												</div>
-											</td>
-											<td class="  column-key-id">1</td>
-											<td class=" text-left column-key-name"><a href="http://hasa.botble.com/admin/categories/edit/1"> Uncategorizied</a></td>
-											<td class="  column-key-created_at">2020-06-13</td>
-											<td class="  column-key-updated_at">13-06-2020</td>
-											<td class="  column-key-status"><span class="label-success status-label">Published</span></td>
-											<td class=" text-center"><a href="http://hasa.botble.com/admin/categories/edit/1" class="btn btn-icon btn-primary" data-toggle="tooltip" data-original-title="Sửa"><i class="fa fa-edit"></i></a>
-											</td>
-										</tr>
-										<tr role="row" class="even">
-											<td class=" text-left no-sort">
-												<div class="text-left">
-												    <div class="checkbox checkbox-primary table-checkbox">
-												        <input type="checkbox" class="checkboxes" name="id[]" value="2">
-												    </div>
-												</div>
-											</td>
-											<td class="  column-key-id">2</td>
-											<td class=" text-left column-key-name"><a href="http://hasa.botble.com/admin/categories/edit/2"> TIN TỨC</a></td>
-											<td class="  column-key-created_at">2020-07-10</td><td class="  column-key-updated_at">10-07-2020</td>
-											<td class="  column-key-status"><span class="label-info status-label">Bản nháp</span></td>
-											<td class=" text-center">
-												<a href="http://hasa.botble.com/admin/categories/edit/2" class="btn btn-icon btn-primary" data-toggle="tooltip" data-original-title="Sửa"><i class="fa fa-edit"></i></a>
-												<a href="#" class="btn btn-icon btn-danger deleteDialog" data-toggle="tooltip" data-section="http://hasa.botble.com/admin/categories/2" role="button" data-original-title="Xóa bản ghi"><i class="fa fa-trash"></i></a>
-											</td>
-										</tr>
+                            			@php
+                            				$i=1;
+                            			@endphp
+                            			@foreach($categories as $cate)
+                            				@if($i%2 !=0)
+	                            				<tr role="row" class="odd">
+	                            			@else
+	                            				<tr role="row" class="odd">
+	                            			@endif
+		                            				<td class=" text-left no-sort">
+			                            				<div class="text-left">
+														    <div class="checkbox checkbox-primary table-checkbox">
+														        <input type="checkbox" class="checkboxes" name="id[]" value="{{$cate->id}}">
+														    </div>
+														</div>
+													</td>
+													<td class="  column-key-id">{{$i++}}</td>
+													<td class=" text-left column-key-name"><a href="{{URL::route('editBlogCategorie',$cate->id)}}">{{$cate->name}}</a></td>
+													<td class="  column-key-created_at">{{$cate->created_at}}</td>
+													<td class="  column-key-updated_at">{{$cate->updated_at}}</td>
+													@if($cate->display ==1)
+														<td class="  column-key-status"><span class="label-success status-label">Xuất bản</span></td>
+													@else
+														<td class="  column-key-status"><span class="label-danger status-label">Bản nháp</span></td>
+													@endif
+													<td class=" text-center">
+														<a href="{{URL::route('editBlogCategorie',$cate->id)}}" class="btn btn-icon btn-primary" data-toggle="tooltip" data-original-title="Sửa"><i class="fa fa-edit"></i></a>
+														<a href="#" class="btn btn-icon btn-danger deleteDialog" data-toggle="tooltip" data-section="http://hasa.botble.com/admin/categories/2" role="button" data-original-title="Xóa bản ghi"><i class="fa fa-trash"></i></a>
+													</td>
+												</tr>
+										@endforeach
+										
 									</tbody>
 								</table>
 								@include('admin.layout.table-footer')

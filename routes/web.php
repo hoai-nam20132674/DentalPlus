@@ -37,5 +37,9 @@ Route::post('admin/user/edit-password/{id}', 'HomeController@postEditPassword')-
 
 // blog route
 Route::get('admin/blog/categories', 'HomeController@blogCategories')->name('blogCategories');
+Route::get('admin/blog/categories/add', 'HomeController@addBlogCategorie')->name('addBlogCategorie');
+Route::post('admin/blog/categories/add', 'HomeController@postAddBlogCategorie')->name('postAddBlogCategorie');
+Route::get('admin/blog/categories/edit/{id}', 'HomeController@editBlogCategorie')->name('editBlogCategorie');
+Route::post('admin/blog/categories/edit/{id}', 'HomeController@postEditBlogCategorie')->name('postEditBlogCategorie');
 // end blog route
 
