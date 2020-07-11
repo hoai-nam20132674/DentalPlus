@@ -8,8 +8,10 @@ use App\Http\Requests\editUserRequest;
 use App\Http\Requests\editPasswordRequest;
 use App\Http\Requests\addBlogCategorieRequest;
 use App\Http\Requests\editBlogCategorieRequest;
+use App\Http\Requests\addBlogRequest;
 use App\User;
 use App\BlogCate;
+use App\Blog;
 
 class HomeController extends Controller
 {
@@ -110,6 +112,19 @@ class HomeController extends Controller
         $item = new BlogCate;
         $item->edit($request,$id);
         return redirect()->route('editBlogCategorie',$id)->with(['flash_level'=>'success','flash_message'=>'Sửa thành công']);
+    }
+    public function blogs(){
+        $blogs = Blog::select()->get();
+        return view('admin.blogs',['blogs'=>$blogs]);
+    }
+    public function addBlog(){
+        $categories = BlogCate::select()->get();
+        return view('admin.addBlog',['categories'=>$categories]);
+    }
+    public function postAddBlog(addBlogRequest $request){
+        $item = new Blog;
+        $item -> add($request);
+        return redirect()->route('blogs')->with(['flash_level'=>'success','flash_message'=>'Thêm thành công']); 
     }
     // end blog
 }

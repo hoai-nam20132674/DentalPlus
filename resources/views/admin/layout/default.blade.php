@@ -246,6 +246,9 @@
             });
         },"paging":true,"searching":true,"info":true,"searchDelay":350,"bStateSave":true,"lengthMenu":[[-1,10,30,50],["T\u1ea5t c\u1ea3",10,30,50]],"pageLength":10,"bServerSide":true,"bDeferRender":true,"bProcessing":true,"language":{"aria":{"sortAscending":"orderby asc","sortDescending":"orderby desc","paginate":{"next":"Sau &raquo;","previous":"&laquo; Tr\u01b0\u1edbc"}},"emptyTable":"Kh\u00f4ng c\u00f3 d\u1eef li\u1ec7u \u0111\u1ec3 hi\u1ec3n th\u1ecb","info":"<span class=\"dt-length-records\">\n    <i class=\"fa fa-globe\"><\/i> <span class=\"d-none d-sm-inline\">Hi\u1ec3n th\u1ecb t\u1eeb<\/span> _START_ \u0111\u1ebfn _END_ trong t\u1ed5ng s\u1ed1 <span class=\"badge badge-secondary bold badge-dt\">_TOTAL_<\/span> <span class=\"hidden-xs\">b\u1ea3n ghi<\/span>\n<\/span>","infoEmpty":"Kh\u00f4ng c\u00f3 d\u1eef li\u1ec7u","lengthMenu":"<span class=\"dt-length-style\">_MENU_<\/span>","search":"","searchPlaceholder":"Search...","zeroRecords":"Kh\u00f4ng c\u00f3 d\u1eef li\u1ec7u","processing":{},"paginate":{"next":"Sau &raquo;","previous":"&laquo; Tr\u01b0\u1edbc"},"infoFiltered":"(\u0111\u00e3 \u0111\u01b0\u1ee3c l\u1ecdc t\u1eeb _MAX_ b\u1ea3n ghi)"},"aaSorting":[[6,"desc"]]});})(window,jQuery);
 </script>
+<script type="text/javascript">
+            $("div.note").delay(3000).slideUp();
+        </script>
 
 
     

@@ -23,7 +23,7 @@
                         </a>
                         <ul class="sub-menu ">
                             <li class="nav-item  active " id="cms-plugins-blog-post">
-                                <a href="http://hasa.botble.com/admin/posts" class="nav-link">
+                                <a href="{{URL::route('blogs')}}" class="nav-link">
                                     <i class=""></i>
                                     Bài viết
                                 </a>
