@@ -34,4 +34,39 @@ class Blog extends Model
         }
 
     }
+    public function edit($request,$id){
+        $blog = $this::where('id',$id)->get()->first();
+        $blog->name = $request->name;
+        $blog->title = $request->title;
+        $blog->seo_keyword = $request->seo_keyword;
+        $blog->seo_description = $request->seo_description;
+        $blog->url = $request->url;
+        $blog->content = $request->content;
+        $blog->user_id = Auth::user()->id;
+        $blog->display = $request->display;
+        if($request->hasFile('avata')){ 
+            $file_name = $request->file('avata')->getClientOriginalName();
+            $blog->avata = $file_name;
+            $request->file('avata')->move('uploads/images/blogs/',$file_name);
+            // $request->file('avata')->move('public/uploads/images/blogs/categories/',$file_name);
+        }
+        $blog->save();
+        $categories = $request->categories;
+        $count = count($categories);
+        $itemDeletes = BCID::where('blog_id',$id)->whereNotIn('cate_id',$categories)->get();
+        foreach($itemDeletes as $itemDelete){
+            $itemDelete->delete();
+        }
+        for($j=0;$j<$count;$j++){
+            $item = BCID::where('cate_id',$categories[$j])->where('blog_id',$id)->get();
+            if(count($item)==0){
+                $bcid = new BCID;
+                $bcid->blog_id = $id;
+                $bcid->cate_id = $categories[$j];
+                $bcid->save();
+            }
+            
+        }
+
+    }
 }

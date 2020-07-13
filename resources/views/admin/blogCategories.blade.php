@@ -32,6 +32,20 @@
 
         <div class="clearfix"></div>
         <div id="main">
+        	@if( Session::has('flash_message'))
+                <div class="note note-{{ Session::get('flash_level')}}">
+				    <p>{{ Session::get('flash_message')}}</p>
+				</div>
+            @endif
+            @if( count($errors) > 0)
+		    	
+    			@foreach($errors->all() as $error)
+    				<div class="note note-danger">
+					    <p>{{$error}}</p>
+					</div>
+    			@endforeach
+		    		
+	    	@endif
             <div class="table-wrapper">
                 <div class="table-configuration-wrap">
 	                <span class="configuration-close-btn btn-show-table-options"><i class="fa fa-times"></i></span>
@@ -197,7 +211,7 @@
 													@endif
 													<td class=" text-center">
 														<a href="{{URL::route('editBlogCategorie',$cate->id)}}" class="btn btn-icon btn-primary" data-toggle="tooltip" data-original-title="Sửa"><i class="fa fa-edit"></i></a>
-														<a href="#" class="btn btn-icon btn-danger deleteDialog" data-toggle="tooltip" data-section="http://hasa.botble.com/admin/categories/2" role="button" data-original-title="Xóa bản ghi"><i class="fa fa-trash"></i></a>
+														<a href="#" class="btn btn-icon btn-danger deleteDialog delete" data-toggle="tooltip" data-section="{{URL::route('deleteBlogCategorie',$cate->id)}}" role="button" data-original-title="Xóa bản ghi"><i class="fa fa-trash"></i></a>
 													</td>
 												</tr>
 										@endforeach
@@ -226,7 +240,7 @@
 
 			            <div class="modal-footer">
 			                <button class="float-left btn btn-warning" data-dismiss="modal">Huỷ bỏ</button>
-			                <button class="float-right btn btn-danger delete-crud-entry">Xóa</button>
+			                <a class="confirm-delete" href=""><button class="float-right btn btn-danger">Xóa</button></a>
 			            </div>
 			        </div>
 			    </div>

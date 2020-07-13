@@ -180,7 +180,7 @@
 											<th  title="ID" width="20px" class=" column-key-id">ID</th>
 											<th  title="Hình ảnh" width="70px" class=" column-key-image">Hình ảnh</th>
 											<th  title="Tên" class="text-left column-key-name">Tên</th>
-											<th  title="Categories" width="150px" class="no-sort column-key-updated_at">Categories</th>
+											<th  title="Categories" width="300px" class="no-sort column-key-updated_at">Categories</th>
 											<th  title="Tác giả" width="150px" class="no-sort column-key-author_id">Tác giả</th>
 											<th  title="Ngày tạo" width="100px" class=" column-key-created_at">Ngày tạo</th>
 											<th  title="Trạng thái" width="100px" class=" column-key-status">Trạng thái</th>
@@ -188,90 +188,63 @@
 										</tr>
 									</thead>
 									<tbody>
-										<tr role="row" class="odd">
-											<td class=" text-left no-sort">
-												<div class="text-left">
-												    <div class="checkbox checkbox-primary table-checkbox">
-												        <input type="checkbox" class="checkboxes" name="id[]" value="3">
-												    </div>
-												</div>
-											</td>
-											<td class="column-key-id sorting_1">3</td>
-											<td class="  column-key-image">
-												<img src="http://hasa.botble.com/storage/news/tui-120-150x150.png" width="50" alt="Summer Bikin 2020">
-											</td>
-											<td class=" text-left column-key-name"><a href="http://hasa.botble.com/admin/posts/edit/3">Summer Bikin 2020</a></td>
-											<td class=" no-sort column-key-updated_at">Uncategorizied</td>
-											<td class=" no-sort column-key-author_id">System Admin</td>
-											<td class="  column-key-created_at">2020-06-13</td>
-											<td class="  column-key-status"><span class="label-success status-label">Published</span></td>
-											<td class=" text-center">
-												<div class="table-actions">
+										@php
+											$i=1;
+										@endphp
+										@foreach($blogs as $blog)
+											@if($i%2 ==1 )
+												<tr role="row" class="odd">
+											@else
+												<tr role="row" class="even">
+											@endif
+													<td class=" text-left no-sort">
+														<div class="text-left">
+														    <div class="checkbox checkbox-primary table-checkbox">
+														        <input type="checkbox" class="checkboxes" name="id[]" value="{{$blog->id}}">
+														    </div>
+														</div>
+													</td>
+													<td class="column-key-id sorting_{{$i}}">{{$i}}</td>
+													<td class="  column-key-image">
+														<img src="{{asset('uploads/images/blogs/'.$blog->avata)}}" width="50" alt="{{$blog->name}}">
+													</td>
+													<td class=" text-left column-key-name"><a href="">{{$blog->name}}</a></td>
+													@php
+														$bcids = App\BCID::where('blog_id',$blog->id)->get();
+														$user = App\User::where('id',$blog->user_id)->get()->first();
+													@endphp
+													<td class=" no-sort column-key-updated_at">
+														@foreach($bcids as $bcid)
+															@php
+																$c = App\BlogCate::where('id',$bcid->cate_id)->get()->first();
+															@endphp
+															<a class="btn btn-sm btn-default">{{$c->name}}</a>
+															
+														@endforeach
+													</td>
+													<td class=" no-sort column-key-author_id">{{$user->name}}</td>
+													<td class="  column-key-created_at">{{$blog->created_at}}</td>
+													@if($blog->display ==1 )
+														<td class="  column-key-status"><span class="label-success status-label">Xuất bản</span></td>
+													@else
+														<td class="  column-key-status"><span class="label-danger status-label">Bản nháp</span></td>
 
-								                    <a href="http://hasa.botble.com/admin/posts/edit/3" class="btn btn-icon btn-sm btn-primary" data-toggle="tooltip" data-original-title="Sửa">
-								                    	<i class="fa fa-edit"></i>
-								                    </a>
-								        
-								                    <a href="#" class="btn btn-icon btn-sm btn-danger deleteDialog" data-toggle="tooltip" data-section="http://hasa.botble.com/admin/posts/3" role="button" data-original-title="Xóa bản ghi">
-								                    	<i class="fa fa-trash"></i>
-								                    </a>
-								                </div>
-								            </td>
-								        </tr>
-								        <tr role="row" class="even">
-								        	<td class=" text-left no-sort">
-								        		<div class="text-left">
-												    <div class="checkbox checkbox-primary table-checkbox">
-												        <input type="checkbox" class="checkboxes" name="id[]" value="2">
-												    </div>
-												</div>
-											</td>
-											<td class="column-key-id sorting_1">2</td>
-											<td class="  column-key-image"><img src="http://hasa.botble.com/storage/news/tui-123-150x150.png" width="50" alt="Summer Bikin 2020"></td>
-											<td class=" text-left column-key-name"><a href="http://hasa.botble.com/admin/posts/edit/2">Summer Bikin 2020</a></td>
-											<td class=" no-sort column-key-updated_at">Uncategorizied</td>
-											<td class=" no-sort column-key-author_id">System Admin</td>
-											<td class="  column-key-created_at">2020-06-13</td>
-											<td class="  column-key-status"><span class="label-success status-label">Published</span></td>
-											<td class=" text-center">
-												<div class="table-actions">
+													@endif
+													<td class=" text-center">
+														<div class="table-actions">
 
-								                    <a href="http://hasa.botble.com/admin/posts/edit/2" class="btn btn-icon btn-sm btn-primary" data-toggle="tooltip" data-original-title="Sửa"><i class="fa fa-edit"></i></a>
+										                    <a href="{{URL::route('editBlog',$blog->id)}}" class="btn btn-icon btn-sm btn-primary" data-toggle="tooltip" data-original-title="Sửa">
+										                    	<i class="fa fa-edit"></i>
+										                    </a>
+										        
+										                    <a href="#" class="btn btn-icon btn-sm btn-danger deleteDialog delete" data-toggle="tooltip" data-section="{{URL::route('deleteBlog',$blog->id)}}" role="button" data-original-title="Xóa bản ghi">
+										                    	<i class="fa fa-trash"></i>
+										                    </a>
+										                </div>
+										            </td>
+										        </tr>
+								        @endforeach
 								        
-								                    <a href="#" class="btn btn-icon btn-sm btn-danger deleteDialog" data-toggle="tooltip" data-section="http://hasa.botble.com/admin/posts/2" role="button" data-original-title="Xóa bản ghi"><i class="fa fa-trash"></i></a>
-								                </div>
-								            </td>
-								        </tr>
-								        <tr role="row" class="odd">
-											<td class=" text-left no-sort">
-												<div class="text-left">
-												    <div class="checkbox checkbox-primary table-checkbox">
-												        <input type="checkbox" class="checkboxes" name="id[]" value="3">
-												    </div>
-												</div>
-											</td>
-											<td class="column-key-id sorting_1">3</td>
-											<td class="  column-key-image">
-												<img src="http://hasa.botble.com/storage/news/tui-120-150x150.png" width="50" alt="Summer Bikin 2020">
-											</td>
-											<td class=" text-left column-key-name"><a href="http://hasa.botble.com/admin/posts/edit/3">Summer Bikin 2020</a></td>
-											<td class=" no-sort column-key-updated_at">Uncategorizied</td>
-											<td class=" no-sort column-key-author_id">System Admin</td>
-											<td class="  column-key-created_at">2020-06-13</td>
-											<td class="  column-key-status"><span class="label-success status-label">Published</span></td>
-											<td class=" text-center">
-												<div class="table-actions">
-
-								                    <a href="http://hasa.botble.com/admin/posts/edit/3" class="btn btn-icon btn-sm btn-primary" data-toggle="tooltip" data-original-title="Sửa">
-								                    	<i class="fa fa-edit"></i>
-								                    </a>
-								        
-								                    <a href="#" class="btn btn-icon btn-sm btn-danger deleteDialog" data-toggle="tooltip" data-section="http://hasa.botble.com/admin/posts/3" role="button" data-original-title="Xóa bản ghi">
-								                    	<i class="fa fa-trash"></i>
-								                    </a>
-								                </div>
-								            </td>
-								        </tr>
 								    </tbody>
 								</table>
 								@include('admin.layout.table-footer')
@@ -296,7 +269,7 @@
 
 			            <div class="modal-footer">
 			                <button class="float-left btn btn-warning" data-dismiss="modal">Huỷ bỏ</button>
-			                <button class="float-right btn btn-danger delete-crud-entry">Xóa</button>
+			                <a class="confirm-delete" href=""><button class="float-right btn btn-danger">Xóa</button></a>
 			            </div>
 			        </div>
 			    </div>
@@ -373,4 +346,5 @@
     <script src="http://hasa.botble.com/vendor/core/libraries/bootstrap3-typeahead.min.js"></script>
     <script src="http://hasa.botble.com/vendor/core/js/table.js"></script>
     <script src="http://hasa.botble.com/vendor/core/js/filter.js"></script>
+    
 @endsection

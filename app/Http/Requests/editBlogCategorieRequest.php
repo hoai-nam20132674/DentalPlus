@@ -34,7 +34,7 @@ class editBlogCategorieRequest extends FormRequest
     public function messages(){
         return [
             
-            'url.unique' => 'Url này đã được sử dụng'
+            'url.unique' => 'Đường dẫn này đã được sử dụng'
             
         ];
     }

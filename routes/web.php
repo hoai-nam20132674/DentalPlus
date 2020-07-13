@@ -41,10 +41,12 @@ Route::get('admin/blogs/add', 'HomeController@addBlog')->name('addBlog');
 Route::post('admin/blogs/add', 'HomeController@postAddBlog')->name('postAddBlog');
 Route::get('admin/blogs/edit/{id}', 'HomeController@editBlog')->name('editBlog');
 Route::post('admin/blogs/edit/{id}', 'HomeController@postEditBlog')->name('postEditBlog');
+Route::get('admin/blogs/delete/{id}', 'HomeController@deleteBlog')->name('deleteBlog');
 Route::get('admin/blog/categories', 'HomeController@blogCategories')->name('blogCategories');
 Route::get('admin/blog/categories/add', 'HomeController@addBlogCategorie')->name('addBlogCategorie');
 Route::post('admin/blog/categories/add', 'HomeController@postAddBlogCategorie')->name('postAddBlogCategorie');
 Route::get('admin/blog/categories/edit/{id}', 'HomeController@editBlogCategorie')->name('editBlogCategorie');
 Route::post('admin/blog/categories/edit/{id}', 'HomeController@postEditBlogCategorie')->name('postEditBlogCategorie');
+Route::get('admin/blogs/categories/delete/{id}', 'HomeController@deleteBlogCategorie')->name('deleteBlogCategorie');
 // end blog route
 

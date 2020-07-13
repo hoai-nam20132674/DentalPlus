@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class addBlogRequest extends FormRequest
+class editBlogRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,7 +25,8 @@ class addBlogRequest extends FormRequest
     {
         return [
             
-            'url' => 'unique:blogs,url|unique:services,url|unique:blog_cates,url|unique:product_cates,url|unique:products,url'
+            'url' => 'unique:services,url|unique:blog_cates,url|unique:product_cates,url|unique:products,url|unique:blogs,url,'.$this->id,
+
             
             
         ];

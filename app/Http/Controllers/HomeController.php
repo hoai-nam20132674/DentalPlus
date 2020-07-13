@@ -9,6 +9,7 @@ use App\Http\Requests\editPasswordRequest;
 use App\Http\Requests\addBlogCategorieRequest;
 use App\Http\Requests\editBlogCategorieRequest;
 use App\Http\Requests\addBlogRequest;
+use App\Http\Requests\editBlogRequest;
 use App\User;
 use App\BlogCate;
 use App\Blog;
@@ -113,6 +114,11 @@ class HomeController extends Controller
         $item->edit($request,$id);
         return redirect()->route('editBlogCategorie',$id)->with(['flash_level'=>'success','flash_message'=>'Sửa thành công']);
     }
+    public function deleteBlogCategorie($id){
+        $item = BlogCate::where('id',$id)->get()->first();
+        $item->delete();
+        return redirect()->route('blogCategories')->with(['flash_level'=>'success','flash_message'=>'Xóa tin tức thành công']); 
+    }
     public function blogs(){
         $blogs = Blog::select()->get();
         return view('admin.blogs',['blogs'=>$blogs]);
@@ -125,6 +131,21 @@ class HomeController extends Controller
         $item = new Blog;
         $item -> add($request);
         return redirect()->route('blogs')->with(['flash_level'=>'success','flash_message'=>'Thêm thành công']); 
+    }
+    public function editBlog($id){
+        $categories = BlogCate::select()->get();
+        $blog = Blog::where('id',$id)->get()->first();
+        return view('admin.editBlog',['blog'=>$blog,'categories'=>$categories]);
+    }
+    public function postEditBlog(editBlogRequest $request, $id){
+        $item = new Blog;
+        $item->edit($request,$id);
+        return redirect()->route('editBlog',$id)->with(['flash_level'=>'success','flash_message'=>'Sửa thành công']);
+    }
+    public function deleteBlog($id){
+        $item = Blog::where('id',$id)->get()->first();
+        $item->delete();
+        return redirect()->route('blogs')->with(['flash_level'=>'success','flash_message'=>'Xóa tin tức thành công']); 
     }
     // end blog
 }
