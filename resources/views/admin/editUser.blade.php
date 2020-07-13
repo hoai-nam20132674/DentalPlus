@@ -1,17 +1,17 @@
 @extends('admin.layout.default')
 @section('css')
-	<link media="all" type="text/css" rel="stylesheet" href="http://hasa.botble.com/vendor/core/libraries/font-awesome/css/fontawesome.min.css">
-    <link media="all" type="text/css" rel="stylesheet" href="http://hasa.botble.com/vendor/core/libraries/simple-line-icons/css/simple-line-icons.css">
-    <link media="all" type="text/css" rel="stylesheet" href="http://hasa.botble.com/vendor/core/libraries/select2/css/select2.min.css">
-    <link media="all" type="text/css" rel="stylesheet" href="http://hasa.botble.com/vendor/core/libraries/select2/css/select2-bootstrap.min.css">
-    <link media="all" type="text/css" rel="stylesheet" href="http://hasa.botble.com/vendor/core/libraries/pace/pace-theme-minimal.css">
-    <link media="all" type="text/css" rel="stylesheet" href="http://hasa.botble.com/vendor/core/libraries/toastr/toastr.min.css">
-    <link media="all" type="text/css" rel="stylesheet" href="http://hasa.botble.com/vendor/core/libraries/mcustom-scrollbar/jquery.mCustomScrollbar.css">
-    <link media="all" type="text/css" rel="stylesheet" href="http://hasa.botble.com/vendor/core/libraries/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
-    <link media="all" type="text/css" rel="stylesheet" href="http://hasa.botble.com/vendor/core/libraries/spectrum/spectrum.css">
-    <link media="all" type="text/css" rel="stylesheet" href="http://hasa.botble.com/vendor/core/libraries/fancybox/jquery.fancybox.min.css">
-    <link media="all" type="text/css" rel="stylesheet" href="http://hasa.botble.com/vendor/core/css/core.css">
-    <link media="all" type="text/css" rel="stylesheet" href="http://hasa.botble.com/vendor/core/css/themes/default.css">
+	<link media="all" type="text/css" rel="stylesheet" href="{{asset('css/admin/fontawesome.min.css')}}">
+    <link media="all" type="text/css" rel="stylesheet" href="{{asset('css/admin/simple-line-icons.css')}}">
+    <link media="all" type="text/css" rel="stylesheet" href="{{asset('css/admin/select2.min.css')}}">
+    <link media="all" type="text/css" rel="stylesheet" href="{{asset('css/admin/select2-bootstrap.min.css')}}">
+    <link media="all" type="text/css" rel="stylesheet" href="{{asset('css/admin/pace-theme-minimal.css')}}">
+    <link media="all" type="text/css" rel="stylesheet" href="{{asset('css/admin/toastr.min.css')}}">
+    <link media="all" type="text/css" rel="stylesheet" href="{{asset('css/admin/jquery.mCustomScrollbar.css')}}">
+    <link media="all" type="text/css" rel="stylesheet" href="{{asset('css/admin/bootstrap-datepicker3.min.css')}}">
+    <link media="all" type="text/css" rel="stylesheet" href="{{asset('css/admin/spectrum.css')}}">
+    <link media="all" type="text/css" rel="stylesheet" href="{{asset('css/admin/jquery.fancybox.min.css')}}">
+    <link media="all" type="text/css" rel="stylesheet" href="{{asset('css/admin/core.css')}}">
+    <link media="all" type="text/css" rel="stylesheet" href="{{asset('css/admin/default.css')}}">
 @endsection
 @section('content')
 <div class="page-content ">
@@ -221,23 +221,23 @@
 </div>
 @endsection
 @section('js')
-	<script src="http://hasa.botble.com/vendor/core/libraries/respond.min.js"></script>
-    <script src="http://hasa.botble.com/vendor/core/libraries/excanvas.min.js"></script>
-    <script src="http://hasa.botble.com/vendor/core/libraries/ie8.fix.min.js"></script>
-    <script src="http://hasa.botble.com/vendor/core/libraries/modernizr/modernizr.min.js"></script>
-    <script src="http://hasa.botble.com/vendor/core/libraries/select2/js/select2.min.js"></script>
-    <script src="http://hasa.botble.com/vendor/core/libraries/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-    <script src="http://hasa.botble.com/vendor/core/libraries/jquery-cookie/jquery.cookie.js"></script>
-    <script src="http://hasa.botble.com/vendor/core/js/core.js"></script>
-    <script src="http://hasa.botble.com/vendor/core/libraries/toastr/toastr.min.js"></script>
-    <script src="http://hasa.botble.com/vendor/core/libraries/pace/pace.min.js"></script>
-    <script src="http://hasa.botble.com/vendor/core/libraries/mcustom-scrollbar/jquery.mCustomScrollbar.js"></script>
-    <script src="http://hasa.botble.com/vendor/core/libraries/stickytableheaders/jquery.stickytableheaders.js"></script>
-    <script src="http://hasa.botble.com/vendor/core/libraries/jquery-waypoints/jquery.waypoints.min.js"></script>
-    <script src="http://hasa.botble.com/vendor/core/libraries/spectrum/spectrum.js"></script>
-    <script src="http://hasa.botble.com/vendor/core/libraries/fancybox/jquery.fancybox.min.js"></script>
-    <script src="http://hasa.botble.com/vendor/core/libraries/cropper.min.js"></script>
-    <script src="http://hasa.botble.com/vendor/core/js/js-validation.js"></script>
-    <script src="http://hasa.botble.com/vendor/core/libraries/jquery.are-you-sure/jquery.are-you-sure.js"></script>
-    <script src="http://hasa.botble.com/vendor/core/js/profile.js"></script>
+	<script src="{{asset('js/admin/respond.min.js')}}"></script>
+    <script src="{{asset('js/admin/excanvas.min.js')}}"></script>
+    <script src="{{asset('js/admin/ie8.fix.min.js')}}"></script>
+    <script src="{{asset('js/admin/modernizr.min.js')}}"></script>
+    <script src="{{asset('js/admin/select2.min.js')}}"></script>
+    <script src="{{asset('js/admin/bootstrap-datepicker.min.js')}}"></script>
+    <script src="{{asset('js/admin/jquery.cookie.js')}}"></script>
+    <script src="{{asset('js/admin/core.js')}}"></script>
+    <script src="{{asset('js/admin/toastr.min.js')}}"></script>
+    <script src="{{asset('js/admin/pace.min.js')}}"></script>
+    <script src="{{asset('js/admin/jquery.mCustomScrollbar.js')}}"></script>
+    <script src="{{asset('js/admin/jquery.stickytableheaders.js')}}"></script>
+    <script src="{{asset('js/admin/jquery.waypoints.min.js')}}"></script>
+    <script src="{{asset('js/admin/spectrum.js')}}"></script>
+    <script src="{{asset('js/admin/jquery.fancybox.min.js')}}"></script>
+    <script src="{{asset('js/admin/cropper.min.js')}}"></script>
+    <script src="{{asset('js/admin/js-validation.js')}}"></script>
+    <script src="{{asset('js/admin/jquery.are-you-sure.js')}}"></script>
+    <script src="{{asset('js/admin/profile.js')}}"></script>
 @endsection

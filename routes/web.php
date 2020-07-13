@@ -37,16 +37,30 @@ Route::post('admin/user/edit-password/{id}', 'HomeController@postEditPassword')-
 
 // blog route
 Route::get('admin/blogs', 'HomeController@blogs')->name('blogs');
-Route::get('admin/blogs/add', 'HomeController@addBlog')->name('addBlog');
-Route::post('admin/blogs/add', 'HomeController@postAddBlog')->name('postAddBlog');
-Route::get('admin/blogs/edit/{id}', 'HomeController@editBlog')->name('editBlog');
-Route::post('admin/blogs/edit/{id}', 'HomeController@postEditBlog')->name('postEditBlog');
-Route::get('admin/blogs/delete/{id}', 'HomeController@deleteBlog')->name('deleteBlog');
+Route::get('admin/blog/add', 'HomeController@addBlog')->name('addBlog');
+Route::post('admin/blog/add', 'HomeController@postAddBlog')->name('postAddBlog');
+Route::get('admin/blog/edit/{id}', 'HomeController@editBlog')->name('editBlog');
+Route::post('admin/blog/edit/{id}', 'HomeController@postEditBlog')->name('postEditBlog');
+Route::get('admin/blog/delete/{id}', 'HomeController@deleteBlog')->name('deleteBlog');
 Route::get('admin/blog/categories', 'HomeController@blogCategories')->name('blogCategories');
-Route::get('admin/blog/categories/add', 'HomeController@addBlogCategorie')->name('addBlogCategorie');
-Route::post('admin/blog/categories/add', 'HomeController@postAddBlogCategorie')->name('postAddBlogCategorie');
-Route::get('admin/blog/categories/edit/{id}', 'HomeController@editBlogCategorie')->name('editBlogCategorie');
-Route::post('admin/blog/categories/edit/{id}', 'HomeController@postEditBlogCategorie')->name('postEditBlogCategorie');
-Route::get('admin/blogs/categories/delete/{id}', 'HomeController@deleteBlogCategorie')->name('deleteBlogCategorie');
+Route::get('admin/blog/categorie/add', 'HomeController@addBlogCategorie')->name('addBlogCategorie');
+Route::post('admin/blog/categorie/add', 'HomeController@postAddBlogCategorie')->name('postAddBlogCategorie');
+Route::get('admin/blog/categorie/edit/{id}', 'HomeController@editBlogCategorie')->name('editBlogCategorie');
+Route::post('admin/blog/categorie/edit/{id}', 'HomeController@postEditBlogCategorie')->name('postEditBlogCategorie');
+Route::get('admin/blogs/categorie/delete/{id}', 'HomeController@deleteBlogCategorie')->name('deleteBlogCategorie');
 // end blog route
 
+// service route
+Route::get('admin/services', 'HomeController@services')->name('services');
+Route::get('admin/service/add', 'HomeController@addService')->name('addService');
+Route::post('admin/service/add', 'HomeController@postAddService')->name('postAddService');
+Route::get('admin/service/edit/{id}', 'HomeController@editService')->name('editService');
+Route::post('admin/service/edit/{id}', 'HomeController@postEditService')->name('postEditService');
+Route::get('admin/service/delete/{id}', 'HomeController@deleteService')->name('deleteService');
+Route::get('admin/service/categories', 'HomeController@serviceCategories')->name('serviceCategories');
+Route::get('admin/service/categorie/add', 'HomeController@addServiceCategorie')->name('addServiceCategorie');
+Route::post('admin/service/categorie/add', 'HomeController@postAddServiceCategorie')->name('postAddServiceCategorie');
+Route::get('admin/service/categorie/edit/{id}', 'HomeController@editServiceCategorie')->name('editServiceCategorie');
+Route::post('admin/service/categorie/edit/{id}', 'HomeController@postEditServiceCategorie')->name('postEditServiceCategorie');
+Route::get('admin/service/categorie/delete/{id}', 'HomeController@deleteServiceCategorie')->name('deleteServiceCategorie');
+// end service route

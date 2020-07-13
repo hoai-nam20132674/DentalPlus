@@ -148,4 +148,70 @@ class HomeController extends Controller
         return redirect()->route('blogs')->with(['flash_level'=>'success','flash_message'=>'Xóa tin tức thành công']); 
     }
     // end blog
+
+    // service
+    public function serviceCategories(){
+        $categories = ServiceCate::select()->get();
+        return view('admin.blogCategories',['categories'=>$categories]);
+    }
+    public function addServiceCategorie(){
+        $categories = BlogCate::select()->get();
+        return view('admin.addBlogCategorie',['categories'=>$categories]);
+    }
+    public function postAddServiceCategorie(addBlogCategorieRequest $request){
+        $item = new BlogCate;
+        $item -> add($request);
+        return redirect()->route('blogCategories')->with(['flash_level'=>'success','flash_message'=>'Thêm thành công']); 
+    }
+    public function editServiceCategorie($id){
+        $categories = BlogCate::where('id','!=',$id)->get();
+        $cate = BlogCate::where('id',$id)->get()->first();
+        if($cate->parent_id != ''){
+            $parent = BlogCate::where('id',$cate->parent_id)->get()->first();
+            return view('admin.editBlogCategorie',['cate'=>$cate, 'categories'=>$categories,'parent'=>$parent]);
+        }
+        else{
+            return view('admin.editBlogCategorie',['cate'=>$cate, 'categories'=>$categories]);
+        }
+        
+    }
+    public function postEditServiceCategorie(editBlogCategorieRequest $request, $id){
+        $item = new BlogCate;
+        $item->edit($request,$id);
+        return redirect()->route('editBlogCategorie',$id)->with(['flash_level'=>'success','flash_message'=>'Sửa thành công']);
+    }
+    public function deleteServiceCategorie($id){
+        $item = BlogCate::where('id',$id)->get()->first();
+        $item->delete();
+        return redirect()->route('blogCategories')->with(['flash_level'=>'success','flash_message'=>'Xóa tin tức thành công']); 
+    }
+    public function services(){
+        $blogs = Blog::select()->get();
+        return view('admin.blogs',['blogs'=>$blogs]);
+    }
+    public function addService(){
+        $categories = BlogCate::select()->get();
+        return view('admin.addBlog',['categories'=>$categories]);
+    }
+    public function postAddService(addBlogRequest $request){
+        $item = new Blog;
+        $item -> add($request);
+        return redirect()->route('blogs')->with(['flash_level'=>'success','flash_message'=>'Thêm thành công']); 
+    }
+    public function editService($id){
+        $categories = BlogCate::select()->get();
+        $blog = Blog::where('id',$id)->get()->first();
+        return view('admin.editBlog',['blog'=>$blog,'categories'=>$categories]);
+    }
+    public function postEditService(editBlogRequest $request, $id){
+        $item = new Blog;
+        $item->edit($request,$id);
+        return redirect()->route('editBlog',$id)->with(['flash_level'=>'success','flash_message'=>'Sửa thành công']);
+    }
+    public function deleteService($id){
+        $item = Blog::where('id',$id)->get()->first();
+        $item->delete();
+        return redirect()->route('blogs')->with(['flash_level'=>'success','flash_message'=>'Xóa tin tức thành công']); 
+    }
+    // end service
 }

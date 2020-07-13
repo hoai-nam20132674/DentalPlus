@@ -34,20 +34,32 @@
                                     Danh mục
                                 </a>
                             </li>
-                            <li class="nav-item " id="cms-plugins-blog-tags">
-                                <a href="http://hasa.botble.com/admin/tags" class="nav-link">
-                                    <i class=""></i>
-                                    Thẻ
-                                </a>
-                            </li>
+                            
                         </ul>
                     </li>
-                    <li class="nav-item " id="cms-plugins-newsletter">
-                        <a href="http://hasa.botble.com/admin/newsletters" class="nav-link nav-toggle">
-                            <i class="far fa-newspaper"></i>
-                            <span class="title">Newsletters </span>
+                    <li class="nav-item" id="cms-plugins-newsletter">
+                        <a href="http://hasa.botble.com/admin/posts" class="nav-link nav-toggle">
+                            <i class="fa fa-newspaper"></i>
+                            <span class="title">Dịch vụ</span>
+                            <span class="arrow  open "></span>
                         </a>
+                        <ul class="sub-menu ">
+                            <li class="nav-item  active " id="cms-plugins-blog-post">
+                                <a href="{{URL::route('services')}}" class="nav-link">
+                                    <i class=""></i>
+                                    Dịch vụ
+                                </a>
+                            </li>
+                            <li class="nav-item " id="cms-plugins-blog-categories">
+                                <a href="{{URL::route('serviceCategories')}}" class="nav-link">
+                                    <i class=""></i>
+                                    Danh mục
+                                </a>
+                            </li>
+                            
+                        </ul>
                     </li>
+                    
                     <li class="nav-item " id="cms-plugins-ecommerce">
                         <a href="http://hasa.botble.com/admin/ecommerce/products" class="nav-link nav-toggle">
                             <i class="fa fa-shopping-cart"></i>
