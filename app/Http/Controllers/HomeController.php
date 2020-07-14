@@ -14,11 +14,17 @@ use App\Http\Requests\addServiceCategorieRequest;
 use App\Http\Requests\editServiceCategorieRequest;
 use App\Http\Requests\addServiceRequest;
 use App\Http\Requests\editServiceRequest;
+use App\Http\Requests\addProductCategorieRequest;
+use App\Http\Requests\editProductCategorieRequest;
+use App\Http\Requests\addProductRequest;
+use App\Http\Requests\editProductRequest;
 use App\User;
 use App\BlogCate;
 use App\Blog;
 use App\Service;
 use App\ServiceCate;
+use App\Product;
+use App\ProductCate;
 
 class HomeController extends Controller
 {
