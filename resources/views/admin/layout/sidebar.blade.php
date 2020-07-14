@@ -61,96 +61,31 @@
                     </li>
                     
                     <li class="nav-item " id="cms-plugins-ecommerce">
-                        <a href="http://hasa.botble.com/admin/ecommerce/products" class="nav-link nav-toggle">
-                            <i class="fa fa-shopping-cart"></i>
-                            <span class="title">Thương mại điện tử </span>
+                        <a href="" class="nav-link nav-toggle">
+                            <i class="fa fa-user-md"></i>
+                            <span class="title">Khách hàng</span>
                             <span class="arrow "></span>
                         </a>
                         <ul class="sub-menu  hidden-ul ">
-                            <li class="nav-item " id="cms-plugins-ecommerce-report">
-                                <a href="http://hasa.botble.com/admin/ecommerce/reports" class="nav-link">
-                                    <i class="far fa-chart-bar"></i>
-                                    Báo cáo
-                                </a>
-                            </li>
-                            <li class="nav-item " id="cms-plugins-ecommerce-order">
-                                <a href="http://hasa.botble.com/admin/orders" class="nav-link">
-                                    <i class="fa fa-shopping-bag"></i>
-                                    Đơn hàng
-                                </a>
-                            </li>
-                            <li class="nav-item " id="cms-plugins-ecommerce-incomplete-order">
-                                <a href="http://hasa.botble.com/admin/incomplete-orders" class="nav-link">
-                                    <i class="fas fa-shopping-basket"></i>
-                                    Đơn hàng chưa hoàn tất
-                                </a>
-                            </li>
-                            <li class="nav-item " id="cms-plugins-ecommerce.product">
-                                <a href="http://hasa.botble.com/admin/ecommerce/products" class="nav-link">
-                                    <i class="fa fa-camera"></i>
-                                    Sản phẩm
-                                </a>
-                            </li>
-                            <li class="nav-item " id="cms-plugins-product-categories">
-                                <a href="http://hasa.botble.com/admin/ecommerce/product-categories" class="nav-link">
-                                    <i class="fa fa-archive"></i>
-                                    Danh mục sản phẩm
-                                </a>
-                            </li>
-                            <li class="nav-item " id="cms-plugins-product-tag">
-                                <a href="http://hasa.botble.com/admin/ecommerce/product-tags" class="nav-link">
-                                    <i class="fa fa-tag"></i>
-                                    Product tags
-                                </a>
-                            </li>
-                            <li class="nav-item " id="cms-plugins-product-attribute">
-                                <a href="http://hasa.botble.com/admin/ecommerce/product-attribute-sets" class="nav-link">
-                                    <i class="fas fa-glass-martini"></i>
-                                    Thuộc tính sản phẩm
-                                </a>
-                            </li>
-                            <li class="nav-item " id="cms-plugins-brands">
-                                <a href="http://hasa.botble.com/admin/ecommerce/brands" class="nav-link">
-                                    <i class="fa fa-registered"></i>
-                                    Thương hiệu
-                                </a>
-                            </li>
-                            <li class="nav-item " id="cms-plugins-product-collections">
-                                <a href="http://hasa.botble.com/admin/ecommerce/product-collections" class="nav-link">
-                                    <i class="fa fa-file-excel"></i>
-                                    Nhóm sản phẩm
-                                </a>
-                            </li>
-                            <li class="nav-item " id="cms-ecommerce-review">
-                                <a href="http://hasa.botble.com/admin/reviews" class="nav-link">
-                                    <i class="fa fa-comments"></i>
-                                    Đánh giá
-                                </a>
-                            </li>
-                            <li class="nav-item " id="cms-plugins-ecommerce-shipping-provider">
-                                <a href="http://hasa.botble.com/admin/shipping-methods" class="nav-link">
-                                    <i class="fas fa-shipping-fast"></i>
-                                    Vận chuyển
-                                </a>
-                            </li>
-                            <li class="nav-item " id="cms-plugins-ecommerce-discount">
-                                <a href="http://hasa.botble.com/admin/discounts" class="nav-link">
-                                    <i class="fa fa-gift"></i>
-                                    Khuyến mãi
-                                </a>
-                            </li>
                             <li class="nav-item " id="cms-plugins-ecommerce-customer">
-                                <a href="http://hasa.botble.com/admin/customers" class="nav-link">
+                                <a href="{{URL::route('products')}}" class="nav-link">
                                     <i class="fa fa-users"></i>
                                     Khách hàng
                                 </a>
                             </li>
-                            <li class="nav-item " id="cms-plugins-ecommerce.settings">
-                                <a href="http://hasa.botble.com/admin/ecommerce/settings" class="nav-link">
-                                    <i class="fas fa-cogs"></i>
-                                    Cài đặt
+                            <li class="nav-item " id="cms-plugins-product-categories">
+                                <a href="{{URL::route('productCategories')}}" class="nav-link">
+                                    <i class="fa fa-archive"></i>
+                                    Danh mục khách hàng
                                 </a>
                             </li>
+                            <li class="nav-item " id="cms-plugins-ecommerce-customer">
+                                <a href="http://hasa.botble.com/admin/customers" class="nav-link">
+                                    <i class="fa fa-user"></i>
+                                    Khách hàng đăng ký tư vấn
+                                </a>
+                            </li>
+                            
                         </ul>
                     </li>
                     <li class="nav-item " id="cms-plugins-simple-slider">

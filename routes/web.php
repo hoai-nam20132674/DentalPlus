@@ -64,3 +64,18 @@ Route::get('admin/service/categorie/edit/{id}', 'HomeController@editServiceCateg
 Route::post('admin/service/categorie/edit/{id}', 'HomeController@postEditServiceCategorie')->name('postEditServiceCategorie');
 Route::get('admin/service/categorie/delete/{id}', 'HomeController@deleteServiceCategorie')->name('deleteServiceCategorie');
 // end service route
+
+// product route
+Route::get('admin/products', 'HomeController@products')->name('products');
+Route::get('admin/product/add', 'HomeController@addProduct')->name('addProduct');
+Route::post('admin/product/add', 'HomeController@postAddProduct')->name('postAddProduct');
+Route::get('admin/product/edit/{id}', 'HomeController@editProduct')->name('editProduct');
+Route::post('admin/product/edit/{id}', 'HomeController@postEditProduct')->name('postEditProduct');
+Route::get('admin/product/delete/{id}', 'HomeController@deleteProduct')->name('deleteProduct');
+Route::get('admin/product/categories', 'HomeController@productCategories')->name('productCategories');
+Route::get('admin/product/categorie/add', 'HomeController@addProductCategorie')->name('addProductCategorie');
+Route::post('admin/product/categorie/add', 'HomeController@postAddProductCategorie')->name('postAddProductCategorie');
+Route::get('admin/product/categorie/edit/{id}', 'HomeController@editProductCategorie')->name('editProductCategorie');
+Route::post('admin/product/categorie/edit/{id}', 'HomeController@postEditProductCategorie')->name('postEditProductCategorie');
+Route::get('admin/product/categorie/delete/{id}', 'HomeController@deleteProductCategorie')->name('deleteProductCategorie');
+// end product route

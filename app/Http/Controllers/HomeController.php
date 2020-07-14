@@ -220,4 +220,70 @@ class HomeController extends Controller
         return redirect()->route('services')->with(['flash_level'=>'success','flash_message'=>'Xóa dịch vụ thành công']); 
     }
     // end service
+
+    // product
+    public function productCategories(){
+        $categories = ProductCate::select()->get();
+        return view('admin.productCategories',['categories'=>$categories]);
+    }
+    public function addProductCategorie(){
+        $categories = ProductCate::select()->get();
+        return view('admin.addProductCategorie',['categories'=>$categories]);
+    }
+    public function postAddProductCategorie(addProductCategorieRequest $request){
+        $item = new ProductCate;
+        $item -> add($request);
+        return redirect()->route('productCategories')->with(['flash_level'=>'success','flash_message'=>'Thêm danh mục khách hàng thành công']); 
+    }
+    public function editProductCategorie($id){
+        $categories = ProductCate::where('id','!=',$id)->get();
+        $cate = ProductCate::where('id',$id)->get()->first();
+        if($cate->parent_id != ''){
+            $parent = ProductCate::where('id',$cate->parent_id)->get()->first();
+            return view('admin.editProductCategorie',['cate'=>$cate, 'categories'=>$categories,'parent'=>$parent]);
+        }
+        else{
+            return view('admin.editProductCategorie',['cate'=>$cate, 'categories'=>$categories]);
+        }
+        
+    }
+    public function postEditProductCategorie(editProductCategorieRequest $request, $id){
+        $item = new ProductCate;
+        $item->edit($request,$id);
+        return redirect()->route('editProductCategorie',$id)->with(['flash_level'=>'success','flash_message'=>'Sửa danh mục khách hàng thành công']);
+    }
+    public function deleteProductCategorie($id){
+        $item = ProductCate::where('id',$id)->get()->first();
+        $item->delete();
+        return redirect()->route('productCategories')->with(['flash_level'=>'success','flash_message'=>'Xóa danh mục khách hàng thành công']); 
+    }
+    public function products(){
+        $products = Product::select()->get();
+        return view('admin.products',['products'=>$products]);
+    }
+    public function addProduct(){
+        $categories = ProductCate::select()->get();
+        return view('admin.addProduct',['categories'=>$categories]);
+    }
+    public function postAddProduct(addProductRequest $request){
+        $item = new Product;
+        $item -> add($request);
+        return redirect()->route('products')->with(['flash_level'=>'success','flash_message'=>'Thêm khách hàng thành công']); 
+    }
+    public function editProduct($id){
+        $categories = ProductCate::select()->get();
+        $product = Product::where('id',$id)->get()->first();
+        return view('admin.editProduct',['product'=>$product,'categories'=>$categories]);
+    }
+    public function postEditProduct(editProductRequest $request, $id){
+        $item = new Product;
+        $item->edit($request,$id);
+        return redirect()->route('editProduct',$id)->with(['flash_level'=>'success','flash_message'=>'Sửa khách hàng thành công']);
+    }
+    public function deleteProduct($id){
+        $item = Product::where('id',$id)->get()->first();
+        $item->delete();
+        return redirect()->route('products')->with(['flash_level'=>'success','flash_message'=>'Xóa khách hàng thành công']); 
+    }
+    // end product
 }

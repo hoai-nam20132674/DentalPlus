@@ -15,6 +15,7 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->string('title');
             $table->longText('content');
             $table->longText('seo_description');
@@ -22,6 +23,7 @@ class CreateProductsTable extends Migration
             $table->string('url');
             $table->boolean('display');
             $table->boolean('hot');
+            $table->string('avata');
             $table->timestamps();
         });
     }

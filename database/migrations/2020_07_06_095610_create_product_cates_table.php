@@ -15,6 +15,7 @@ class CreateProductCatesTable extends Migration
     {
         Schema::create('product_cates', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('parent_id')->nullable();
             $table->string('name');
             $table->string('url');
             $table->string('title');
