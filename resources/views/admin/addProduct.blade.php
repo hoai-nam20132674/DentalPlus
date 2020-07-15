@@ -128,7 +128,17 @@
 			        		<div class="images-wrapper">
 			        			<div class="row" id="more_image">
 			        				
-			        				
+			        				<div class="col-md-2">
+                                        <div class="file-upload">   
+                                            <div class="file-upload-content file-upload-content1" style="position: relative;">
+                                                <img width="100%" class="file-upload-image file-upload-image1" src="{{asset('uploads/images/icon-image.gif')}}" alt="your image" />
+                                                <div class="image-title-wrap image-title-wrap1" style="position: absolute;top: 0px; right: 0px;">
+                                                    <button type="button" onclick="removeUploadTest(1)" class="remove-image">Ảnh chi tiết</button>
+                                                </div>
+                                                <input style="z-index: 100; position: absolute; top: 0px; left: 0px;" class="file-upload-input file-upload-input1" type='file' required name="images[]" onchange="readURLTest(this,1);" accept="image/*" />
+                                            </div>
+                                        </div>
+                                    </div>
 			        				
 			        			</div>
 

@@ -56,32 +56,32 @@ class Product extends Model
 
     }
     public function edit($request,$id){
-        $service = $this::where('id',$id)->get()->first();
-        $service->name = $request->name;
-        $service->title = $request->title;
-        $service->seo_keyword = $request->seo_keyword;
-        $service->seo_description = $request->seo_description;
-        $service->url = $request->url;
-        $service->content = $request->content;
-        $service->display = $request->display;
-        $service->hot = $request->hot;
+        $product = $this::where('id',$id)->get()->first();
+        $product->name = $request->name;
+        $product->title = $request->title;
+        $product->seo_keyword = $request->seo_keyword;
+        $product->seo_description = $request->seo_description;
+        $product->url = $request->url;
+        $product->content = $request->content;
+        $product->display = $request->display;
+        $product->hot = $request->hot;
         if($request->hasFile('avata')){ 
             $file_name = $request->file('avata')->getClientOriginalName();
-            $service->avata = $file_name;
-            $request->file('avata')->move('uploads/images/services/',$file_name);
+            $product->avata = $file_name;
+            $request->file('avata')->move('uploads/images/products/avatas/',$file_name);
             // $request->file('avata')->move('public/uploads/images/blogs/categories/',$file_name);
         }
-        $service->save();
+        $product->save();
         $categories = $request->categories;
         $count = count($categories);
-        $itemDeletes = SCID::where('service_id',$id)->whereNotIn('cate_id',$categories)->get();
+        $itemDeletes = PCID::where('product_id',$id)->whereNotIn('cate_id',$categories)->get();
         foreach($itemDeletes as $itemDelete){
             $itemDelete->delete();
         }
         for($j=0;$j<$count;$j++){
-            $item = SCID::where('cate_id',$categories[$j])->where('service_id',$id)->get();
+            $item = PCID::where('cate_id',$categories[$j])->where('product_id',$id)->get();
             if(count($item)==0){
-                $scid = new SCID;
+                $scid = new PCID;
                 $scid->service_id = $id;
                 $scid->cate_id = $categories[$j];
                 $scid->save();
