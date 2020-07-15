@@ -25,6 +25,7 @@ use App\Service;
 use App\ServiceCate;
 use App\Product;
 use App\ProductCate;
+use App\ProductImage;
 
 class HomeController extends Controller
 {
@@ -290,6 +291,12 @@ class HomeController extends Controller
         $item = Product::where('id',$id)->get()->first();
         $item->delete();
         return redirect()->route('products')->with(['flash_level'=>'success','flash_message'=>'Xóa khách hàng thành công']); 
+    }
+
+    public function deleteProductImage($id){
+        $item = ProductImage::where('id',$id)->get()->first();
+        $item->delete();
+        return redirect()->back()->with(['flash_level'=>'success','flash_message'=>'Xóa ảnh thành công']); 
     }
     // end product
 }

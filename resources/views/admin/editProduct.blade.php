@@ -157,22 +157,29 @@
 			                                        <div class="image-title-wrap image-title-wrap1" style="position: absolute;top: 0px; right: 0px;">
 			                                            <button type="button" onclick="removeUploadTest(1)" class="remove-image">Ảnh chi tiết</button>
 			                                        </div>
-			                                        <input style="z-index: 100; position: absolute; top: 0px; left: 0px;" class="file-upload-input file-upload-input1" type='file' required name="images[]" onchange="readURLTest(this,1);" accept="image/*" />
+			                                        <input style="z-index: 100; position: absolute; top: 0px; left: 0px;" class="file-upload-input file-upload-input1" type='file' name="images[]" onchange="readURLTest(this,1);" accept="image/*" />
 			                                    </div>
 			                                </div>
 				        				</div>
 				        			@else
 				        				@foreach($images as $image)
 					        				<div class="col-md-2">
-					        					<div class="file-upload">   
-				                                    <div class="file-upload-content file-upload-content{{$image->id*10}}" style="position: relative;">
-				                                        <img width="100%" class="file-upload-image file-upload-image{{$image->id*10}}" src="{{asset('uploads/images/products/details/'.$image->url)}}" alt="your image" />
-				                                        <div class="image-title-wrap image-title-wrap{{$image->id*10}}" style="position: absolute;top: 0px; right: 0px;">
-				                                            <button type="button" onclick="removeUploadTest({{$image->id*10}})" class="remove-image">Ảnh chi tiết</button>
+					        					<div class="file-upload" style="position: relative;">   
+				                                    <div class="file-upload-content file-upload-content{{$image->id+20}}" style="position: relative;">
+				                                        <img width="100%" class="file-upload-image file-upload-image{{$image->id+20}}" src="{{asset('uploads/images/products/details/'.$image->url)}}" alt="your image" />
+				                                        <div class="image-title-wrap image-title-wrap{{$image->id+20}}" style="position: absolute;top: 0px; right: 0px;">
+				                                            
 				                                        </div>
-				                                        <input style="z-index: 100; position: absolute; top: 0px; left: 0px;" class="file-upload-input file-upload-input{{$image->id*10}}" type='file' required name="imageEdit[]" onchange="readURLTest(this,{{$image->id*10}});" accept="image/*" />
+				                                        <input style="z-index: 100; position: absolute; top: 0px; left: 0px;" class="file-upload-input file-upload-input{{$image->id+20}}" type='file' name="{{$image->id}}" onchange="readURLTest(this,{{$image->id+20}});" accept="image/*" />
 				                                    </div>
+                                                    <!-- <div class="delete-image" id="177" onclick="return confirmDelete('Bạn có chắc muốn xóa ảnh này không')" style="position: absolute; top: 0px; right: 0px; z-index: 10000;">
+                                                        <a title="XÓA ẢNH"><i class="fa fa-window-close"></i></a>
+                                                    </div> -->
+                                                    <a title="Xóa ảnh" class="btn btn-icon btn-sm btn-danger deleteDialog delete delete-image" data-toggle="tooltip" data-section="{{URL::route('deleteProductImage',$image->id)}}" role="button" data-original-title="Xóa bản ghi" style="position: absolute; top: 0px; right: 0px; z-index: 10000;">
+                                                        <i class="fa fa-trash"></i>
+                                                    </a>
 				                                </div>
+                                                
 					        				</div>
 					        			@endforeach
 				        			@endif
@@ -186,7 +193,29 @@
 
 			        </div>
 			    </div>
-            
+
+            <div class="modal fade modal-confirm-delete" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header bg-danger">
+                            <h4 class="modal-title"><i class="til_img"></i><strong>Xác nhận xóa</strong></h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+
+                        <div class="modal-body with-padding">
+                            <div>Bạn có chắc chắn muốn xóa bản ghi này?</div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button class="float-left btn btn-warning" data-dismiss="modal">Huỷ bỏ</button>
+                            <a class="confirm-delete" href="">Xóa</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end Modal -->
             
             <div id="advanced-sortables" class="meta-box-sortables">
         <div id="seo_wrap" class="widget meta-boxes">
@@ -224,7 +253,7 @@
             </div>
             <div class="form-group">
                 <label for="seo_description" class="control-label">Từ khóa</label>
-                <textarea class="form-control" rows="3" id="seo_keyword" placeholder="từ khóa" data-counter="155" name="seo_keyword" value="{{$product->seo_keyword}}" required cols="50"></textarea>
+                <textarea class="form-control" rows="3" id="seo_keyword" placeholder="từ khóa" data-counter="155" name="seo_keyword" required cols="50">{{$product->seo_keyword}}</textarea>
             </div>
             <div class="form-group">
                 <label for="seo_description" class="control-label">Mô tả trang</label>
@@ -391,12 +420,12 @@
                         <div class="widget-body">
                             <div class="image-box" style="border: 1px solid #e2e2e2;">
                                 <div class="file-upload">   
-                                    <div class="file-upload-content file-upload-content100" style="position: relative;">
-                                        <img width="100%" class="file-upload-image file-upload-image100" src="{{asset('uploads/images/products/avatas/'.$product->avata)}}" alt="your image" />
-                                        <div class="image-title-wrap image-title-wrap100" style="position: absolute;top: 0px; right: 0px;">
-                                            <button type="button" onclick="removeUploadTest(100)" class="remove-image">Ảnh đại diện</button>
+                                    <div class="file-upload-content file-upload-content0" style="position: relative;">
+                                        <img width="100%" class="file-upload-image file-upload-image0" src="{{asset('uploads/images/products/avatas/'.$product->avata)}}" alt="your image" />
+                                        <div class="image-title-wrap image-title-wrap0" style="position: absolute;top: 0px; right: 0px;">
+                                            <button type="button" onclick="removeUploadTest(0)" class="remove-image">Ảnh đại diện</button>
                                         </div>
-                                        <input style="z-index: 100; position: absolute; top: 0px; left: 0px;" class="file-upload-input file-upload-input100" type='file' required name="avata" onchange="readURLTest(this,100);" accept="image/*" />
+                                        <input style="z-index: 100; position: absolute; top: 0px; left: 0px;" class="file-upload-input file-upload-input0" type='file' name="avata" onchange="readURLTest(this,0);" accept="image/*" />
                                     </div>
                                 </div>
     
@@ -437,6 +466,8 @@
     <script src="{{asset('js/admin/slug.js')}}"></script>
     <script src="{{asset('js/admin/seo-helper.js')}}"></script>
     <script src="{{asset('js/admin/upload-image.js')}}"></script>
+    <script src="{{asset('js/admin/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('js/admin/table.js')}}"></script>
     <script type="text/javascript">
 			
 		function more_image(){

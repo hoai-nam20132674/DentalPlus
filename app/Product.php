@@ -43,6 +43,7 @@ class Product extends Model
         if($request->hasFile('images')){ 
         	foreach($request->file('images') as $file){
                 if(isset($file)){
+                    $file_name = $file->getClientOriginalName();
                     $image = new ProductImage;
 			    	$image->url = $file_name;
 			    	$image->role = 0;
@@ -87,6 +88,30 @@ class Product extends Model
                 $scid->save();
             }
             
+        }
+        if($request->hasFile('images')){ 
+            foreach($request->file('images') as $file){
+                if(isset($file)){
+                    $file_name = $file->getClientOriginalName();
+                    $image = new ProductImage;
+                    $image->url = $file_name;
+                    $image->role = 0;
+                    $image->product_id = $id;
+                    $image->save();
+                    $file->move('uploads/images/products/details/',$file_name);
+                }
+            }
+            
+        }
+        $image_detail = ProductImage::where('product_id',$id)->where('role',0)->get();
+        foreach($image_detail as $image){
+            if($request->hasFile($image->id)){
+                $file = $request->file($image->id);
+                $file_name = $file->getClientOriginalName();
+                $image->url = $file_name;
+                $file->move('uploads/images/products/details/',$file_name); 
+                $image->save();
+            }
         }
 
     }

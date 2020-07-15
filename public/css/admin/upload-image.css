@@ -4,6 +4,15 @@
   margin: 0 auto;
   padding-bottom: 10px;
 }
+.delete-image{
+  display: none;
+}
+.file-upload:hover .file-upload-content{
+  opacity: 0.3;
+}
+.file-upload:hover .delete-image{
+  display: block;
+}
 
 .file-upload-btn {
   width: 100%;
