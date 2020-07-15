@@ -299,4 +299,9 @@ class HomeController extends Controller
         return redirect()->back()->with(['flash_level'=>'success','flash_message'=>'Xóa ảnh thành công']); 
     }
     // end product
+    // system 
+    public function editSystem(Request $request){
+        return view('admin.editSystem');
+    }
+    // end system
 }
