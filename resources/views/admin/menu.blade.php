@@ -17,233 +17,160 @@
 @endsection
 @section('content')
 <div class="page-content ">
-                    <ol class="breadcrumb">
-        
-                            <li class="breadcrumb-item"><a href="http://hasa.botble.com/admin">Bảng điều khiển</a></li>
-            
-        
-                            <li class="breadcrumb-item"><a href="#">Hiển thị</a></li>
-            
-        
-                            <li class="breadcrumb-item"><a href="http://hasa.botble.com/admin/menus">Menu</a></li>
-            
-        
-                            <li class="breadcrumb-item active">Sửa trình đơn</li>
-            
-            </ol>
+    <ol class="breadcrumb">
+
+        <li class="breadcrumb-item"><a href="http://hasa.botble.com/admin">Bảng điều khiển</a></li>
+        <li class="breadcrumb-item"><a href="#">Hiển thị</a></li>
+        <li class="breadcrumb-item"><a href="http://hasa.botble.com/admin/menus">Menu</a></li>
+    
+    </ol>
 
 
-                    <div class="clearfix"></div>
-                    <div id="main">
-                                    <form method="POST" action="http://hasa.botble.com/admin/menus/edit/4" accept-charset="UTF-8" id="form_de7bcdb34b7e65f91db4054da5d794d3" class="form-save-menu"><input name="_token" type="hidden" value="kU6i13XxOpavyLG5JTRb9f8prUR9M5Hn14b8kD57">
-    
-        <div class="row">
-        <div class="col-md-9">
-                            <div class="main-form">
-                    <div class="form-body">
-                                                                                                                                                                            <div class="form-group"  >
-    
-    <label for="name" class="control-label required">T&ecirc;n</label>
-    <input class="form-control" placeholder="Nhập tên" data-counter="120" name="name" type="text" value="Main menu" id="name">
-    
-
-
-        </div>
-    
-                                                                    
-                                                                                                                                                                        <div class="clearfix"></div>
+    <div class="clearfix"></div>
+    <div id="main">
+        <form method="POST" action="" accept-charset="UTF-8" id="form_de7bcdb34b7e65f91db4054da5d794d3" class="form-save-menu">
+            <input name="_token" type="hidden" value="kU6i13XxOpavyLG5JTRb9f8prUR9M5Hn14b8kD57">
+            <div class="tb"></div>
+            
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="main-form">
+                        <div class="form-body">
+                            <div class="form-group"  >
+                                <label for="name" class="control-label required">T&ecirc;n</label>
+                                <input class="form-control" placeholder="Nhập tên" data-counter="120" name="name" type="text" value="Main menu" id="name">
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
                     </div>
-                </div>
-            
-                            <input type="hidden" name="deleted_nodes">
-    <textarea name="menu_nodes" id="nestable-output" class="form-control hidden"></textarea>
-    <div class="row widget-menu">
+                    <input type="hidden" name="deleted_nodes">
+                    <textarea name="menu_nodes" id="nestable-output" class="form-control hidden"></textarea>
+                    <div class="row widget-menu">
         <div class="col-md-4">
             <div class="panel-group" id="accordion">
 
+                
                 <div class="widget meta-boxes">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseBrands">
-            <h4 class="widget-title" style="margin-top: 0">
-                <span>Thương hiệu</span>
-                <i class="fa fa-angle-down narrow-icon"></i>
-            </h4>
-        </a>
-        <div id="collapseBrands" class="panel-collapse collapse">
-            <div class="widget-body">
-                <div class="box-links-for-menu">
-                    <div class="the-box">
-                        <ul  class="list-item">
-            <li>
-            <label for="menu_id_botbleecommercemodelsbrand_1" data-title="Velisa" data-reference-id="1"
-                   data-reference-type="Botble\Ecommerce\Models\Brand">
-                <input id="menu_id_Botble\Ecommerce\Models\Brand_1" name="menu_id" type="checkbox" value="1">
-                Velisa
-            </label>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse_product_categories">
+                        <h4 class="widget-title" style="margin-top: 0">
+                            <span>Danh mục khách hàng</span>
+                            <i class="fa fa-angle-down narrow-icon"></i>
+                        </h4>
+                    </a>
+                    <div id="collapse_product_categories" class="panel-collapse collapse">
+                        <div class="widget-body">
+                            <div class="box-links-for-menu">
+                                <div class="the-box">
+                                    <ul class="list-item">
+                                        <ul  class="list-item">
+                                            @foreach($productCategories as $pc)
+                                            <li>
+                                                <label for="" data-title="{{$pc->name}}" data-reference-id="{{$pc->id}}"
+                                                       data-reference-type="productCategory">
+                                                    <input id="{{$pc->id}}" name="menu_id" type="checkbox" value="{{$pc->id}}">
+                                                    {{$pc->name}}
+                                                </label>
 
-                    </li>
-    </ul>
+                                                                
+                                            </li>
+                                            @endforeach
+                                            
+                                        </ul>
 
-                        <div class="text-right">
-                            <div class="btn-group btn-group-devided">
-                                <a href="#" class="btn-add-to-menu btn btn-primary">
-                                    <span class="text"><i class="fa fa-plus"></i> Thêm vào trình đơn</span>
-                                </a>
+                                    </ul>
+                                    <div class="text-right">
+                                        <div class="btn-group btn-group-devided">
+                                            <a href="#" class="btn-add-to-menu btn btn-primary">
+                                                <span class="text"><i class="fa fa-plus"></i> Thêm vào trình đơn</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-<div class="widget meta-boxes">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapse_product_categories">
-            <h4 class="widget-title" style="margin-top: 0">
-                <span>Danh mục sản phẩm</span>
-                <i class="fa fa-angle-down narrow-icon"></i>
-            </h4>
-        </a>
-        <div id="collapse_product_categories" class="panel-collapse collapse">
-            <div class="widget-body">
-                <div class="box-links-for-menu">
-                    <div class="the-box">
-                        <ul class="list-item">
-                            <ul  class="list-item">
-            <li>
-            <label for="menu_id_botbleecommercemodelsproductcategory_4" data-title="Bags" data-reference-id="4"
-                   data-reference-type="Botble\Ecommerce\Models\ProductCategory">
-                <input id="menu_id_Botble\Ecommerce\Models\ProductCategory_4" name="menu_id" type="checkbox" value="4">
-                Bags
-            </label>
+                <div class="widget meta-boxes">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse_service_categories">
+                        <h4 class="widget-title" style="margin-top: 0">
+                            <span>Danh mục dịch vụ</span>
+                            <i class="fa fa-angle-down narrow-icon"></i>
+                        </h4>
+                    </a>
+                    <div id="collapse_service_categories" class="panel-collapse collapse">
+                        <div class="widget-body">
+                            <div class="box-links-for-menu">
+                                <div class="the-box">
+                                    <ul class="list-item">
+                                        <ul  class="list-item">
+                                            @foreach($serviceCategories as $sc)
+                                            <li>
+                                                <label for="" data-title="{{$sc->name}}" data-reference-id="{{$sc->id}}"
+                                                       data-reference-type="serviceCategory">
+                                                    <input id="{{$sc->id}}" name="menu_id" type="checkbox" value="{{$sc->id}}">
+                                                    {{$sc->name}}
+                                                </label>
 
-                            
-                    </li>
-            <li>
-            <label for="menu_id_botbleecommercemodelsproductcategory_2" data-title="Jewelry" data-reference-id="2"
-                   data-reference-type="Botble\Ecommerce\Models\ProductCategory">
-                <input id="menu_id_Botble\Ecommerce\Models\ProductCategory_2" name="menu_id" type="checkbox" value="2">
-                Jewelry
-            </label>
+                                                                
+                                            </li>
+                                            @endforeach
+                                            
+                                        </ul>
 
-                            
-                    </li>
-            <li>
-            <label for="menu_id_botbleecommercemodelsproductcategory_3" data-title="Shoes" data-reference-id="3"
-                   data-reference-type="Botble\Ecommerce\Models\ProductCategory">
-                <input id="menu_id_Botble\Ecommerce\Models\ProductCategory_3" name="menu_id" type="checkbox" value="3">
-                Shoes
-            </label>
-
-                            
-                    </li>
-            <li>
-            <label for="menu_id_botbleecommercemodelsproductcategory_1" data-title="Sweaters" data-reference-id="1"
-                   data-reference-type="Botble\Ecommerce\Models\ProductCategory">
-                <input id="menu_id_Botble\Ecommerce\Models\ProductCategory_1" name="menu_id" type="checkbox" value="1">
-                Sweaters
-            </label>
-
-                            
-                    </li>
-    </ul>
-
-                        </ul>
-                        <div class="text-right">
-                            <div class="btn-group btn-group-devided">
-                                <a href="#" class="btn-add-to-menu btn btn-primary">
-                                    <span class="text"><i class="fa fa-plus"></i> Thêm vào trình đơn</span>
-                                </a>
+                                    </ul>
+                                    <div class="text-right">
+                                        <div class="btn-group btn-group-devided">
+                                            <a href="#" class="btn-add-to-menu btn btn-primary">
+                                                <span class="text"><i class="fa fa-plus"></i> Thêm vào trình đơn</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-<div class="widget meta-boxes">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapsePages">
-            <h4 class="widget-title" style="margin-top: 0">
-                <span>Trang</span>
-                <i class="fa fa-angle-up narrow-icon"></i>
-            </h4>
-        </a>
-        <div id="collapsePages" class="panel-collapse collapse in">
-            <div class="widget-body">
-                <div class="box-links-for-menu">
-                    <div class="the-box">
-                        <ul  class="list-item">
-            <li>
-            <label for="menu_id_botblepagemodelspage_2" data-title="Blog" data-reference-id="2"
-                   data-reference-type="Botble\Page\Models\Page">
-                <input id="menu_id_Botble\Page\Models\Page_2" name="menu_id" type="checkbox" value="2">
-                Blog
-            </label>
+                <div class="widget meta-boxes">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse_blog_categories">
+                        <h4 class="widget-title" style="margin-top: 0">
+                            <span>Tin Tức</span>
+                            <i class="fa fa-angle-down narrow-icon"></i>
+                        </h4>
+                    </a>
+                    <div id="collapse_blog_categories" class="panel-collapse collapse">
+                        <div class="widget-body">
+                            <div class="box-links-for-menu">
+                                <div class="the-box">
+                                    <ul class="list-item">
+                                        <ul  class="list-item">
+                                            @foreach($blogCategories as $bc)
+                                            <li>
+                                                <label for="" data-title="{{$bc->name}}" data-reference-id="{{$bc->id}}"
+                                                       data-reference-type="blogCategory">
+                                                    <input id="{{$bc->id}}" name="menu_id" type="checkbox" value="{{$bc->id}}">
+                                                    {{$bc->name}}
+                                                </label>
 
-                    </li>
-            <li>
-            <label for="menu_id_botblepagemodelspage_3" data-title="Contact" data-reference-id="3"
-                   data-reference-type="Botble\Page\Models\Page">
-                <input id="menu_id_Botble\Page\Models\Page_3" name="menu_id" type="checkbox" value="3">
-                Contact
-            </label>
+                                                                
+                                            </li>
+                                            @endforeach
+                                            
+                                        </ul>
 
-                    </li>
-            <li>
-            <label for="menu_id_botblepagemodelspage_1" data-title="Homepage" data-reference-id="1"
-                   data-reference-type="Botble\Page\Models\Page">
-                <input id="menu_id_Botble\Page\Models\Page_1" name="menu_id" type="checkbox" value="1">
-                Homepage
-            </label>
-
-                    </li>
-    </ul>
-
-                        <div class="text-right">
-                            <div class="btn-group btn-group-devided">
-                                <a href="#" class="btn-add-to-menu btn btn-primary">
-                                    <span class="text"><i class="fa fa-plus"></i> Thêm vào trình đơn</span>
-                                </a>
+                                    </ul>
+                                    <div class="text-right">
+                                        <div class="btn-group btn-group-devided">
+                                            <a href="#" class="btn-add-to-menu btn btn-primary">
+                                                <span class="text"><i class="fa fa-plus"></i> Thêm vào trình đơn</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-<div class="widget meta-boxes">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseCategories">
-            <h4 class="widget-title">
-                <span>Danh mục</span>
-                <i class="fa fa-angle-down narrow-icon"></i>
-            </h4>
-        </a>
-        <div id="collapseCategories" class="panel-collapse collapse">
-            <div class="widget-body">
-                <div class="box-links-for-menu">
-                    <div class="the-box">
-                        <ul  class="list-item">
-            <li>
-            <label for="menu_id_botbleblogmodelscategory_1" data-title="Uncategorizied" data-reference-id="1"
-                   data-reference-type="Botble\Blog\Models\Category">
-                <input id="menu_id_Botble\Blog\Models\Category_1" name="menu_id" type="checkbox" value="1">
-                Uncategorizied
-            </label>
-
-                            
-                    </li>
-    </ul>
-
-                        <div class="text-right">
-                            <div class="btn-group btn-group-devided">
-                                <a href="#" class="btn-add-to-menu btn btn-primary">
-                                    <span class="text"><i class="fa fa-plus"></i> Thêm vào trình đơn</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                
 
                 <div class="widget meta-boxes">
                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseCustomLink">
@@ -317,211 +244,227 @@
                 <div class="widget-body">
                     <div class="dd nestable-menu" id="nestable" data-depth="0">
                         <ol class="dd-list">
-            <li class="dd-item dd3-item " data-reference-type=""
-            data-reference-id="0" data-title="Home"
-            data-class="" data-id="23" data-custom-url=""
-            data-icon-font="" data-target="_self">
-            <div class="dd-handle dd3-handle"></div>
-            <div class="dd3-content">
-                <span class="text float-left" data-update="title">Home</span>
-                <span class="text float-right">Custom link</span>
-                <a href="#" title="" class="show-item-details"><i class="fa fa-angle-down"></i></a>
-                <div class="clearfix"></div>
-            </div>
-            <div class="item-details">
-                <label class="pad-bot-5">
-                    <span class="text pad-top-5 dis-inline-block" data-update="title">Tiêu đề</span>
-                    <input type="text" name="title" value="Home"
-                           data-old="Home">
-                </label>
-                                    <label class="pad-bot-5 dis-inline-block">
-                        <span class="text pad-top-5" data-update="custom-url">URL</span>
-                        <input type="text" name="custom-url" value="" data-old="">
-                    </label>
-                                <label class="pad-bot-5 dis-inline-block">
-                    <span class="text pad-top-5" data-update="icon-font">Biểu tượng</span>
-                    <input type="text" name="icon-font" value="" data-old="">
-                </label>
-                <label class="pad-bot-10">
-                    <span class="text pad-top-5 dis-inline-block">CSS class</span>
-                    <input type="text" name="class" value="" data-old="">
-                </label>
-                <label class="pad-bot-10">
-                    <span class="text pad-top-5 dis-inline-block">Target</span>
-                    <div style="width: 228px; display: inline-block">
-                        <div class="ui-select-wrapper">
-                            <select name="target" class="ui-select" id="target" data-old="_self">
-                                <option value="_self"  selected="selected" >Mở liên kết trong tab hiện tại
-                                </option>
-                                <option value="_blank" >Mở liên kết trong tab mới
-                                </option>
-                            </select>
-                            <svg class="svg-next-icon svg-next-icon-size-16">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#select-chevron"></use>
-                            </svg>
-                        </div>
-                    </div>
-                </label>
-                <div class="clearfix"></div>
-                <div class="text-right" style="margin-top: 5px">
-                    <a href="#" class="btn btn-danger btn-remove btn-sm">Xóa</a>
-                    <a href="#" class="btn btn-primary btn-cancel btn-sm">Hủy bỏ</a>
-                </div>
-            </div>
-            <div class="clearfix"></div>
-                    </li>
-            <li class="dd-item dd3-item " data-reference-type=""
-            data-reference-id="0" data-title="Products"
-            data-class="" data-id="14" data-custom-url="/products"
-            data-icon-font="" data-target="_self">
-            <div class="dd-handle dd3-handle"></div>
-            <div class="dd3-content">
-                <span class="text float-left" data-update="title">Products</span>
-                <span class="text float-right">Custom link</span>
-                <a href="#" title="" class="show-item-details"><i class="fa fa-angle-down"></i></a>
-                <div class="clearfix"></div>
-            </div>
-            <div class="item-details">
-                <label class="pad-bot-5">
-                    <span class="text pad-top-5 dis-inline-block" data-update="title">Tiêu đề</span>
-                    <input type="text" name="title" value="Products"
-                           data-old="Products">
-                </label>
-                                    <label class="pad-bot-5 dis-inline-block">
-                        <span class="text pad-top-5" data-update="custom-url">URL</span>
-                        <input type="text" name="custom-url" value="/products" data-old="/products">
-                    </label>
-                                <label class="pad-bot-5 dis-inline-block">
-                    <span class="text pad-top-5" data-update="icon-font">Biểu tượng</span>
-                    <input type="text" name="icon-font" value="" data-old="">
-                </label>
-                <label class="pad-bot-10">
-                    <span class="text pad-top-5 dis-inline-block">CSS class</span>
-                    <input type="text" name="class" value="" data-old="">
-                </label>
-                <label class="pad-bot-10">
-                    <span class="text pad-top-5 dis-inline-block">Target</span>
-                    <div style="width: 228px; display: inline-block">
-                        <div class="ui-select-wrapper">
-                            <select name="target" class="ui-select" id="target" data-old="_self">
-                                <option value="_self"  selected="selected" >Mở liên kết trong tab hiện tại
-                                </option>
-                                <option value="_blank" >Mở liên kết trong tab mới
-                                </option>
-                            </select>
-                            <svg class="svg-next-icon svg-next-icon-size-16">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#select-chevron"></use>
-                            </svg>
-                        </div>
-                    </div>
-                </label>
-                <div class="clearfix"></div>
-                <div class="text-right" style="margin-top: 5px">
-                    <a href="#" class="btn btn-danger btn-remove btn-sm">Xóa</a>
-                    <a href="#" class="btn btn-primary btn-cancel btn-sm">Hủy bỏ</a>
-                </div>
-            </div>
-            <div class="clearfix"></div>
-                    </li>
-            <li class="dd-item dd3-item  post-item " data-reference-type="Botble\Page\Models\Page"
-            data-reference-id="2" data-title="Blog"
-            data-class="" data-id="19" data-custom-url="http://hasa.botble.com/blog"
-            data-icon-font="" data-target="_self">
-            <div class="dd-handle dd3-handle"></div>
-            <div class="dd3-content">
-                <span class="text float-left" data-update="title">Blog</span>
-                <span class="text float-right">Botble\Page\Models\Page</span>
-                <a href="#" title="" class="show-item-details"><i class="fa fa-angle-down"></i></a>
-                <div class="clearfix"></div>
-            </div>
-            <div class="item-details">
-                <label class="pad-bot-5">
-                    <span class="text pad-top-5 dis-inline-block" data-update="title">Tiêu đề</span>
-                    <input type="text" name="title" value="Blog"
-                           data-old="Blog">
-                </label>
-                                <label class="pad-bot-5 dis-inline-block">
-                    <span class="text pad-top-5" data-update="icon-font">Biểu tượng</span>
-                    <input type="text" name="icon-font" value="" data-old="">
-                </label>
-                <label class="pad-bot-10">
-                    <span class="text pad-top-5 dis-inline-block">CSS class</span>
-                    <input type="text" name="class" value="" data-old="">
-                </label>
-                <label class="pad-bot-10">
-                    <span class="text pad-top-5 dis-inline-block">Target</span>
-                    <div style="width: 228px; display: inline-block">
-                        <div class="ui-select-wrapper">
-                            <select name="target" class="ui-select" id="target" data-old="_self">
-                                <option value="_self"  selected="selected" >Mở liên kết trong tab hiện tại
-                                </option>
-                                <option value="_blank" >Mở liên kết trong tab mới
-                                </option>
-                            </select>
-                            <svg class="svg-next-icon svg-next-icon-size-16">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#select-chevron"></use>
-                            </svg>
-                        </div>
-                    </div>
-                </label>
-                <div class="clearfix"></div>
-                <div class="text-right" style="margin-top: 5px">
-                    <a href="#" class="btn btn-danger btn-remove btn-sm">Xóa</a>
-                    <a href="#" class="btn btn-primary btn-cancel btn-sm">Hủy bỏ</a>
-                </div>
-            </div>
-            <div class="clearfix"></div>
-                    </li>
-            <li class="dd-item dd3-item  post-item " data-reference-type="Botble\Page\Models\Page"
-            data-reference-id="3" data-title="Contact"
-            data-class="" data-id="20" data-custom-url="http://hasa.botble.com/contact"
-            data-icon-font="" data-target="_self">
-            <div class="dd-handle dd3-handle"></div>
-            <div class="dd3-content">
-                <span class="text float-left" data-update="title">Contact</span>
-                <span class="text float-right">Botble\Page\Models\Page</span>
-                <a href="#" title="" class="show-item-details"><i class="fa fa-angle-down"></i></a>
-                <div class="clearfix"></div>
-            </div>
-            <div class="item-details">
-                <label class="pad-bot-5">
-                    <span class="text pad-top-5 dis-inline-block" data-update="title">Tiêu đề</span>
-                    <input type="text" name="title" value="Contact"
-                           data-old="Contact">
-                </label>
-                                <label class="pad-bot-5 dis-inline-block">
-                    <span class="text pad-top-5" data-update="icon-font">Biểu tượng</span>
-                    <input type="text" name="icon-font" value="" data-old="">
-                </label>
-                <label class="pad-bot-10">
-                    <span class="text pad-top-5 dis-inline-block">CSS class</span>
-                    <input type="text" name="class" value="" data-old="">
-                </label>
-                <label class="pad-bot-10">
-                    <span class="text pad-top-5 dis-inline-block">Target</span>
-                    <div style="width: 228px; display: inline-block">
-                        <div class="ui-select-wrapper">
-                            <select name="target" class="ui-select" id="target" data-old="_self">
-                                <option value="_self"  selected="selected" >Mở liên kết trong tab hiện tại
-                                </option>
-                                <option value="_blank" >Mở liên kết trong tab mới
-                                </option>
-                            </select>
-                            <svg class="svg-next-icon svg-next-icon-size-16">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#select-chevron"></use>
-                            </svg>
-                        </div>
-                    </div>
-                </label>
-                <div class="clearfix"></div>
-                <div class="text-right" style="margin-top: 5px">
-                    <a href="#" class="btn btn-danger btn-remove btn-sm">Xóa</a>
-                    <a href="#" class="btn btn-primary btn-cancel btn-sm">Hủy bỏ</a>
-                </div>
-            </div>
-            <div class="clearfix"></div>
-                    </li>
-    </ol>
+                            @foreach($menus as $menu)
+                            <li class="dd-item dd3-item " data-reference-type="{{$menu->type}}"
+                            data-reference-id="{{$menu->type_id}}" data-title="{{$menu->title}}"
+                            data-class="" data-id="{{$menu->id}}" data-custom-url="{{$menu->url}}"
+                            data-icon-font="{{$menu->icon}}" data-target="{{$menu->target}}">
+                                <div class="dd-handle dd3-handle"></div>
+                                <div class="dd3-content">
+                                    <span class="text float-left" data-update="title">{{$menu->title}}</span>
+                                    <span class="text float-right">{{$menu->type}}</span>
+                                    <a href="#" title="" class="show-item-details"><i class="fa fa-angle-down"></i></a>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="item-details">
+                                    <label class="pad-bot-5">
+                                        <span class="text pad-top-5 dis-inline-block" data-update="title">Tiêu đề</span>
+                                        <input type="text" name="title" value="{{$menu->title}}"
+                                               data-old="{{$menu->title}}">
+                                    </label>
+                                                        <label class="pad-bot-5 dis-inline-block">
+                                            <span class="text pad-top-5" data-update="custom-url">URL</span>
+                                            <input type="text" name="custom-url" value="{{$menu->url}}" data-old="{{$menu->url}}">
+                                        </label>
+                                                    <label class="pad-bot-5 dis-inline-block">
+                                        <span class="text pad-top-5" data-update="icon-font">Biểu tượng</span>
+                                        <input type="text" name="icon-font" value="{{$menu->icon}}" data-old="{{$menu->icon}}">
+                                    </label>
+                                    <label class="pad-bot-10">
+                                        <span class="text pad-top-5 dis-inline-block">CSS class</span>
+                                        <input type="text" name="class" value="" data-old="">
+                                    </label>
+                                    <label class="pad-bot-10">
+                                        <span class="text pad-top-5 dis-inline-block">Target</span>
+                                        <div style="width: 228px; display: inline-block">
+                                            <div class="ui-select-wrapper">
+                                                @if($menu->target == '_self')
+                                                    <select name="target" class="ui-select" id="target" data-old="_self">
+                                                        <option value="_self"  selected="selected" >Mở liên kết trong tab hiện tại
+                                                        </option>
+                                                        <option value="_blank" >Mở liên kết trong tab mới
+                                                        </option>
+                                                    </select>
+                                                @else
+                                                    <select name="target" class="ui-select" id="target" data-old="_blank">
+                                                        <option value="_self" >Mở liên kết trong tab hiện tại
+                                                        </option>
+                                                        <option value="_blank" selected="selected" >Mở liên kết trong tab mới
+                                                        </option>
+                                                    </select>
+                                                @endif
+                                                <svg class="svg-next-icon svg-next-icon-size-16">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#select-chevron"></use>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <div class="clearfix"></div>
+                                    <div class="text-right" style="margin-top: 5px">
+                                        <a href="#" class="btn btn-danger btn-remove btn-sm">Xóa</a>
+                                        <a href="#" class="btn btn-primary btn-cancel btn-sm">Hủy bỏ</a>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            @endforeach
+            
+                            <!-- <li class="dd-item dd3-item  post-item " data-reference-type="Botble\Page\Models\Page"
+                            data-reference-id="2" data-title="Blog"
+                            data-class="" data-id="19" data-custom-url="http://hasa.botble.com/blog"
+                            data-icon-font="" data-target="_self">
+                                <div class="dd-handle dd3-handle"></div>
+                                <div class="dd3-content">
+                                    <span class="text float-left" data-update="title">Blog</span>
+                                    <span class="text float-right">Botble\Page\Models\Page</span>
+                                    <a href="#" title="" class="show-item-details"><i class="fa fa-angle-down"></i></a>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="item-details">
+                                    <label class="pad-bot-5">
+                                        <span class="text pad-top-5 dis-inline-block" data-update="title">Tiêu đề</span>
+                                        <input type="text" name="title" value="Blog"
+                                               data-old="Blog">
+                                    </label>
+                                                    <label class="pad-bot-5 dis-inline-block">
+                                        <span class="text pad-top-5" data-update="icon-font">Biểu tượng</span>
+                                        <input type="text" name="icon-font" value="" data-old="">
+                                    </label>
+                                    <label class="pad-bot-10">
+                                        <span class="text pad-top-5 dis-inline-block">CSS class</span>
+                                        <input type="text" name="class" value="" data-old="">
+                                    </label>
+                                    <label class="pad-bot-10">
+                                        <span class="text pad-top-5 dis-inline-block">Target</span>
+                                        <div style="width: 228px; display: inline-block">
+                                            <div class="ui-select-wrapper">
+                                                <select name="target" class="ui-select" id="target" data-old="_self">
+                                                    <option value="_self"  selected="selected" >Mở liên kết trong tab hiện tại
+                                                    </option>
+                                                    <option value="_blank" >Mở liên kết trong tab mới
+                                                    </option>
+                                                </select>
+                                                <svg class="svg-next-icon svg-next-icon-size-16">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#select-chevron"></use>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <div class="clearfix"></div>
+                                    <div class="text-right" style="margin-top: 5px">
+                                        <a href="#" class="btn btn-danger btn-remove btn-sm">Xóa</a>
+                                        <a href="#" class="btn btn-primary btn-cancel btn-sm">Hủy bỏ</a>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <ol class="dd-list">
+                                    <li class="dd-item dd3-item " data-reference-type=""
+                                    data-reference-id="0" data-title="Home"
+                                    data-class="" data-id="23" data-custom-url=""
+                                    data-icon-font="" data-target="_self">
+                                        <div class="dd-handle dd3-handle"></div>
+                                        <div class="dd3-content">
+                                            <span class="text float-left" data-update="title">Home</span>
+                                            <span class="text float-right">Custom link</span>
+                                            <a href="#" title="" class="show-item-details"><i class="fa fa-angle-down"></i></a>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="item-details">
+                                            <label class="pad-bot-5">
+                                                <span class="text pad-top-5 dis-inline-block" data-update="title">Tiêu đề</span>
+                                                <input type="text" name="title" value="Home"
+                                                       data-old="Home">
+                                            </label>
+                                                                <label class="pad-bot-5 dis-inline-block">
+                                                    <span class="text pad-top-5" data-update="custom-url">URL</span>
+                                                    <input type="text" name="custom-url" value="" data-old="">
+                                                </label>
+                                                            <label class="pad-bot-5 dis-inline-block">
+                                                <span class="text pad-top-5" data-update="icon-font">Biểu tượng</span>
+                                                <input type="text" name="icon-font" value="" data-old="">
+                                            </label>
+                                            <label class="pad-bot-10">
+                                                <span class="text pad-top-5 dis-inline-block">CSS class</span>
+                                                <input type="text" name="class" value="" data-old="">
+                                            </label>
+                                            <label class="pad-bot-10">
+                                                <span class="text pad-top-5 dis-inline-block">Target</span>
+                                                <div style="width: 228px; display: inline-block">
+                                                    <div class="ui-select-wrapper">
+                                                        <select name="target" class="ui-select" id="target" data-old="_self">
+                                                            <option value="_self"  selected="selected" >Mở liên kết trong tab hiện tại
+                                                            </option>
+                                                            <option value="_blank" >Mở liên kết trong tab mới
+                                                            </option>
+                                                        </select>
+                                                        <svg class="svg-next-icon svg-next-icon-size-16">
+                                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#select-chevron"></use>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </label>
+                                            <div class="clearfix"></div>
+                                            <div class="text-right" style="margin-top: 5px">
+                                                <a href="#" class="btn btn-danger btn-remove btn-sm">Xóa</a>
+                                                <a href="#" class="btn btn-primary btn-cancel btn-sm">Hủy bỏ</a>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </li>
+                    
+                                    <li class="dd-item dd3-item  post-item " data-reference-type="Botble\Page\Models\Page"
+                                    data-reference-id="2" data-title="Blog"
+                                    data-class="" data-id="19" data-custom-url="http://hasa.botble.com/blog"
+                                    data-icon-font="" data-target="_self">
+                                        <div class="dd-handle dd3-handle"></div>
+                                        <div class="dd3-content">
+                                            <span class="text float-left" data-update="title">Blog</span>
+                                            <span class="text float-right">Botble\Page\Models\Page</span>
+                                            <a href="#" title="" class="show-item-details"><i class="fa fa-angle-down"></i></a>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="item-details">
+                                            <label class="pad-bot-5">
+                                                <span class="text pad-top-5 dis-inline-block" data-update="title">Tiêu đề</span>
+                                                <input type="text" name="title" value="Blog"
+                                                       data-old="Blog">
+                                            </label>
+                                                            <label class="pad-bot-5 dis-inline-block">
+                                                <span class="text pad-top-5" data-update="icon-font">Biểu tượng</span>
+                                                <input type="text" name="icon-font" value="" data-old="">
+                                            </label>
+                                            <label class="pad-bot-10">
+                                                <span class="text pad-top-5 dis-inline-block">CSS class</span>
+                                                <input type="text" name="class" value="" data-old="">
+                                            </label>
+                                            <label class="pad-bot-10">
+                                                <span class="text pad-top-5 dis-inline-block">Target</span>
+                                                <div style="width: 228px; display: inline-block">
+                                                    <div class="ui-select-wrapper">
+                                                        <select name="target" class="ui-select" id="target" data-old="_self">
+                                                            <option value="_self"  selected="selected" >Mở liên kết trong tab hiện tại
+                                                            </option>
+                                                            <option value="_blank" >Mở liên kết trong tab mới
+                                                            </option>
+                                                        </select>
+                                                        <svg class="svg-next-icon svg-next-icon-size-16">
+                                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#select-chevron"></use>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </label>
+                                            <div class="clearfix"></div>
+                                            <div class="text-right" style="margin-top: 5px">
+                                                <a href="#" class="btn btn-danger btn-remove btn-sm">Xóa</a>
+                                                <a href="#" class="btn btn-primary btn-cancel btn-sm">Hủy bỏ</a>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </li>
+                                </ol>
+                            </li> -->
+
+                        </ol>
 
                     </div>
                                             <hr>
@@ -555,13 +498,11 @@
     </div>
     <div class="widget-body">
         <div class="btn-set">
-                        <button type="submit" name="submit" value="save" class="btn btn-info">
-                <i class="fa fa-save"></i> Lưu
+                        <button type="button" name="submit" value="save" class="btn btn-info save-menu">
+                <i class="fa fa-save"></i> Lưu &amp; cập nhật
             </button>
                             &nbsp;
-            <button type="submit" name="submit" value="apply" class="btn btn-success">
-                <i class="fa fa-check-circle"></i> Lưu &amp; chỉnh sửa
-            </button>
+            
                     </div>
     </div>
 </div>
@@ -584,13 +525,11 @@
 
 
     <div class="btn-set">
-                <button type="submit" name="submit" value="save" class="btn btn-info">
-            <i class="fa fa-save"></i> Lưu
+                <button type="button" name="submit" value="save" class="btn btn-info save-menu">
+            <i class="fa fa-save"></i> Lưu &amp; cập nhật
         </button>
                     &nbsp;
-            <button type="submit" name="submit" value="apply" class="btn btn-success">
-                <i class="fa fa-check-circle"></i> Lưu &amp; chỉnh sửa
-            </button>
+            
             </div>
 </div>
 
@@ -641,4 +580,37 @@
     <script src="{{asset('js/admin/jquery.are-you-sure.js')}}"></script>
     <script src="{{asset('js/admin/jquery.nestable.js')}}"></script>
     <script src="{{asset('js/admin/menu.js')}}"></script>
+    <script type="text/javascript">
+    $(document).on('click', '.save-menu', function(event) {
+        event.preventDefault();
+        var menu = $(".nestable-menu");
+        var ol = menu.children("ol");
+        var li = ol.children("li");
+        var i =0;
+        li.each(function(){
+
+            var data_id = $(this).attr("data-id");
+            var data_reference_type = $(this).attr("data-reference-type");
+            var data_reference_id = $(this).attr("data-reference-id");
+            var data_title=$(this).attr("data-title");
+            var data_custom_url=$(this).attr("data-custom-url");
+            var data_icon_font=$(this).attr("data-icon-font");
+            var data_target=$(this).attr("data-target");
+            var url = '/admin/menu/update?data_id='+data_id+'&data_reference_type='+data_reference_type+'&data_reference_id='+data_reference_id+'&data_title='+data_title+'&data_custom_url='+data_custom_url+'&data_icon_font='+data_icon_font+'&data_target='+data_target+'&data_stt='+i+'&data_parent_id=';
+            i++;
+            $.ajax({
+              type: "GET",
+              url: url,
+              dataType: 'html',
+              success: function(data){
+                
+              }
+            });
+        })
+        var html = '<div class="note note-success"><p>Cập nhật menu thành công</p></div>'
+        $(".tb").append(html);
+        $(".tb").delay(3000).slideUp();
+
+    });
+    </script>
 @endsection

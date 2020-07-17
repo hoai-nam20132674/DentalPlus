@@ -80,6 +80,13 @@ Route::post('admin/product/categorie/edit/{id}', 'HomeController@postEditProduct
 Route::get('admin/product/categorie/delete/{id}', 'HomeController@deleteProductCategorie')->name('deleteProductCategorie');
 Route::get('admin/product/image/delete/{id}', 'HomeController@deleteProductImage')->name('deleteProductImage');
 // end product route
+
 // system 
 Route::get('admin/system/edit', 'HomeController@editSystem')->name('editSystem');
+Route::post('admin/system/edit', 'HomeController@postEditSystem')->name('postEditSystem');
 // end system
+
+//menu
+Route::get('admin/menu/edit', 'HomeController@editMenu')->name('editMenu');
+Route::get('admin/menu/update', 'HomeController@updateMenu')->name('updateMenu');
+// end menu

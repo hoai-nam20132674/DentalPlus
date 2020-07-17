@@ -26,6 +26,8 @@ use App\ServiceCate;
 use App\Product;
 use App\ProductCate;
 use App\ProductImage;
+use App\System;
+use App\Menu;
 
 class HomeController extends Controller
 {
@@ -300,8 +302,30 @@ class HomeController extends Controller
     }
     // end product
     // system 
-    public function editSystem(Request $request){
-        return view('admin.editSystem');
+    public function editSystem(){
+        $system = System::where('id',1)->get()->first();
+        return view('admin.editSystem',['system'=>$system]);
+    }
+    public function postEditSystem(Request $request){
+        $item = new System;
+        $item->edit($request);
+        return redirect()->route('editSystem')->with(['flash_level'=>'success','flash_message'=>'Cập nhật hệ thống thành công']);
     }
     // end system
+
+    // menu 
+    public function editMenu(){
+        $menus = Menu::orderBy('stt','ASC')->get();
+        $serviceCategories = ServiceCate::where('display',1)->get();
+        $productCategories = ProductCate::where('display',1)->get();
+        $blogCategories = BlogCate::where('display',1)->get();
+        return view('admin.menu',['serviceCategories'=>$serviceCategories,'productCategories'=>$productCategories,'blogCategories'=>$blogCategories,'menus'=>$menus]);
+    }
+    public function updateMenu(Request $request){
+        $item = new Menu;
+        $item->updateMenu($request);
+        return redirect()->route('editMenu')->with(['flash_level'=>'success','flash_message'=>'Cập nhật menu thành công']);
+        // echo($request->data_icon_font);
+    }
+    // end menu
 }

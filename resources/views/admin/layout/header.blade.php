@@ -43,7 +43,7 @@
                     
                 <li class="dropdown dropdown-user">
                     <a href="javascript:void(0)" class="dropdown-toggle dropdown-header-name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="{{asset('upload/images/systems/lg-u.png')}}" />
+                        <img src="{{asset('uploads/images/systems/lg-u.png')}}" />
                         <span class="username username-hide-on-mobile"> {{Auth::user()->name}} </span>
                         <i class="fa fa-angle-down"></i>
                     </a>

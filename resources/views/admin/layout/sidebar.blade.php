@@ -79,12 +79,12 @@
                                     Danh mục khách hàng
                                 </a>
                             </li>
-                            <li class="nav-item " id="cms-plugins-ecommerce-customer">
+                            <!-- <li class="nav-item " id="cms-plugins-ecommerce-customer">
                                 <a href="http://hasa.botble.com/admin/customers" class="nav-link">
                                     <i class="fa fa-user"></i>
                                     Khách hàng đăng ký tư vấn
                                 </a>
-                            </li>
+                            </li> -->
                             
                         </ul>
                     </li>
@@ -111,48 +111,22 @@
                         <ul class="sub-menu  hidden-ul ">
                             
                             <li class="nav-item " id="cms-core-menu">
-                                <a href="http://hasa.botble.com/admin/menus" class="nav-link">
+                                <a href="{{URL::route('editMenu')}}" class="nav-link">
                                     <i class=""></i>
                                     Menu
                                 </a>
                             </li>
                             
-                            <li class="nav-item " id="cms-core-appearance-custom-css">
+                            <!-- <li class="nav-item " id="cms-core-appearance-custom-css">
                                 <a href="http://hasa.botble.com/admin/theme/custom-css" class="nav-link">
                                     <i class=""></i>
                                     Tuỳ chỉnh CSS
                                 </a>
-                            </li>
+                            </li> -->
                         </ul>
                     </li>
                     
-                    <li class="nav-item " id="cms-core-settings">
-                        <a href="http://hasa.botble.com/admin/settings/general" class="nav-link nav-toggle">
-                            <i class="fa fa-cogs"></i>
-                            <span class="title">Cài đặt </span>
-                            <span class="arrow "></span>
-                        </a>
-                        <ul class="sub-menu  hidden-ul ">
-                            <li class="nav-item " id="cms-core-settings-general">
-                                <a href="http://hasa.botble.com/admin/settings/general" class="nav-link">
-                                    <i class=""></i>
-                                    Cơ bản
-                                </a>
-                            </li>
-                            <li class="nav-item " id="cms-core-settings-email">
-                                <a href="http://hasa.botble.com/admin/settings/email" class="nav-link">
-                                    <i class=""></i>
-                                    Email
-                                </a>
-                            </li>
-                            <li class="nav-item " id="cms-core-settings-media">
-                                <a href="http://hasa.botble.com/admin/settings/media" class="nav-link">
-                                    <i class=""></i>
-                                    Media
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+                
                     <li class="nav-item " id="cms-core-platform-administration">
                         <a href="" class="nav-link nav-toggle">
                             <i class="fa fa-user-shield"></i>
