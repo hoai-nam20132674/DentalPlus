@@ -89,4 +89,5 @@ Route::post('admin/system/edit', 'HomeController@postEditSystem')->name('postEdi
 //menu
 Route::get('admin/menu/edit', 'HomeController@editMenu')->name('editMenu');
 Route::get('admin/menu/update', 'HomeController@updateMenu')->name('updateMenu');
+Route::get('admin/menu/delete/{array}', 'HomeController@deleteMenu')->name('deleteMenu');
 // end menu

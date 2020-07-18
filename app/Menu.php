@@ -49,6 +49,7 @@ class Menu extends Model
     		$this->stt=$stt;
     		$this->parent_id = $parent_id;
     		$this->save();
+            echo $this->id;
     	}
     	else{
     		$menu = $this::where('id',$id)->get()->first();
@@ -61,6 +62,14 @@ class Menu extends Model
     		$menu->stt=$stt;
     		$menu->parent_id = $parent_id;
     		$menu->save();
+            echo $id;
     	}
+    }
+    public function deleteItems($array){
+        $ids = explode(',' ,$array);
+        $items = $this::whereNotIn('id',$ids)->get();
+        foreach($items as $item){
+            $item->delete();
+        }
     }
 }

@@ -8,6 +8,9 @@
 <html lang="en">
 <!--<![endif]-->
 <head>
+    @php
+        $system = App\System::where('id',1)->get()->first();
+    @endphp
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -20,7 +23,7 @@
     <meta name="description" content="Bản quyền 2020 &amp;copy; Dental Plus. Phiên bản: 1.0">
     <meta property="og:description" content="Bản quyền 2020 &amp;copy; Dental Plus. Phiên bản: 1.0">
 
-    <link rel="icon shortcut" href="">
+    <link rel="icon shortcut" href="{{asset('uploads/images/systems/'.$system->shortcut_logo)}}">
     <link rel='stylesheet'
           href='https://fonts.googleapis.com/css?family=Roboto:100%2C100italic%2C300%2C300italic%2C400%2Citalic%2C500%2C500italic%2C700%2C700italic%2C900%2C900italic|Roboto+Slab:100%2C300%2C400%2C700&#038;subset=greek-ext%2Cgreek%2Ccyrillic-ext%2Clatin-ext%2Clatin%2Cvietnamese%2Ccyrillic'
           type='text/css' media='all'/>
@@ -33,6 +36,7 @@
     
     </head>
 <body class="page-sidebar-closed-hide-logo page-content-white page-container-bg-solid" style="">
+    
 
         <div id="global-icon-symbols" data-tg-refresh="global-icon-symbols" data-tg-refresh-always="true" style="display: none;">
     <svg xmlns="http://www.w3.org/2000/svg">

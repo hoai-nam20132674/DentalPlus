@@ -20,7 +20,7 @@
 	<div class="page-content ">
                     <ol class="breadcrumb">
         
-                            <li class="breadcrumb-item"><a href="http://hasa.botble.com/admin">Bảng điều khiển</a></li>
+                            <li class="breadcrumb-item"><a href="{{URL::route('home')}}">Bảng điều khiển</a></li>
             
         
                             <li class="breadcrumb-item active">Trang quản trị</li>
@@ -30,19 +30,17 @@
 
                     <div class="clearfix"></div>
                     <div id="main">
-                            <div id="dashboard-alerts">
-        <verify-license-component verify-url="http://hasa.botble.com/admin/settings/license/verify" setting-url="http://hasa.botble.com/admin/settings/general"></verify-license-component>
-    </div>
+                            
     <div class="note note-success">
-    <p>Chào khách, nếu bạn thấy trang demo bị phá hoại, hãy tới <a href="http://hasa.botble.com/admin/system/backups">trang sao lưu</a> và khôi phục bản sao lưu cuối cùng. Cảm ơn bạn nhiều!</p>
-</div>
+        <p>Chào {{Auth::user()->name}} đến với trình quản trị nội dung của website Dental Plus</p>
+    </div>
     <div class="row">
         
     </div>
     <div class="clearfix"></div>
     <div id="list_widgets" class="row">
                     <div class="col-lg-3 col-md-3 col-sm-6 col-12">
-        <a class="dashboard-stat dashboard-stat-v2" style="background-color: #32c5d2; color: #fff" href="http://hasa.botble.com/admin/pages">
+        <a class="dashboard-stat dashboard-stat-v2" style="background-color: #32c5d2; color: #fff" href="{{URL::route('services')}}">
             <div class="visual">
                 <i class="far fa-file-alt" style="opacity: .1;"></i>
             </div>
@@ -50,13 +48,13 @@
                 <div class="number">
                     <span data-counter="counterup" data-value="3">0</span>
                 </div>
-                <div class="desc"> Trang </div>
+                <div class="desc"> Dịch vụ </div>
             </div>
         </a>
     </div>
 
                     <div class="col-lg-3 col-md-3 col-sm-6 col-12">
-        <a class="dashboard-stat dashboard-stat-v2" style="background-color: #8e44ad; color: #fff" href="http://hasa.botble.com/admin/plugins">
+        <a class="dashboard-stat dashboard-stat-v2" style="background-color: #8e44ad; color: #fff" href="{{URL::route('products')}}">
             <div class="visual">
                 <i class="fa fa-plug" style="opacity: .1;"></i>
             </div>
@@ -64,13 +62,13 @@
                 <div class="number">
                     <span data-counter="counterup" data-value="12">0</span>
                 </div>
-                <div class="desc"> Tiện ích mở rộng </div>
+                <div class="desc"> Khách hàng </div>
             </div>
         </a>
     </div>
 
                     <div class="col-lg-3 col-md-3 col-sm-6 col-12">
-        <a class="dashboard-stat dashboard-stat-v2" style="background-color: #e7505a; color: #fff" href="http://hasa.botble.com/admin/theme/all">
+        <a class="dashboard-stat dashboard-stat-v2" style="background-color: #e7505a; color: #fff" href="">
             <div class="visual">
                 <i class="fa fa-paint-brush" style="opacity: .1;"></i>
             </div>
@@ -78,13 +76,13 @@
                 <div class="number">
                     <span data-counter="counterup" data-value="1">0</span>
                 </div>
-                <div class="desc"> Giao diện </div>
+                <div class="desc"> Liên hệ </div>
             </div>
         </a>
     </div>
 
                     <div class="col-lg-3 col-md-3 col-sm-6 col-12">
-        <a class="dashboard-stat dashboard-stat-v2" style="background-color: #3598dc; color: #fff" href="http://hasa.botble.com/admin/system/users">
+        <a class="dashboard-stat dashboard-stat-v2" style="background-color: #3598dc; color: #fff" href="{{URL::route('users')}}">
             <div class="visual">
                 <i class="fas fa-users" style="opacity: .1;"></i>
             </div>
@@ -97,7 +95,7 @@
         </a>
     </div>
 
-                    <div class=" col-12 widget_item" id="widget_analytics_general" data-url="http://hasa.botble.com/admin/analytics/general">
+                    <div class=" col-12 widget_item" id="widget_analytics_general" data-url="">
         <div class="portlet light bordered portlet-no-padding ">
             <div class="portlet-title">
                 <div class="caption">
@@ -114,7 +112,7 @@
         </div>
     </div>
 
-                    <div class="col-md-6 col-sm-6 col-12 widget_item" id="widget_analytics_page" data-url="http://hasa.botble.com/admin/analytics/page">
+                    <div class="col-md-6 col-sm-6 col-12 widget_item" id="widget_analytics_page" data-url="">
         <div class="portlet light bordered portlet-no-padding ">
             <div class="portlet-title">
                 <div class="caption">
@@ -131,7 +129,7 @@
         </div>
     </div>
 
-                    <div class="col-md-6 col-sm-6 col-12 widget_item" id="widget_analytics_browser" data-url="http://hasa.botble.com/admin/analytics/browser">
+                    <div class="col-md-6 col-sm-6 col-12 widget_item" id="widget_analytics_browser" data-url="">
         <div class="portlet light bordered portlet-no-padding ">
             <div class="portlet-title">
                 <div class="caption">
@@ -148,7 +146,7 @@
         </div>
     </div>
 
-                    <div class="col-md-6 col-sm-6 col-12 widget_item" id="widget_posts_recent" data-url="http://hasa.botble.com/admin/posts/widgets/recent-posts">
+                    <div class="col-md-6 col-sm-6 col-12 widget_item" id="widget_posts_recent" data-url="">
         <div class="portlet light bordered portlet-no-padding ">
             <div class="portlet-title">
                 <div class="caption">
@@ -165,7 +163,7 @@
         </div>
     </div>
 
-                    <div class="col-md-6 col-sm-6 col-12 widget_item" id="widget_analytics_referrer" data-url="http://hasa.botble.com/admin/analytics/referrer">
+                    <div class="col-md-6 col-sm-6 col-12 widget_item" id="widget_analytics_referrer" data-url="">
         <div class="portlet light bordered portlet-no-padding ">
             <div class="portlet-title">
                 <div class="caption">
@@ -182,7 +180,7 @@
         </div>
     </div>
 
-                    <div class="col-md-6 col-sm-6 col-12 widget_item" id="widget_audit_logs" data-url="http://hasa.botble.com/admin/audit-logs/widgets/activities">
+                    <div class="col-md-6 col-sm-6 col-12 widget_item" id="widget_audit_logs" data-url="">
         <div class="portlet light bordered portlet-no-padding ">
             <div class="portlet-title">
                 <div class="caption">
@@ -199,7 +197,7 @@
         </div>
     </div>
 
-                    <div class="col-md-6 col-sm-6 col-12 widget_item" id="widget_ecommerce_report_general" data-url="http://hasa.botble.com/admin/ecommerce/reports/dashboard-general-report">
+                    <div class="col-md-6 col-sm-6 col-12 widget_item" id="widget_ecommerce_report_general" data-url="">
         <div class="portlet light bordered portlet-no-padding ">
             <div class="portlet-title">
                 <div class="caption">
@@ -243,7 +241,7 @@
 <div id="manage_widget_modal" class="modal fade" tabindex="-1" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form method="POST" action="http://hasa.botble.com/admin/widgets/hides" accept-charset="UTF-8"><input name="_token" type="hidden" value="pDJd5ehSBKJT4WE8iMOSN1ClgOvWNSeSJ2isp5H5">
+            <form method="POST" action="" accept-charset="UTF-8"><input name="_token" type="hidden" value="pDJd5ehSBKJT4WE8iMOSN1ClgOvWNSeSJ2isp5H5">
                 <div class="modal-header">
                     <h4 class="modal-title"><i class="til_img"></i><strong>Quản lý tiện ích</strong></h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">

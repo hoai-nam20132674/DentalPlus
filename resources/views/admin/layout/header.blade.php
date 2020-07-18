@@ -2,8 +2,8 @@
     <div class="page-header-inner col-12">
 
         <div class="page-logo">
-            <a href="http://hasa.botble.com/admin">
-                <img src="http://hasa.botble.com/vendor/core/images/logo_white.png" alt="logo" class="logo-default" />
+            <a href="{{URL::route('home')}}">
+                <img src="{{asset('uploads/images/systems/'.$system->logo)}}" alt="logo" class="logo-default" />
             </a>
             <div class="menu-toggler sidebar-toggler">
                 <span></span>

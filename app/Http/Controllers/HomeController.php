@@ -315,7 +315,7 @@ class HomeController extends Controller
 
     // menu 
     public function editMenu(){
-        $menus = Menu::orderBy('stt','ASC')->get();
+        $menus = Menu::where('parent_id',null)->orderBy('stt','ASC')->get();
         $serviceCategories = ServiceCate::where('display',1)->get();
         $productCategories = ProductCate::where('display',1)->get();
         $blogCategories = BlogCate::where('display',1)->get();
@@ -324,8 +324,10 @@ class HomeController extends Controller
     public function updateMenu(Request $request){
         $item = new Menu;
         $item->updateMenu($request);
-        return redirect()->route('editMenu')->with(['flash_level'=>'success','flash_message'=>'Cập nhật menu thành công']);
-        // echo($request->data_icon_font);
+    }
+    public function deleteMenu($array){
+        $item = new Menu;
+        $item->deleteItems($array);
     }
     // end menu
 }

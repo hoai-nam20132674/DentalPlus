@@ -4,22 +4,22 @@
             <div class="sidebar-content">
                 <ul class="page-sidebar-menu page-header-fixed" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
                     <li class="nav-item " id="cms-core-dashboard">
-                        <a href="http://hasa.botble.com/admin" class="nav-link nav-toggle">
+                        <a href="{{URL::route('home')}}" class="nav-link nav-toggle">
                             <i class="fa fa-home"></i>
                             <span class="title">Bảng điều khiển </span>
                         </a>
                     </li>
-                    <li class="nav-item " id="cms-core-page">
+                    <!-- <li class="nav-item " id="cms-core-page">
                         <a href="http://hasa.botble.com/admin/pages" class="nav-link nav-toggle">
                             <i class="fa fa-book"></i>
                             <span class="title">Trang </span>
                         </a>
-                    </li>
+                    </li> -->
                     <li class="nav-item" id="cms-plugins-blog">
-                        <a href="http://hasa.botble.com/admin/posts" class="nav-link nav-toggle">
+                        <a href="" class="nav-link nav-toggle">
                             <i class="fa fa-edit"></i>
-                            <span class="title">Blog </span>
-                            <span class="arrow  open "></span>
+                            <span class="title">Tin tức</span>
+                            <span class="arrow "></span>
                         </a>
                         <ul class="sub-menu ">
                             <li class="nav-item  active " id="cms-plugins-blog-post">
@@ -38,10 +38,10 @@
                         </ul>
                     </li>
                     <li class="nav-item" id="cms-plugins-newsletter">
-                        <a href="http://hasa.botble.com/admin/posts" class="nav-link nav-toggle">
+                        <a href="" class="nav-link nav-toggle">
                             <i class="fa fa-newspaper"></i>
                             <span class="title">Dịch vụ</span>
-                            <span class="arrow  open "></span>
+                            <span class="arrow "></span>
                         </a>
                         <ul class="sub-menu ">
                             <li class="nav-item  active " id="cms-plugins-blog-post">
@@ -95,7 +95,7 @@
                         </a>
                     </li> -->
                     <li class="nav-item " id="cms-plugins-contact">
-                        <a href="http://hasa.botble.com/admin/contacts" class="nav-link nav-toggle">
+                        <a href="#" class="nav-link nav-toggle">
                             <i class="far fa-envelope"></i>
                             <span class="title">Liên hệ </span>
                         </a>

@@ -306,163 +306,78 @@
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
+                                @php
+                                    $menus_c = App\Menu::where('parent_id',$menu->id)->orderBy('stt','ASC')->get();
+                                @endphp
+                                @if(count($menus_c) !=0)
+                                    <ol class="dd-list">
+                                        @foreach($menus_c as $menu_c)
+                                            <li class="dd-item dd3-item " data-reference-type="{{$menu_c->type}}" data-reference-id="{{$menu_c->type_id}}" data-title="{{$menu_c->title}}" data-class="" data-id="{{$menu_c->id}}" data-custom-url="{{$menu_c->url}}" data-icon-font="{{$menu_c->icon}}" data-target="{{$menu_c->target}}">
+                                                <div class="dd-handle dd3-handle"></div>
+                                                <div class="dd3-content">
+                                                    <span class="text float-left" data-update="title">{{$menu_c->title}}</span>
+                                                    <span class="text float-right">{{$menu_c->type}}</span>
+                                                    <a href="#" title="" class="show-item-details"><i class="fa fa-angle-down"></i></a>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="item-details">
+                                                    <label class="pad-bot-5">
+                                                        <span class="text pad-top-5 dis-inline-block" data-update="title">Tiêu đề</span>
+                                                        <input type="text" name="title" value="{{$menu_c->title}}"
+                                                               data-old="{{$menu_c->title}}">
+                                                    </label>
+                                                                        <label class="pad-bot-5 dis-inline-block">
+                                                            <span class="text pad-top-5" data-update="custom-url">URL</span>
+                                                            <input type="text" name="custom-url" value="{{$menu_c->url}}" data-old="{{$menu_c->url}}">
+                                                        </label>
+                                                                    <label class="pad-bot-5 dis-inline-block">
+                                                        <span class="text pad-top-5" data-update="icon-font">Biểu tượng</span>
+                                                        <input type="text" name="icon-font" value="{{$menu_c->icon}}" data-old="{{$menu_c->icon}}">
+                                                    </label>
+                                                    <label class="pad-bot-10">
+                                                        <span class="text pad-top-5 dis-inline-block">CSS class</span>
+                                                        <input type="text" name="class" value="" data-old="">
+                                                    </label>
+                                                    <label class="pad-bot-10">
+                                                        <span class="text pad-top-5 dis-inline-block">Target</span>
+                                                        <div style="width: 228px; display: inline-block">
+                                                            <div class="ui-select-wrapper">
+                                                                @if($menu_c->target == '_self')
+                                                                    <select name="target" class="ui-select" id="target" data-old="_self">
+                                                                        <option value="_self"  selected="selected" >Mở liên kết trong tab hiện tại
+                                                                        </option>
+                                                                        <option value="_blank" >Mở liên kết trong tab mới
+                                                                        </option>
+                                                                    </select>
+                                                                @else
+                                                                    <select name="target" class="ui-select" id="target" data-old="_blank">
+                                                                        <option value="_self" >Mở liên kết trong tab hiện tại
+                                                                        </option>
+                                                                        <option value="_blank" selected="selected" >Mở liên kết trong tab mới
+                                                                        </option>
+                                                                    </select>
+                                                                @endif
+                                                                <svg class="svg-next-icon svg-next-icon-size-16">
+                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#select-chevron"></use>
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                    </label>
+                                                    <div class="clearfix"></div>
+                                                    <div class="text-right" style="margin-top: 5px">
+                                                        <a href="#" class="btn btn-danger btn-remove btn-sm">Xóa</a>
+                                                        <a href="#" class="btn btn-primary btn-cancel btn-sm">Hủy bỏ</a>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </li>
+                                        @endforeach
+                                    </ol>
+                                @endif
                             </li>
                             @endforeach
             
-                            <!-- <li class="dd-item dd3-item  post-item " data-reference-type="Botble\Page\Models\Page"
-                            data-reference-id="2" data-title="Blog"
-                            data-class="" data-id="19" data-custom-url="http://hasa.botble.com/blog"
-                            data-icon-font="" data-target="_self">
-                                <div class="dd-handle dd3-handle"></div>
-                                <div class="dd3-content">
-                                    <span class="text float-left" data-update="title">Blog</span>
-                                    <span class="text float-right">Botble\Page\Models\Page</span>
-                                    <a href="#" title="" class="show-item-details"><i class="fa fa-angle-down"></i></a>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="item-details">
-                                    <label class="pad-bot-5">
-                                        <span class="text pad-top-5 dis-inline-block" data-update="title">Tiêu đề</span>
-                                        <input type="text" name="title" value="Blog"
-                                               data-old="Blog">
-                                    </label>
-                                                    <label class="pad-bot-5 dis-inline-block">
-                                        <span class="text pad-top-5" data-update="icon-font">Biểu tượng</span>
-                                        <input type="text" name="icon-font" value="" data-old="">
-                                    </label>
-                                    <label class="pad-bot-10">
-                                        <span class="text pad-top-5 dis-inline-block">CSS class</span>
-                                        <input type="text" name="class" value="" data-old="">
-                                    </label>
-                                    <label class="pad-bot-10">
-                                        <span class="text pad-top-5 dis-inline-block">Target</span>
-                                        <div style="width: 228px; display: inline-block">
-                                            <div class="ui-select-wrapper">
-                                                <select name="target" class="ui-select" id="target" data-old="_self">
-                                                    <option value="_self"  selected="selected" >Mở liên kết trong tab hiện tại
-                                                    </option>
-                                                    <option value="_blank" >Mở liên kết trong tab mới
-                                                    </option>
-                                                </select>
-                                                <svg class="svg-next-icon svg-next-icon-size-16">
-                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#select-chevron"></use>
-                                                </svg>
-                                            </div>
-                                        </div>
-                                    </label>
-                                    <div class="clearfix"></div>
-                                    <div class="text-right" style="margin-top: 5px">
-                                        <a href="#" class="btn btn-danger btn-remove btn-sm">Xóa</a>
-                                        <a href="#" class="btn btn-primary btn-cancel btn-sm">Hủy bỏ</a>
-                                    </div>
-                                </div>
-                                <div class="clearfix"></div>
-                                <ol class="dd-list">
-                                    <li class="dd-item dd3-item " data-reference-type=""
-                                    data-reference-id="0" data-title="Home"
-                                    data-class="" data-id="23" data-custom-url=""
-                                    data-icon-font="" data-target="_self">
-                                        <div class="dd-handle dd3-handle"></div>
-                                        <div class="dd3-content">
-                                            <span class="text float-left" data-update="title">Home</span>
-                                            <span class="text float-right">Custom link</span>
-                                            <a href="#" title="" class="show-item-details"><i class="fa fa-angle-down"></i></a>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                        <div class="item-details">
-                                            <label class="pad-bot-5">
-                                                <span class="text pad-top-5 dis-inline-block" data-update="title">Tiêu đề</span>
-                                                <input type="text" name="title" value="Home"
-                                                       data-old="Home">
-                                            </label>
-                                                                <label class="pad-bot-5 dis-inline-block">
-                                                    <span class="text pad-top-5" data-update="custom-url">URL</span>
-                                                    <input type="text" name="custom-url" value="" data-old="">
-                                                </label>
-                                                            <label class="pad-bot-5 dis-inline-block">
-                                                <span class="text pad-top-5" data-update="icon-font">Biểu tượng</span>
-                                                <input type="text" name="icon-font" value="" data-old="">
-                                            </label>
-                                            <label class="pad-bot-10">
-                                                <span class="text pad-top-5 dis-inline-block">CSS class</span>
-                                                <input type="text" name="class" value="" data-old="">
-                                            </label>
-                                            <label class="pad-bot-10">
-                                                <span class="text pad-top-5 dis-inline-block">Target</span>
-                                                <div style="width: 228px; display: inline-block">
-                                                    <div class="ui-select-wrapper">
-                                                        <select name="target" class="ui-select" id="target" data-old="_self">
-                                                            <option value="_self"  selected="selected" >Mở liên kết trong tab hiện tại
-                                                            </option>
-                                                            <option value="_blank" >Mở liên kết trong tab mới
-                                                            </option>
-                                                        </select>
-                                                        <svg class="svg-next-icon svg-next-icon-size-16">
-                                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#select-chevron"></use>
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                            </label>
-                                            <div class="clearfix"></div>
-                                            <div class="text-right" style="margin-top: 5px">
-                                                <a href="#" class="btn btn-danger btn-remove btn-sm">Xóa</a>
-                                                <a href="#" class="btn btn-primary btn-cancel btn-sm">Hủy bỏ</a>
-                                            </div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </li>
-                    
-                                    <li class="dd-item dd3-item  post-item " data-reference-type="Botble\Page\Models\Page"
-                                    data-reference-id="2" data-title="Blog"
-                                    data-class="" data-id="19" data-custom-url="http://hasa.botble.com/blog"
-                                    data-icon-font="" data-target="_self">
-                                        <div class="dd-handle dd3-handle"></div>
-                                        <div class="dd3-content">
-                                            <span class="text float-left" data-update="title">Blog</span>
-                                            <span class="text float-right">Botble\Page\Models\Page</span>
-                                            <a href="#" title="" class="show-item-details"><i class="fa fa-angle-down"></i></a>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                        <div class="item-details">
-                                            <label class="pad-bot-5">
-                                                <span class="text pad-top-5 dis-inline-block" data-update="title">Tiêu đề</span>
-                                                <input type="text" name="title" value="Blog"
-                                                       data-old="Blog">
-                                            </label>
-                                                            <label class="pad-bot-5 dis-inline-block">
-                                                <span class="text pad-top-5" data-update="icon-font">Biểu tượng</span>
-                                                <input type="text" name="icon-font" value="" data-old="">
-                                            </label>
-                                            <label class="pad-bot-10">
-                                                <span class="text pad-top-5 dis-inline-block">CSS class</span>
-                                                <input type="text" name="class" value="" data-old="">
-                                            </label>
-                                            <label class="pad-bot-10">
-                                                <span class="text pad-top-5 dis-inline-block">Target</span>
-                                                <div style="width: 228px; display: inline-block">
-                                                    <div class="ui-select-wrapper">
-                                                        <select name="target" class="ui-select" id="target" data-old="_self">
-                                                            <option value="_self"  selected="selected" >Mở liên kết trong tab hiện tại
-                                                            </option>
-                                                            <option value="_blank" >Mở liên kết trong tab mới
-                                                            </option>
-                                                        </select>
-                                                        <svg class="svg-next-icon svg-next-icon-size-16">
-                                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#select-chevron"></use>
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                            </label>
-                                            <div class="clearfix"></div>
-                                            <div class="text-right" style="margin-top: 5px">
-                                                <a href="#" class="btn btn-danger btn-remove btn-sm">Xóa</a>
-                                                <a href="#" class="btn btn-primary btn-cancel btn-sm">Hủy bỏ</a>
-                                            </div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </li>
-                                </ol>
-                            </li> -->
+                            
 
                         </ol>
 
@@ -540,7 +455,7 @@
                         </div>
                         <div class="widget-body">
                             <div class="ui-select-wrapper">
-        <select class="form-control ui-select ui-select" id="status" name="status"><option value="published" selected="selected">Published</option><option value="draft">Bản nháp</option><option value="pending">Đang chờ xử lý</option></select>
+        <select class="form-control ui-select ui-select" id="status" name="status"><option value="published" selected="selected">Xuất bản</option><option value="draft">Bản nháp</option><option value="pending">Đang chờ xử lý</option></select>
     <svg class="svg-next-icon svg-next-icon-size-16">
         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#select-chevron"></use>
     </svg>
@@ -583,12 +498,39 @@
     <script type="text/javascript">
     $(document).on('click', '.save-menu', function(event) {
         event.preventDefault();
+
+        // xóa menu 
+        var items = $(".dd-item");
+        var items_id = new Array();
+        var x=0;
+        items.each(function(){
+            var id_item = $(this).attr("data-id");
+            if(id_item == 0){
+
+            }
+            else{
+                items_id[x] = id_item;
+                x++;
+            }
+        });
+        var url_delete_item = '/admin/menu/delete/'+items_id;
+        $.ajax({
+          type: "GET",
+          url: url_delete_item,
+          data: items_id,
+          success: function(data){
+
+          }
+        });
+        // end xóa menu
+
         var menu = $(".nestable-menu");
         var ol = menu.children("ol");
         var li = ol.children("li");
         var i =0;
+        
         li.each(function(){
-
+            var item = $(this);
             var data_id = $(this).attr("data-id");
             var data_reference_type = $(this).attr("data-reference-type");
             var data_reference_id = $(this).attr("data-reference-id");
@@ -603,13 +545,39 @@
               url: url,
               dataType: 'html',
               success: function(data){
+                var ol = item.children("ol");
+                var li = ol.children("li");
+                var i=0;
+                li.each(function(){
+                    var item = $(this);
+                    var data_id = $(this).attr("data-id");
+                    var data_reference_type = $(this).attr("data-reference-type");
+                    var data_reference_id = $(this).attr("data-reference-id");
+                    var data_title=$(this).attr("data-title");
+                    var data_custom_url=$(this).attr("data-custom-url");
+                    var data_icon_font=$(this).attr("data-icon-font");
+                    var data_target=$(this).attr("data-target");
+                    var url = '/admin/menu/update?data_id='+data_id+'&data_reference_type='+data_reference_type+'&data_reference_id='+data_reference_id+'&data_title='+data_title+'&data_custom_url='+data_custom_url+'&data_icon_font='+data_icon_font+'&data_target='+data_target+'&data_stt='+i+'&data_parent_id='+data;
+                    i++;
+                    $.ajax({
+                      type: "GET",
+                      url: url,
+                      dataType: 'html',
+                      success: function(data){
+
+                      }
+                    });
+
+                });
+                
                 
               }
             });
-        })
+        });
         var html = '<div class="note note-success"><p>Cập nhật menu thành công</p></div>'
         $(".tb").append(html);
         $(".tb").delay(3000).slideUp();
+        setTimeout(function(){location.reload()}, 3000);
 
     });
     </script>

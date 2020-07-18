@@ -133,9 +133,9 @@
                                                         <div class="file-upload">   
                                                             <div class="file-upload-content file-upload-content100" style="position: relative;">
                                                                 @if($system->shortcut_logo == '')
-                                                                    <img width="100%" class="file-upload-image file-upload-image101" src="{{asset('uploads/images/icon-image.gif')}}" alt="your image" />
+                                                                    <img width="100%" class="file-upload-image file-upload-image100" src="{{asset('uploads/images/icon-image.gif')}}" alt="your image" />
                                                                 @else
-                                                                    <img width="100%" class="file-upload-image file-upload-image101" src="{{asset('uploads/images/systems/'.$system->shortcut_logo)}}" alt="your image" />
+                                                                    <img width="100%" class="file-upload-image file-upload-image100" src="{{asset('uploads/images/systems/'.$system->shortcut_logo)}}" alt="your image" />
                                                                 @endif
                                                                 <div class="image-title-wrap image-title-wrap100" style="position: absolute;top: 0px; right: 0px;">
                                                                     <button type="button" onclick="removeUploadTest(100)" class="remove-image">Favicon</button>
