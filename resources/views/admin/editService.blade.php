@@ -20,8 +20,8 @@
 	<div class="page-content ">
                     <ol class="breadcrumb">
         
-                            <li class="breadcrumb-item"><a href="http://hasa.botble.com/admin">Bảng điều khiển</a></li>
-                            <li class="breadcrumb-item"><a href="http://hasa.botble.com/admin/posts">Dịch vụ</a></li>
+                            <li class="breadcrumb-item"><a href="{{URL::route('home')}}">Bảng điều khiển</a></li>
+                            <li class="breadcrumb-item"><a href="{{URL::route('services')}}">Dịch vụ</a></li>
                             <li class="breadcrumb-item active">Sửa dịch vụ</li>
             
             </ol>
@@ -82,6 +82,15 @@
     
                             <label for="content" class="control-label">Nội dung</label>
                             <textarea class="form-control" rows="4" placeholder="Nội dung" data-counter="400" name="content" cols="50" id="content">{{$service->content}}</textarea>
+                            <script type="text/javascript">
+                              var editor = CKEDITOR.replace('content',{
+                               language:'vi',
+                               filebrowserImageBrowseUrl : '../../../auth/ckfinder/ckfinder.html?type=Images',
+                               filebrowserFlashBrowseUrl : '../../../auth/ckfinder/ckfinder.html?type=Flash',
+                               filebrowserImageUploadUrl : '../../../auth/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+                               filebrowserFlashUploadUrl : '../../../auth/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
+                               });
+                             </script>﻿
                         </div>
     
                         <!-- <div class="form-group" >

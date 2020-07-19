@@ -25,7 +25,7 @@
             <li class="breadcrumb-item"><a href="{{URL::route('home')}}">Bảng điều khiển</a></li>
 
 
-            <li class="breadcrumb-item"><a href="">Danh mục dịch vụ</a></li>
+            <li class="breadcrumb-item active">Danh mục dịch vụ</li>
 
         
         </ol>

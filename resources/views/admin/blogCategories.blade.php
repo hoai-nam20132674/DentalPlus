@@ -22,13 +22,10 @@
 	<div class="page-content ">
         <ol class="breadcrumb">
 
-            <li class="breadcrumb-item"><a href="http://hasa.botble.com/admin">Bảng điều khiển</a></li>
+            <li class="breadcrumb-item"><a href="{{URL::route('home')}}">Bảng điều khiển</a></li>
 
 
-            <li class="breadcrumb-item"><a href="http://hasa.botble.com/admin/posts">Blog</a></li>
-
-
-            <li class="breadcrumb-item active">Danh mục</li>
+            <li class="breadcrumb-item active">Danh mục tin tức</li>
         
         </ol>
 

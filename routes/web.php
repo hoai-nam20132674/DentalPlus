@@ -13,9 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('front-end.index');
-});
+
+
 
 Auth::routes();
 
@@ -91,3 +90,6 @@ Route::get('admin/menu/edit', 'HomeController@editMenu')->name('editMenu');
 Route::get('admin/menu/update', 'HomeController@updateMenu')->name('updateMenu');
 Route::get('admin/menu/delete/{array}', 'HomeController@deleteMenu')->name('deleteMenu');
 // end menu
+
+Route::get('/{url}', 'Controller@page')->name('page');
+Route::get('/', 'Controller@index')->name('index');

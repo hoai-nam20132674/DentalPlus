@@ -19,9 +19,8 @@
 <div class="page-content ">
     <ol class="breadcrumb">
 
-        <li class="breadcrumb-item"><a href="http://hasa.botble.com/admin">Bảng điều khiển</a></li>
-        <li class="breadcrumb-item"><a href="#">Hiển thị</a></li>
-        <li class="breadcrumb-item"><a href="http://hasa.botble.com/admin/menus">Menu</a></li>
+        <li class="breadcrumb-item"><a href="{{URL::route('home')}}">Bảng điều khiển</a></li>
+        <li class="breadcrumb-item active">Sửa menu</li>
     
     </ol>
 
@@ -564,6 +563,7 @@
                       url: url,
                       dataType: 'html',
                       success: function(data){
+                        
 
                       }
                     });

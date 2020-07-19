@@ -31,6 +31,8 @@
     @yield('css')
 
     <script src="{{asset('js/admin/app.js')}}"></script>
+    <script type="text/javascript" src="{{asset('auth/ckeditor/ckeditor.js')}}"></script>
+    <script type="text/javascript" src="{{asset('auth/ckfinder/ckfinder.js')}}"></script>
     
 
     

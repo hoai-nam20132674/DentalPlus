@@ -17,16 +17,13 @@
 <div class="page-content ">
     <ol class="breadcrumb">
 
-        <li class="breadcrumb-item"><a href="http://hasa.botble.com/admin">Bảng điều khiển</a></li>
+        <li class="breadcrumb-item"><a href="{{URL::route('home')}}">Bảng điều khiển</a></li>
 
 
-        <li class="breadcrumb-item active">Quản trị hệ thống</li>
+        <li class="breadcrumb-item"><a href="{{URL::route('users')}}">Quản trị viên</a></li>
 
 
-        <li class="breadcrumb-item"><a href="http://hasa.botble.com/admin/system/users">Quản trị viên</a></li>
-
-
-        <li class="breadcrumb-item active">System Admin</li>
+        <li class="breadcrumb-item active">Sửa thông tin quản trị viên</li>
     
     </ol>
 

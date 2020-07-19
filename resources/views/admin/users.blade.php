@@ -19,9 +19,7 @@
 @section('content')
 <div class="page-content ">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="http://hasa.botble.com/admin">Bảng điều khiển</a></li>
-        <li class="breadcrumb-item active">Quản trị hệ thống</li>
-        <li class="breadcrumb-item"><a href="http://hasa.botble.com/admin/system/roles">Nhóm và phân quyền</a></li>
+        <li class="breadcrumb-item"><a href="{{URL::route('home')}}">Bảng điều khiển</a></li>
         <li class="breadcrumb-item active">Quản trị viên</li>
     </ol>
 

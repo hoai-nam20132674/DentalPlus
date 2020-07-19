@@ -2,23 +2,12 @@
 <!DOCTYPE html>
 <html lang="vi">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">			
-		<title>Evo Spa</title>
-		<meta name="description" content="">
-		<meta name="keywords" content="Evo Team, Evo Spa"/>		
-		<link rel="canonical" href="https://evo-spa.mysapo.net/"/>
-		<meta name='revisit-after' content='1 days' />
-		<meta name="robots" content="noodp,index,follow" />
-		<link rel="icon" href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/favicon.png?1593142743270" type="image/x-icon" />
-		<meta property="og:type" content="website">
-		<meta property="og:title" content="Evo Spa">
-		<meta property="og:image" content="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/logo.png?1593142743270">
-		<meta property="og:image:secure_url" content="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/logo.png?1593142743270">
-		<meta property="og:description" content="">
-		<meta property="og:url" content="https://evo-spa.mysapo.net/">
-		<meta property="og:site_name" content="Evo Spa">
+		@php
+	        $system = App\System::where('id',1)->get()->first();
+	    @endphp
+		@yield('meta')
 		@yield('css')
+		<link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/evo-dich-vu.scss.css?1593142743270" rel="stylesheet" type="text/css" />
 		
 
 		<script>
@@ -160,12 +149,65 @@
 				<a class="quickview-close close-window" href="javascript:;" onclick="$('#popup-cart').modal('hide');" title="Đóng"><i class="fa fa-times"></i></a>
 			</div>
 		</div>
+		<div class="callmeback-form modal fade" id="myModalCall" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="myModalLabel">Đăng ký tư vấn dịch vụ</h4>
+					</div>
+					<div class="modal-body">
+						<div class="row">
+							
+							<div class="col-md-12 col-sm-12">
+								<form accept-charset="utf-8" action="/contact" id="contact" method="post">
+		
+								
+									<div class="form-signup clearfix">
+										<div class="row">
+											<div class="col-xs-12">
+												<fieldset class="form-group">
+													<input placeholder="Họ tên" type="text" name="name" id="name" class="form-control" data-validation-error-msg= "Không được để trống" data-validation="required" required />
+													<input type="hidden" name="name" id="nametour" class="form-control" value="Nâng mũi Model"/>
+												</fieldset>
+											</div>
+											<div class="col-xs-12">
+												<fieldset class="form-group">
+													<input placeholder="Điện thoại" type="text" name="phone" id="phone" class="form-control number-sidebar" data-validation-error-msg= "Không được để trống" data-validation="required" required />
+												</fieldset>
+											</div>
+											<div class="col-xs-12">
+												<fieldset class="form-group">
+													<input placeholder="Email" type="email" name="email" id="email" class="form-control" />
+												</fieldset>
+											</div>
+											<div class="col-xs-12">
+												<fieldset class="form-group">
+													<textarea placeholder="Nội dung" name="message" id="comment" class="form-control" rows="3" data-validation-error-msg= "Không được để trống" ></textarea>
+												</fieldset>
+												<div class="pull-xs-right text-center" style="margin-top:10px;">
+													<button type="submit" class="btn btn-blues btn-style btn-style-active">Gửi thông tin</button>
+												</div> 
+											</div>
+										</div>
+									</div>
+								<footer class="notification-box margin-top-10"></footer>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div id="myModal" class="modal fade" role="dialog"></div>
 		<script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.5.1/intersection-observer.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.0.0/dist/lazyload.min.js"></script>
 		<script src="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/cs.script.js?1593142743270" type="text/javascript"></script>
 		<script src="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/main.js?1593142743270" type="text/javascript"></script>				
 		<script src="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/evo-index-js.js?1593142743270" type="text/javascript"></script>
+		@yield('js')
+
+		
 		
 	</body>
 </html>

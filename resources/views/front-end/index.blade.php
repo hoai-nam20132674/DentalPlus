@@ -1,4 +1,21 @@
 @extends('front-end.layout.default')
+@section('meta')
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">			
+	<title>Dental Plus Nha Khoa Thẩm Mỹ Hàng Đầu Việt Nam</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="Dental Plus"/>		
+	<link rel="canonical" href="http://dentalplusvn.com/"/>
+	<meta name='revisit-after' content='1 days' />
+	<link rel="icon" href="{{asset('uploads/images/systems/'.$system->shortcut_logo)}}" type="image/x-icon" />
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Dental Plus">
+	<meta property="og:image" content="">
+	<meta property="og:image:secure_url" content="">
+	<meta property="og:description" content="">
+	<meta property="og:url" content="http://dentalplusvn.com/">
+	<meta property="og:site_name" content="Dental Plus">
+@endsection
 @section('css')
 	<link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/bootstrap.scss.css?1593142743270" rel="stylesheet" type="text/css" />
 	<link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/plugin.scss.css?1593142743270" rel="stylesheet" type="text/css" />							
@@ -9,6 +26,35 @@
 	<link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/evo-index.scss.css?1593142743270" rel="stylesheet" type="text/css" />
 	<!-- <link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/evo-dich-vu.scss.css?1593142743270" rel="stylesheet" type="text/css" /> -->
 	<!-- <link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/evo-blogs.scss.css?1593142743270" rel="stylesheet" type="text/css" /> -->
+	
+	<style type="text/css">
+		.image-source-link {
+			color: #98C3D1;
+		}
+
+		.mfp-with-zoom .mfp-container,
+		.mfp-with-zoom.mfp-bg {
+			opacity: 0;
+			-webkit-backface-visibility: hidden;
+			/* ideally, transition speed should match zoom duration */
+			-webkit-transition: all 0.3s ease-out; 
+			-moz-transition: all 0.3s ease-out; 
+			-o-transition: all 0.3s ease-out; 
+			transition: all 0.3s ease-out;
+		}
+
+		.mfp-with-zoom.mfp-ready .mfp-container {
+				opacity: 1;
+		}
+		.mfp-with-zoom.mfp-ready.mfp-bg {
+				opacity: 0.8;
+		}
+
+		.mfp-with-zoom.mfp-removing .mfp-container, 
+		.mfp-with-zoom.mfp-removing.mfp-bg {
+			opacity: 0;
+		}
+	</style>
 @endsection
 @section('body_class')
 index
@@ -18,7 +64,7 @@ index
 		<div class="home-slider">
 			<div class="item">
 				<a href="#" class="clearfix" title="Evo Mỹ Phẩm">
-					<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-lazy="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/slider_1.jpg?1593142743270" alt="Evo Mỹ Phẩm" class="lazy img-responsive center-block" />
+					<img src="{{asset('uploads/images/systems/banner.jpg')}}" data-lazy="{{asset('uploads/images/system/banner.jpg')}}" alt="Evo Mỹ Phẩm" class="lazy img-responsive center-block" />
 				</a>
 			</div>
 		</div>
@@ -31,11 +77,12 @@ index
 				<div class="row row-flex align-items-lg-center">
 					<div class="col-md-6">
 						<div class="block-header">
-							<p>Bệnh viện thẩm mỹ đẳng cấp quốc tế</p>
-							<h2>EVO SPA - Với sứ mệnh tôn vinh vẻ đẹp phụ nữ Á Đông</h2>
+							<p>Nha khoa thẩm mỹ đẳng cấp quốc tế</p>
+							<h2>DENTAL PLUS - Với sứ mệnh đem lại nụ cười tự tin tỏa sáng cho cộng đồng</h2>
 						</div>
-						<p>Với sứ mệnh tôn vinh vẻ đẹp phụ nữ Á Đông, mang đến giải pháp làm đẹp công nghệ tiên tiến cho chị em trên khắp vùng miền đất nước, cam kết mang đến cho khách hàng sự hài lòng tuyệt đối bằng chất lượng dịch vụ và chế độ chăm sóc chuyên nghiệp.</p>
-						<p>Với mong muốn mang đến cho khách hàng những trải nghiệm dịch vụ chất lượng tốt nhất, EVO SPA được đầu tư cơ sở vật chất hiện đại, đạt tiêu chuẩn 5 sao. 100% bác sĩ tại <strong>EVO SPA</strong> được đào tạo bài bản, tốt nghiệp tại các trường đại học danh tiếng trong & ngoài nước, là thành viên danh dự thuộc Hiệp hội thẩm mỹ Hàn Quốc.</p>
+						<p>Với sứ mệnh mang lại nụ cười tự tin tỏa sáng, nâng cao chất lượng cuộc sống cho cộng đồng.  Đội ngũ y bác sỹ của <strong>Dental Plus</strong> vẫn không ngừng học hỏi, cập nhật những giải pháp công nghệ mới trong lĩnh vực thẩm mỹ nha khoa để đem lại cho Quý khách những trải nghiệm về chất lượng và dịch vụ tuyệt vời nhất .</p>
+						<p><strong>Dental Plus</strong> với hơn 5 năm hoạt động trong lĩnh vực nha khoa thẩm mỹ. Đội ngũ y bác sỹ dày dặn kinh nghiệm, tận tâm tư vấn miễn phí cho quý khách để đưa ra hướng giải quyết tốt nhất. Giúp quý khách lấy lại tự tin với hàm răng mới thẩm mỹ trắng sáng rạng ngời.</p>
+						<p>Đừng ngần ngại, hãy cho <strong>Dental Plus</strong> biết vấn đề răng miệng bạn đang gặp phải, bạn sẽ nhận lại những giá trị tuyệt vời hơn những gì bạn nghĩ.</p>
 						<a href="#" class="read-more" title="Xem thêm">Xem thêm <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M0.505883 5.20577L0.491834 5.2027L6.51423 5.2027L4.62101 7.10009C4.5283 7.19272 4.47745 7.31821 4.47745 7.44992C4.47745 7.58162 4.5283 7.70623 4.62101 7.79909L4.91559 8.09382C5.00823 8.18645 5.13166 8.23767 5.2633 8.23767C5.39501 8.23767 5.51852 8.18682 5.61115 8.09418L8.85649 4.84913C8.94949 4.75613 9.00035 4.63226 8.99998 4.50048C9.00035 4.36796 8.94949 4.24401 8.85649 4.15116L5.61115 0.905818C5.51852 0.813257 5.39508 0.76233 5.2633 0.76233C5.13166 0.76233 5.00823 0.813331 4.91559 0.905818L4.62101 1.20055C4.5283 1.29304 4.47745 1.41655 4.47745 1.54826C4.47745 1.67989 4.5283 1.79689 4.62101 1.88945L6.53559 3.79745L0.499152 3.79745C0.227908 3.79745 -1.94412e-05 4.03123 -1.94175e-05 4.30233L-1.93811e-05 4.71918C-1.93574e-05 4.99028 0.23464 5.20577 0.505883 5.20577Z"></path></svg></a>
 					</div>
 					<div class="col-md-6">
@@ -69,19 +116,19 @@ index
 								</div>
 								<div class="tab-element-content">
 									<div class="for-tab start">
-										<h3>Đẹp mãi với thời gian<br>EVO SPA</h3>
+										<h3>Nụ cười tự tin tỏa sáng<br>DENTAL PLUS</h3>
 									</div>
 									<div class="for-tab" id="0">
 										<h3>Sứ mệnh</h3>
-										<p>Với sứ mệnh tôn vinh vẻ đẹp phụ nữ Á Đông, mang đến giải pháp làm đẹp công nghệ tiên tiến cho chị em trên khắp vùng miền đất nước, cam kết mang đến cho khách hàng sự hài lòng tuyệt đối</p>
+										<p>Với sứ mệnh mang lại nụ cười tự tin tỏa sáng, nâng cao chất lượng cuộc sống cho cộng đồng.</p>
 									</div>
 									<div class="for-tab" id="1">
 										<h3>Đội ngũ</h3>
-										<p>100% bác sĩ tại EVO SPA được đào tạo bài bản, tốt nghiệp tại các trường đại học danh tiếng trong & ngoài nước, là thành viên danh dự thuộc Hiệp hội thẩm mỹ Hàn Quốc.</p>
+										<p>100% bác sĩ tại DENTAL PLUS được đào tạo bài bản, Đội ngũ y bác sỹ của Dental Plus vẫn không ngừng học hỏi, cập nhật những giải pháp công nghệ mới trong lĩnh vực thẩm mỹ nha khoa để đem lại cho Quý khách những trải nghiệm về chất lượng và dịch vụ tuyệt vời nhất </p>
 									</div>
 									<div class="for-tab" id="2">
 										<h3>Cơ sở VC</h3>
-										<p>Với mong muốn mang đến cho khách hàng những trải nghiệm dịch vụ chất lượng tốt nhất, EVO SPA được đầu tư cơ sở vật chất hiện đại, đạt tiêu chuẩn 5 sao.</p>
+										<p>Với mong muốn mang đến cho khách hàng những trải nghiệm dịch vụ chất lượng tốt nhất, DENTAL PLUS được đầu tư cơ sở vật chất hiện đại, đạt tiêu chuẩn 5 sao.</p>
 									</div>
 									<div class="for-tab" id="3">
 										<h3>Máy móc</h3>
@@ -89,11 +136,11 @@ index
 									</div>
 									<div class="for-tab" id="4">
 										<h3>Dịch vụ</h3>
-										<p>EVO SPA mang đến cho khách hàng bằng dịch vụ chăm sóc chu đáo. Sau khi sử dụng dịch vụ, Quý khách sẽ được các bác sĩ dặn dò kỹ lưỡng, cấp phát thuốc theo chỉ định cùng thẻ bảo hành kết quả thẩm mỹ.</p>
+										<p>DENTAL PLUS mang đến cho khách hàng bằng dịch vụ chăm sóc chu đáo. Sau khi sử dụng dịch vụ, Quý khách sẽ được các bác sĩ dặn dò kỹ lưỡng, cấp phát thuốc theo chỉ định cùng thẻ bảo hành kết quả thẩm mỹ.</p>
 									</div>
 									<div class="for-tab" id="5">
 										<h3>Hệ thống</h3>
-										<p>Với 8 chi nhánh trải dài khắp cả nước, EVO SPA tự hào là đơn vị thẩm mỹ có chuỗi chi nhánh thẩm mỹ lớn nhất Việt Nam.</p>
+										<p>CS1: Địa chỉ Số 1 Thi Sách, phường Phạm Đình Hổ, quận Hai Bà Trưng, Hà Nội.</p>
 									</div>
 								</div>
 							</div>
@@ -110,89 +157,26 @@ index
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 col-sm-12 col-xs-12 evo_dich_vu_title text-center">
-						<h2 class="section_dich_vu_title">Evo Spa</h2>
-						<h4>Công nghệ thẩm mỹ nổi bật</h4>
+						<h2 class="section_dich_vu_title">Dental Plus</h2>
+						<h4>Dịch vụ nổi bật</h4>
 					</div>
 				</div>
 				<div class="row row-dich-vu">
-					<div class="col-md-4 col-sm-4 col-xs-6">
-						<div class="evo-box-dich-vu">
-							<div class="evo-box-dich-vu-group">
-								<div class="evo-box-dich-vu-image">
-									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/evo_dich_vu_image_1.jpg?1593142743270" alt="Nâng mũi Model" class="img-responsive center-block lazy" />
+					@foreach($services as $service)
+						<div class="col-md-4 col-sm-4 col-xs-6">
+							<div class="evo-box-dich-vu">
+								<div class="evo-box-dich-vu-group">
+									<div class="evo-box-dich-vu-image">
+										<img src="{{asset('uploads/images/services/'.$service->avata)}}" data-src="{{asset('uploads/images/services/'.$service->avata)}}" alt="{{$service->name}}" class="img-responsive center-block lazy" />
+									</div>
+									<div class="content-box-dich-vu hidden-sm hidden-xs">
+										{{$service->seo_description}}
+									</div>
 								</div>
-								<div class="content-box-dich-vu hidden-sm hidden-xs">
-									Mũi là trung tâm của gương mặt, ảnh hưởng rất nhiều đến diện mạo của mỗi người. Phẫu thuật nâng mũi chính là giải pháp giúp bạn chỉnh sửa toàn diện mọi khuyết điểm về mũi để sở hữu gương mặt hài hòa với chiếc mũi cao thanh thoát tự nhiên, đẹp hoàn hảo trong mọi góc nhìn.
-								</div>
+								<h3><a href="/{{$service->url}}" title="Nâng mũi Model">{{$service->name}}</a></h3>
 							</div>
-							<h3><a href="/nang-mui-model" title="Nâng mũi Model">Nâng mũi Model</a></h3>
 						</div>
-					</div>
-					<div class="col-md-4 col-sm-4 col-xs-6">
-						<div class="evo-box-dich-vu">
-							<div class="evo-box-dich-vu-group">
-								<div class="evo-box-dich-vu-image">
-									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/evo_dich_vu_image_2.jpg?1593142743270" alt="Cắt mí Eye Lift" class="img-responsive center-block lazy" />
-								</div>
-								<div class="content-box-dich-vu hidden-sm hidden-xs">
-									Cắt mí mắt là phương pháp loại bỏ da thừa, tạo lại nếp mí mới rõ nét và cân đối, có thể kết hợp với lấy mỡ mí mắt nếu đã có bọng mỡ, cho đôi mắt TO TRÒN nhanh chóng – An toàn- Duy trì kết quả VĨNH VIỄN
-								</div>
-							</div>
-							<h3><a href="#" title="Cắt mí Eye Lift">Cắt mí Eye Lift</a></h3>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-4 col-xs-6">
-						<div class="evo-box-dich-vu">
-							<div class="evo-box-dich-vu-group">
-								<div class="evo-box-dich-vu-image">
-									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/evo_dich_vu_image_3.jpg?1593142743270" alt="Giảm mỡ Slimlipo" class="img-responsive center-block lazy" />
-								</div>
-								<div class="content-box-dich-vu hidden-sm hidden-xs">
-									Hút mỡ SlimLipo vaser là phương pháp sử dụng đầu dò thông minh Smart Ultrasonic để tìm kiếm và phân rã các tổ chức mỡ, khiến chúng hóa lỏng. Sau đó được đầu hút Vaser đưa ra khỏi cơ thể một cách an toàn mà không phải chờ thải ra bên ngoài bằng đường tiết liệu.
-								</div>
-							</div>
-							<h3><a href="#" title="Giảm mỡ Slimlipo">Giảm mỡ Slimlipo</a></h3>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-4 col-xs-6">
-						<div class="evo-box-dich-vu">
-							<div class="evo-box-dich-vu-group">
-								<div class="evo-box-dich-vu-image">
-									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/evo_dich_vu_image_4.jpg?1593142743270" alt="Phẩu thuật Hàm mặt" class="img-responsive center-block lazy" />
-								</div>
-								<div class="content-box-dich-vu hidden-sm hidden-xs">
-									Phẫu thuật hàm mặt hiện đang là một trong những dịch vụ thẩm mỹ Hot tại Việt Nam hiện nay. Phương pháp phẫu thuật này cho phép chỉnh sửa từng khuyết điểm trên mặt ở các vị trí khác nhau với kết quả hoàn hảo nhất một cách nhanh chóng.
-								</div>
-							</div>
-							<h3><a href="#" title="Phẩu thuật Hàm mặt">Phẩu thuật Hàm mặt</a></h3>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-4 col-xs-6">
-						<div class="evo-box-dich-vu">
-							<div class="evo-box-dich-vu-group">
-								<div class="evo-box-dich-vu-image">
-									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/evo_dich_vu_image_5.jpg?1593142743270" alt="Nâng ngực Biofat" class="img-responsive center-block lazy" />
-								</div>
-								<div class="content-box-dich-vu hidden-sm hidden-xs">
-									Sở hữu một đôi “gò bồng đảo” căng tròn, săn chắc là ao ước của rất nhiều người. Vòng 1 nảy nở giúp bạn tự tin hơn trong giao tiếp, đặc biệt có thể thỏa ao ước mặc những trang phục ôm sát tôn lên đường cong cơ thể.
-								</div>
-							</div>
-							<h3><a href="#" title="Nâng ngực Biofat">Nâng ngực Biofat</a></h3>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-4 col-xs-6">
-						<div class="evo-box-dich-vu">
-							<div class="evo-box-dich-vu-group">
-								<div class="evo-box-dich-vu-image">
-									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/evo_dich_vu_image_6.jpg?1593142743270" alt="Điều trị Trẻ hóa" class="img-responsive center-block lazy" />
-								</div>
-								<div class="content-box-dich-vu hidden-sm hidden-xs">
-									Bio Young là công nghệ trẻ hóa da tiên tiến dựa trên công nghệ Tế Bào Gốc tự thân và các công nghệ không phẫu thuật tiên tiến, tác động trẻ hóa da ở tầng sâu bao gồm 4 lớp biểu bì, trung bì, hạ bì và đệm cơ.
-								</div>
-							</div>
-							<h3><a href="#" title="Điều trị Trẻ hóa">Điều trị Trẻ hóa</a></h3>
-						</div>
-					</div>
+					@endforeach
 				</div>
 			</div>
 		</div>
@@ -204,181 +188,70 @@ index
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 col-sm-12 col-xs-12 evo_dich_vu_title text-center">
-						<h2 class="section_dich_vu_title">Evo Spa</h2>
+						<h2 class="section_dich_vu_title">Dental Plus</h2>
 						<h4>Câu chuyện khách hàng</h4>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-6">
 						<div class="tab-content">
-							
-							<div id="kh1" class="tab-pane active">
-								<div class="h2big">
-									<div class="h2big__pic col-6">
-										<a href="/khong-he-hop-son-phan-luu-diec-phi-cu-de-mat-moc-moi-dung-khi-chat-than-tien-ty-ty" class="align-middle" title="Kh&#244;ng hề hợp son phấn, Lưu Diệc Phi cứ để mặt mộc mới đ&#250;ng kh&#237; chất &quot;thần ti&#234;n tỷ tỷ&quot;">
-											
-											<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/thumb/large/100/359/276/articles/15781816-1833052046936438-777086604170295220-n.jpg?v=1562288966903" alt="Kh&#244;ng hề hợp son phấn, Lưu Diệc Phi cứ để mặt mộc mới đ&#250;ng kh&#237; chất &quot;thần ti&#234;n tỷ tỷ&quot;" class="lazy img-responsive center-block" />
-											
-										</a>
-									</div>
-									<div class="h2big__box col-6">
-										<h3><a class="line-clamp" href="/khong-he-hop-son-phan-luu-diec-phi-cu-de-mat-moc-moi-dung-khi-chat-than-tien-ty-ty" title="Kh&#244;ng hề hợp son phấn, Lưu Diệc Phi cứ để mặt mộc mới đ&#250;ng kh&#237; chất &quot;thần ti&#234;n tỷ tỷ&quot;">Kh&#244;ng hề hợp son phấn, Lưu Diệc Phi cứ để mặt mộc mới đ&#250;ng kh&#237; chất &quot;thần ti&#234;n tỷ tỷ&quot;</a></h3>
-										<div class="evo-customer-des"> Trang điểm với các ngôi sao trong showbiz mà nói, là việc tối quan trọng. Vì bước này, sẽ giúp họ che hết những khuyết điểm trên gương mặt, trở nên hoàn hảo hơn, thanh tú hơn. Nhưng trong trường h...</div>
-										<div class="h2big__more">
-											<a href="/khong-he-hop-son-phan-luu-diec-phi-cu-de-mat-moc-moi-dung-khi-chat-than-tien-ty-ty" title="Xem ngay">Xem ngay</a>
+							@php
+								$i=1;
+							@endphp
+							@foreach($products as $product)
+								@if($i==1)
+								<div id="item{{$i}}" class="tab-pane active">
+								@else
+								<div id="item{{$i}}" class="tab-pane">
+								@endif
+									<div class="h2big">
+										<div class="h2big__pic col-6">
+											<a href="/{{$product->url}}" class="align-middle" title="{{$product->title}}">
+												
+												<img src="{{asset('uploads/images/products/avatas/'.$product->avata)}}" data-src="{{asset('uploads/images/products/avatas/'.$product->avata)}}" alt="{{$product->title}}" class="lazy img-responsive center-block" />
+												
+											</a>
+										</div>
+										<div class="h2big__box col-6">
+											<h3><a class="line-clamp" href="/{{$product->url}}" title="{{$product->title}}">{{$product->title}}</a></h3>
+											<div class="evo-customer-des">{{$product->seo_description}}</div>
+											<div class="h2big__more">
+												<a href="/{{$product->url}}" title="Xem ngay">Xem ngay</a>
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
+								@php
+									$i++;
+								@endphp
+							@endforeach
 							
-							<div id="kh2" class="tab-pane fade">
-								<div class="h2big">
-									<div class="h2big__pic col-6">
-										<a href="/voi-doi-chan-nuot-na-lieu-jennie-co-du-suc-lan-at-joy-va-park-min-young-khi-dung-dam-tram-trieu" class="align-middle" title="Với đ&#244;i ch&#226;n nuột n&#224;, liệu Jennie c&#243; đủ sức lấn &#225;t Joy v&#224; Park Min Young khi đụng đầm trăm triệu?">
-											
-											<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/thumb/large/100/359/276/articles/20190329090647-93f8.jpg?v=1562288871517" alt="Với đ&#244;i ch&#226;n nuột n&#224;, liệu Jennie c&#243; đủ sức lấn &#225;t Joy v&#224; Park Min Young khi đụng đầm trăm triệu?" class="lazy img-responsive center-block" />
-											
-										</a>
-									</div>
-									<div class="h2big__box col-6">
-										<h3><a class="line-clamp" href="/voi-doi-chan-nuot-na-lieu-jennie-co-du-suc-lan-at-joy-va-park-min-young-khi-dung-dam-tram-trieu" title="Với đ&#244;i ch&#226;n nuột n&#224;, liệu Jennie c&#243; đủ sức lấn &#225;t Joy v&#224; Park Min Young khi đụng đầm trăm triệu?">Với đ&#244;i ch&#226;n nuột n&#224;, liệu Jennie c&#243; đủ sức lấn &#225;t Joy v&#224; Park Min Young khi đụng đầm trăm triệu?</a></h3>
-										<div class="evo-customer-des"> Cùng diện mẫu váy trễ vai ngọt ngào, Jennie, Joy và Park Min Young đã tạo nên những dấu ấn riêng. 
-		 Jennie nổi tiếng là cô nàng sở hữu vóc dáng chuẩn chỉnh, body không chút mỡ thừa, đôi chân thon ...</div>
-										<div class="h2big__more">
-											<a href="/voi-doi-chan-nuot-na-lieu-jennie-co-du-suc-lan-at-joy-va-park-min-young-khi-dung-dam-tram-trieu" title="Xem ngay">Xem ngay</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							
-							<div id="kh3" class="tab-pane fade">
-								<div class="h2big">
-									<div class="h2big__pic col-6">
-										<a href="/style-thi-sen-nhung-lam-tam-nhu-van-hack-tuoi-tai-tinh-nho-kieu-toc-nhu-nu-sinh" class="align-middle" title="Style th&#236; sến nhưng L&#226;m T&#226;m Như vẫn &quot;hack&quot; tuổi t&#224;i t&#236;nh nhờ kiểu t&#243;c như nữ sinh">
-											
-											<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/thumb/large/100/359/276/articles/lam-tam-nhu-hoa-quy-phu-nhan-diu-dang-1cdfe5.jpg?v=1562288706573" alt="Style th&#236; sến nhưng L&#226;m T&#226;m Như vẫn &quot;hack&quot; tuổi t&#224;i t&#236;nh nhờ kiểu t&#243;c như nữ sinh" class="lazy img-responsive center-block" />
-											
-										</a>
-									</div>
-									<div class="h2big__box col-6">
-										<h3><a class="line-clamp" href="/style-thi-sen-nhung-lam-tam-nhu-van-hack-tuoi-tai-tinh-nho-kieu-toc-nhu-nu-sinh" title="Style th&#236; sến nhưng L&#226;m T&#226;m Như vẫn &quot;hack&quot; tuổi t&#224;i t&#236;nh nhờ kiểu t&#243;c như nữ sinh">Style th&#236; sến nhưng L&#226;m T&#226;m Như vẫn &quot;hack&quot; tuổi t&#224;i t&#236;nh nhờ kiểu t&#243;c như nữ sinh</a></h3>
-										<div class="evo-customer-des"> Còn nhớ cách đây không lâu Lâm Tâm Như từng gây bất ngờ khi cắt phăng mái tóc dài thướt tha mà chuyển sang kiểu tóc bob. Người ta cắt tóc ngắn thì trẻ, riêng Lâm Tâm Như lại bị chê già hơn thường ...</div>
-										<div class="h2big__more">
-											<a href="/style-thi-sen-nhung-lam-tam-nhu-van-hack-tuoi-tai-tinh-nho-kieu-toc-nhu-nu-sinh" title="Xem ngay">Xem ngay</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							
-							<div id="kh4" class="tab-pane fade">
-								<div class="h2big">
-									<div class="h2big__pic col-6">
-										<a href="/style-doi-thuong-doi-lap-cua-black-pink-red-velvet-ben-ca-tinh-ben-banh-beo-doi-lap-han-nhau" class="align-middle" title="Style đời thường đối lập của Black Pink – Red Velvet: B&#234;n c&#225; t&#237;nh, b&#234;n b&#225;nh b&#232;o đối lập hẳn nhau">
-											
-											<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/thumb/large/100/359/276/articles/blackpink-kill-this-love-concept-hd-jisoo-2000x2000.jpg?v=1562288537957" alt="Style đời thường đối lập của Black Pink – Red Velvet: B&#234;n c&#225; t&#237;nh, b&#234;n b&#225;nh b&#232;o đối lập hẳn nhau" class="lazy img-responsive center-block" />
-											
-										</a>
-									</div>
-									<div class="h2big__box col-6">
-										<h3><a class="line-clamp" href="/style-doi-thuong-doi-lap-cua-black-pink-red-velvet-ben-ca-tinh-ben-banh-beo-doi-lap-han-nhau" title="Style đời thường đối lập của Black Pink – Red Velvet: B&#234;n c&#225; t&#237;nh, b&#234;n b&#225;nh b&#232;o đối lập hẳn nhau">Style đời thường đối lập của Black Pink – Red Velvet: B&#234;n c&#225; t&#237;nh, b&#234;n b&#225;nh b&#232;o đối lập hẳn nhau</a></h3>
-										<div class="evo-customer-des"> Black Pink và Red Velvet là 2 girl group được đông đảo giới trẻ yêu thích. Vậy nhưng 2 nhóm nhạc này lại theo đuổi hình tượng, phong cách âm nhạc và style hoàn toàn khác nhau. Đặc biệt khi nhìn và...</div>
-										<div class="h2big__more">
-											<a href="/style-doi-thuong-doi-lap-cua-black-pink-red-velvet-ben-ca-tinh-ben-banh-beo-doi-lap-han-nhau" title="Xem ngay">Xem ngay</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							
-							<div id="kh5" class="tab-pane fade">
-								<div class="h2big">
-									<div class="h2big__pic col-6">
-										<a href="/den-tan-luc-beo-len-chau-bui-van-sexy-va-mac-dep-than-thai-kho-ai-do-noi" class="align-middle" title="Đến tận l&#250;c b&#233;o l&#234;n, Ch&#226;u B&#249;i vẫn sexy v&#224; mặc đẹp, thần th&#225;i kh&#243; ai đọ nổi">
-											
-											<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/thumb/large/100/359/276/articles/fashionista-chau-bui-mach-nuoc-chieu-mix-do-cho-nang-thap-be-d66350.jpg?v=1562288402120" alt="Đến tận l&#250;c b&#233;o l&#234;n, Ch&#226;u B&#249;i vẫn sexy v&#224; mặc đẹp, thần th&#225;i kh&#243; ai đọ nổi" class="lazy img-responsive center-block" />
-											
-										</a>
-									</div>
-									<div class="h2big__box col-6">
-										<h3><a class="line-clamp" href="/den-tan-luc-beo-len-chau-bui-van-sexy-va-mac-dep-than-thai-kho-ai-do-noi" title="Đến tận l&#250;c b&#233;o l&#234;n, Ch&#226;u B&#249;i vẫn sexy v&#224; mặc đẹp, thần th&#225;i kh&#243; ai đọ nổi">Đến tận l&#250;c b&#233;o l&#234;n, Ch&#226;u B&#249;i vẫn sexy v&#224; mặc đẹp, thần th&#225;i kh&#243; ai đọ nổi</a></h3>
-										<div class="evo-customer-des"> Với tâm lý "gầy mặc đồ mới đẹp", nhiều chị em hẳn phải rất khổ sở trong khoản tập tành kiêng khem để giữ dáng hoặc vật lộn trong đống quần áo oversized nếu nhỡ tăng lên vài lạng. Tuy nhiên, Châu B...</div>
-										<div class="h2big__more">
-											<a href="/den-tan-luc-beo-len-chau-bui-van-sexy-va-mac-dep-than-thai-kho-ai-do-noi" title="Xem ngay">Xem ngay</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							
-							<div id="kh6" class="tab-pane fade">
-								<div class="h2big">
-									<div class="h2big__pic col-6">
-										<a href="/ngoc-trinh-bat-ngo-cat-toc-ngan-khien-dan-tinh-thon-thuc-yeu-luon-tu-cai-nhin-dau-tien" class="align-middle" title="Ngọc Trinh bất ngờ cắt t&#243;c ngắn khiến d&#226;n t&#236;nh thổn thức: “Y&#234;u lu&#244;n từ c&#225;i nh&#236;n đầu ti&#234;n”">
-											
-											<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/thumb/large/100/359/276/articles/ngoc-trinh-2.jpg?v=1562288462617" alt="Ngọc Trinh bất ngờ cắt t&#243;c ngắn khiến d&#226;n t&#236;nh thổn thức: “Y&#234;u lu&#244;n từ c&#225;i nh&#236;n đầu ti&#234;n”" class="lazy img-responsive center-block" />
-											
-										</a>
-									</div>
-									<div class="h2big__box col-6">
-										<h3><a class="line-clamp" href="/ngoc-trinh-bat-ngo-cat-toc-ngan-khien-dan-tinh-thon-thuc-yeu-luon-tu-cai-nhin-dau-tien" title="Ngọc Trinh bất ngờ cắt t&#243;c ngắn khiến d&#226;n t&#236;nh thổn thức: “Y&#234;u lu&#244;n từ c&#225;i nh&#236;n đầu ti&#234;n”">Ngọc Trinh bất ngờ cắt t&#243;c ngắn khiến d&#226;n t&#236;nh thổn thức: “Y&#234;u lu&#244;n từ c&#225;i nh&#236;n đầu ti&#234;n”</a></h3>
-										<div class="evo-customer-des"> Ngọc Trinh vốn gắn liền với mái tóc dài thướt tha nữ tính, tuy nhiên mới đây cô nàng khiến nhiều người bất ngờ khi cắt phăng mái tóc quen thuộc, chuyển sang kiểu tóc bob trẻ trung. Hình ảnh mới củ...</div>
-										<div class="h2big__more">
-											<a href="/ngoc-trinh-bat-ngo-cat-toc-ngan-khien-dan-tinh-thon-thuc-yeu-luon-tu-cai-nhin-dau-tien" title="Xem ngay">Xem ngay</a>
-										</div>
-									</div>
-								</div>
-							</div>
 							
 						</div>
 					</div>
 					<div class="col-md-6">
 						<ul class="row evo-tabs" role="tablist">
+							@php
+								$i=1;
+							@endphp
+							@foreach($products as $product)
+								@if($i==1)
+								<li class="col-md-4 col-sm-3 col-xs-4 nav-item active">
+								@else
+								<li class="col-md-4 col-sm-3 col-xs-4 nav-item">
+								@endif
+									<a href="#item{{$i}}" data-toggle="tab">
+										
+										<img src="{{asset('uploads/images/products/avatas/'.$product->avata)}}" data-src="{{asset('uploads/images/products/avatas/'.$product->avata)}}" alt="{{$product->title}}" class="lazy img-responsive center-block" />
+										
+									</a>
+								</li>
+								@php
+									$i++;
+								@endphp
+							@endforeach
 							
-							<li class="col-md-4 col-sm-3 col-xs-4 nav-item active">
-								<a href="#kh1" data-toggle="tab">
-									
-									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/thumb/large/100/359/276/articles/15781816-1833052046936438-777086604170295220-n.jpg?v=1562288966903" alt="Kh&#244;ng hề hợp son phấn, Lưu Diệc Phi cứ để mặt mộc mới đ&#250;ng kh&#237; chất &quot;thần ti&#234;n tỷ tỷ&quot;" class="lazy img-responsive center-block" />
-									
-								</a>
-							</li>
 							
-							<li class="col-md-4 col-sm-3 col-xs-4 nav-item ">
-								<a href="#kh2" data-toggle="tab">
-									
-									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/thumb/large/100/359/276/articles/20190329090647-93f8.jpg?v=1562288871517" alt="Với đ&#244;i ch&#226;n nuột n&#224;, liệu Jennie c&#243; đủ sức lấn &#225;t Joy v&#224; Park Min Young khi đụng đầm trăm triệu?" class="lazy img-responsive center-block" />
-									
-								</a>
-							</li>
-							
-							<li class="col-md-4 col-sm-3 col-xs-4 nav-item ">
-								<a href="#kh3" data-toggle="tab">
-									
-									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/thumb/large/100/359/276/articles/lam-tam-nhu-hoa-quy-phu-nhan-diu-dang-1cdfe5.jpg?v=1562288706573" alt="Style th&#236; sến nhưng L&#226;m T&#226;m Như vẫn &quot;hack&quot; tuổi t&#224;i t&#236;nh nhờ kiểu t&#243;c như nữ sinh" class="lazy img-responsive center-block" />
-									
-								</a>
-							</li>
-							
-							<li class="col-md-4 col-sm-3 col-xs-4 nav-item ">
-								<a href="#kh4" data-toggle="tab">
-									
-									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/thumb/large/100/359/276/articles/blackpink-kill-this-love-concept-hd-jisoo-2000x2000.jpg?v=1562288537957" alt="Style đời thường đối lập của Black Pink – Red Velvet: B&#234;n c&#225; t&#237;nh, b&#234;n b&#225;nh b&#232;o đối lập hẳn nhau" class="lazy img-responsive center-block" />
-									
-								</a>
-							</li>
-							
-							<li class="col-md-4 col-sm-3 col-xs-4 nav-item ">
-								<a href="#kh5" data-toggle="tab">
-									
-									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/thumb/large/100/359/276/articles/fashionista-chau-bui-mach-nuoc-chieu-mix-do-cho-nang-thap-be-d66350.jpg?v=1562288402120" alt="Đến tận l&#250;c b&#233;o l&#234;n, Ch&#226;u B&#249;i vẫn sexy v&#224; mặc đẹp, thần th&#225;i kh&#243; ai đọ nổi" class="lazy img-responsive center-block" />
-									
-								</a>
-							</li>
-							
-							<li class="col-md-4 col-sm-3 col-xs-4 nav-item ">
-								<a href="#kh6" data-toggle="tab">
-									
-									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/thumb/large/100/359/276/articles/ngoc-trinh-2.jpg?v=1562288462617" alt="Ngọc Trinh bất ngờ cắt t&#243;c ngắn khiến d&#226;n t&#236;nh thổn thức: “Y&#234;u lu&#244;n từ c&#225;i nh&#236;n đầu ti&#234;n”" class="lazy img-responsive center-block" />
-									
-								</a>
-							</li>
 							
 						</ul>
 					</div>
@@ -394,7 +267,7 @@ index
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 col-sm-12 col-xs-12 evo_dich_vu_title text-center">
-						<h2 class="section_dich_vu_title">Evo Spa</h2>
+						<h2 class="section_dich_vu_title">Dental Plus</h2>
 						<h4><a href="san-pham-moi" title="Sản phẩm làm đẹp">Sản phẩm làm đẹp</a></h4>
 					</div>
 					<div class="col-md-12 col-sm-12 col-xs-12">
@@ -675,72 +548,15 @@ index
 			<div class="row">
 				<div class="col-md-12 col-sm-12 col-xs-12">
 					<div class="evo_dich_vu_title text-center">
-						<h2 class="section_dich_vu_title">Evo Blogs</h2>
-						<h4><a href="tin-tuc" title="Evo Beauty Magazine">Evo Beauty Magazine</a></h4>
+						<h2 class="section_dich_vu_title">Dental Blogs</h2>
+						<h4><a href="tin-tuc" title="Evo Beauty Magazine">TIN TỨC</a></h4>
 					</div>
 					
 					<div class="evo-owl-blog evo-slick">
+						@foreach($blogs as $blog)
 						
-						<div class="news-items">
-							<a href="/khong-he-hop-son-phan-luu-diec-phi-cu-de-mat-moc-moi-dung-khi-chat-than-tien-ty-ty" title="Kh&#244;ng hề hợp son phấn, Lưu Diệc Phi cứ để mặt mộc mới đ&#250;ng kh&#237; chất &quot;thần ti&#234;n tỷ tỷ&quot;" class="clearfix evo-item-blogs">
-								<div class="evo-article-image">
-									
-									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/thumb/large/100/359/276/articles/15781816-1833052046936438-777086604170295220-n.jpg?v=1562288966903" alt="Kh&#244;ng hề hợp son phấn, Lưu Diệc Phi cứ để mặt mộc mới đ&#250;ng kh&#237; chất &quot;thần ti&#234;n tỷ tỷ&quot;" class="lazy img-responsive center-block" />
-									
-								</div>
-								<h3 class="line-clamps">Kh&#244;ng hề hợp son phấn, Lưu Diệc Phi cứ để mặt mộc mới đ&#250;ng kh&#237; chất &quot;thần ti&#234;n tỷ tỷ&quot;</h3>
-								<p> Trang điểm với các ngôi sao trong showbiz mà nói, là việc tối quan trọng. Vì bước này, sẽ giúp họ che hết ...</p>
-							</a>
-						</div>
-						
-						<div class="news-items">
-							<a href="/voi-doi-chan-nuot-na-lieu-jennie-co-du-suc-lan-at-joy-va-park-min-young-khi-dung-dam-tram-trieu" title="Với đ&#244;i ch&#226;n nuột n&#224;, liệu Jennie c&#243; đủ sức lấn &#225;t Joy v&#224; Park Min Young khi đụng đầm trăm triệu?" class="clearfix evo-item-blogs">
-								<div class="evo-article-image">
-									
-									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/thumb/large/100/359/276/articles/20190329090647-93f8.jpg?v=1562288871517" alt="Với đ&#244;i ch&#226;n nuột n&#224;, liệu Jennie c&#243; đủ sức lấn &#225;t Joy v&#224; Park Min Young khi đụng đầm trăm triệu?" class="lazy img-responsive center-block" />
-									
-								</div>
-								<h3 class="line-clamps">Với đ&#244;i ch&#226;n nuột n&#224;, liệu Jennie c&#243; đủ sức lấn &#225;t Joy v&#224; Park Min Young khi đụng đầm trăm triệu?</h3>
-								<p> Cùng diện mẫu váy trễ vai ngọt ngào, Jennie, Joy và Park Min Young đã tạo nên những dấu ấn riêng. 
-		 Jennie...</p>
-							</a>
-						</div>
-						
-						<div class="news-items">
-							<a href="/style-thi-sen-nhung-lam-tam-nhu-van-hack-tuoi-tai-tinh-nho-kieu-toc-nhu-nu-sinh" title="Style th&#236; sến nhưng L&#226;m T&#226;m Như vẫn &quot;hack&quot; tuổi t&#224;i t&#236;nh nhờ kiểu t&#243;c như nữ sinh" class="clearfix evo-item-blogs">
-								<div class="evo-article-image">
-									
-									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/thumb/large/100/359/276/articles/lam-tam-nhu-hoa-quy-phu-nhan-diu-dang-1cdfe5.jpg?v=1562288706573" alt="Style th&#236; sến nhưng L&#226;m T&#226;m Như vẫn &quot;hack&quot; tuổi t&#224;i t&#236;nh nhờ kiểu t&#243;c như nữ sinh" class="lazy img-responsive center-block" />
-									
-								</div>
-								<h3 class="line-clamps">Style th&#236; sến nhưng L&#226;m T&#226;m Như vẫn &quot;hack&quot; tuổi t&#224;i t&#236;nh nhờ kiểu t&#243;c như nữ sinh</h3>
-								<p> Còn nhớ cách đây không lâu Lâm Tâm Như từng gây bất ngờ khi cắt phăng mái tóc dài thướt tha mà chuyển sang...</p>
-							</a>
-						</div>
-						
-						<div class="news-items">
-							<a href="/style-doi-thuong-doi-lap-cua-black-pink-red-velvet-ben-ca-tinh-ben-banh-beo-doi-lap-han-nhau" title="Style đời thường đối lập của Black Pink – Red Velvet: B&#234;n c&#225; t&#237;nh, b&#234;n b&#225;nh b&#232;o đối lập hẳn nhau" class="clearfix evo-item-blogs">
-								<div class="evo-article-image">
-									
-									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/thumb/large/100/359/276/articles/blackpink-kill-this-love-concept-hd-jisoo-2000x2000.jpg?v=1562288537957" alt="Style đời thường đối lập của Black Pink – Red Velvet: B&#234;n c&#225; t&#237;nh, b&#234;n b&#225;nh b&#232;o đối lập hẳn nhau" class="lazy img-responsive center-block" />
-									
-								</div>
-								<h3 class="line-clamps">Style đời thường đối lập của Black Pink – Red Velvet: B&#234;n c&#225; t&#237;nh, b&#234;n b&#225;nh b&#232;o đối lập hẳn nhau</h3>
-								<p> Black Pink và Red Velvet là 2 girl group được đông đảo giới trẻ yêu thích. Vậy nhưng 2 nhóm nhạc này lại t...</p>
-							</a>
-						</div>
-						
-						<div class="news-items">
-							<a href="/den-tan-luc-beo-len-chau-bui-van-sexy-va-mac-dep-than-thai-kho-ai-do-noi" title="Đến tận l&#250;c b&#233;o l&#234;n, Ch&#226;u B&#249;i vẫn sexy v&#224; mặc đẹp, thần th&#225;i kh&#243; ai đọ nổi" class="clearfix evo-item-blogs">
-								<div class="evo-article-image">
-									
-									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/thumb/large/100/359/276/articles/fashionista-chau-bui-mach-nuoc-chieu-mix-do-cho-nang-thap-be-d66350.jpg?v=1562288402120" alt="Đến tận l&#250;c b&#233;o l&#234;n, Ch&#226;u B&#249;i vẫn sexy v&#224; mặc đẹp, thần th&#225;i kh&#243; ai đọ nổi" class="lazy img-responsive center-block" />
-									
-								</div>
-								<h3 class="line-clamps">Đến tận l&#250;c b&#233;o l&#234;n, Ch&#226;u B&#249;i vẫn sexy v&#224; mặc đẹp, thần th&#225;i kh&#243; ai đọ nổi</h3>
-								<p> Với tâm lý "gầy mặc đồ mới đẹp", nhiều chị em hẳn phải rất khổ sở trong khoản tập tành kiêng khem để giữ d...</p>
-							</a>
-						</div>
+							@include('front-end.layout.blog-item')
+						@endforeach
 						
 					</div>
 					
@@ -757,92 +573,92 @@ index
 					<div class="col-md-12 col-sm-12 col-xs-12">
 						<div class="evo_dich_vu_title text-center">
 							<h2 class="section_dich_vu_title">#Instagram</h2>
-							<h4><a href="https://www.instagram.com/emlem.beauty" title="Evo Spa và Khách hàng" target="_blank" rel="nofollow">Evo Spa và Khách hàng</a></h4>
+							<h4><a href="https://www.instagram.com/emlem.beauty" title="Dental Plus và Khách hàng" target="_blank" rel="nofollow">Dental Plus và Khách hàng</a></h4>
 						</div>
 					</div>
 				</div>
 				<div class="instagram-list-image">
 					<div class="col-md-2 col-sm-3 col-xs-4 no-padding">
 						<div class="instagram-image">
-							<a href="#" title="Evo Spa" rel="nofollow" target="_blank">
-								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/image_instagram_image_1.jpg?1593142743270" alt="Evo Spa" class="lazy img-responsive center-block" />
+							<a href="#" title="Dental Plus" rel="nofollow" target="_blank">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/image_instagram_image_1.jpg?1593142743270" alt="Dental Plus" class="lazy img-responsive center-block" />
 							</a>
 						</div>
 					</div>
 					<div class="col-md-2 col-sm-3 col-xs-4 no-padding">
 						<div class="instagram-image">
-							<a href="#" title="Evo Spa" rel="nofollow" target="_blank">
-								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/image_instagram_image_2.jpg?1593142743270" alt="Evo Spa" class="lazy img-responsive center-block" />
+							<a href="#" title="Dental Plus" rel="nofollow" target="_blank">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/image_instagram_image_2.jpg?1593142743270" alt="Dental Plus" class="lazy img-responsive center-block" />
 							</a>
 						</div>
 					</div>
 					<div class="col-md-2 col-sm-3 col-xs-4 no-padding">
 						<div class="instagram-image">
-							<a href="#" title="Evo Spa" rel="nofollow" target="_blank">
-								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/image_instagram_image_3.jpg?1593142743270" alt="Evo Spa" class="lazy img-responsive center-block" />
+							<a href="#" title="Dental Plus" rel="nofollow" target="_blank">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/image_instagram_image_3.jpg?1593142743270" alt="Dental Plus" class="lazy img-responsive center-block" />
 							</a>
 						</div>
 					</div>
 					<div class="col-md-2 col-sm-3 col-xs-4 no-padding">
 						<div class="instagram-image">
-							<a href="#" title="Evo Spa" rel="nofollow" target="_blank">
-								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/image_instagram_image_4.jpg?1593142743270" alt="Evo Spa" class="lazy img-responsive center-block" />
+							<a href="#" title="Dental Plus" rel="nofollow" target="_blank">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/image_instagram_image_4.jpg?1593142743270" alt="Dental Plus" class="lazy img-responsive center-block" />
 							</a>
 						</div>
 					</div>
 					<div class="col-md-2 col-sm-3 col-xs-4 no-padding">
 						<div class="instagram-image">
-							<a href="#" title="Evo Spa" rel="nofollow" target="_blank">
-								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/image_instagram_image_5.jpg?1593142743270" alt="Evo Spa" class="lazy img-responsive center-block" />
+							<a href="#" title="Dental Plus" rel="nofollow" target="_blank">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/image_instagram_image_5.jpg?1593142743270" alt="Dental Plus" class="lazy img-responsive center-block" />
 							</a>
 						</div>
 					</div>
 					<div class="col-md-2 col-sm-3 col-xs-4 no-padding">
 						<div class="instagram-image">
-							<a href="#" title="Evo Spa" rel="nofollow" target="_blank">
-								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/image_instagram_image_6.jpg?1593142743270" alt="Evo Spa" class="lazy img-responsive center-block" />
+							<a href="#" title="Dental Plus" rel="nofollow" target="_blank">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/image_instagram_image_6.jpg?1593142743270" alt="Dental Plus" class="lazy img-responsive center-block" />
 							</a>
 						</div>
 					</div>
 					<div class="col-md-2 col-sm-3 col-xs-4 no-padding">
 						<div class="instagram-image">
-							<a href="#" title="Evo Spa" rel="nofollow" target="_blank">
-								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/image_instagram_image_7.jpg?1593142743270" alt="Evo Spa" class="lazy img-responsive center-block" />
+							<a href="#" title="Dental Plus" rel="nofollow" target="_blank">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/image_instagram_image_7.jpg?1593142743270" alt="Dental Plus" class="lazy img-responsive center-block" />
 							</a>
 						</div>
 					</div>
 					<div class="col-md-2 col-sm-3 col-xs-4 no-padding">
 						<div class="instagram-image">
-							<a href="#" title="Evo Spa" rel="nofollow" target="_blank">
-								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/image_instagram_image_8.jpg?1593142743270" alt="Evo Spa" class="lazy img-responsive center-block" />
+							<a href="#" title="Dental Plus" rel="nofollow" target="_blank">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/image_instagram_image_8.jpg?1593142743270" alt="Dental Plus" class="lazy img-responsive center-block" />
 							</a>
 						</div>
 					</div>
 					<div class="col-md-2 col-sm-3 col-xs-4 no-padding">
 						<div class="instagram-image">
-							<a href="#" title="Evo Spa" rel="nofollow" target="_blank">
-								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/image_instagram_image_9.jpg?1593142743270" alt="Evo Spa" class="lazy img-responsive center-block" />
+							<a href="#" title="Dental Plus" rel="nofollow" target="_blank">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/image_instagram_image_9.jpg?1593142743270" alt="Dental Plus" class="lazy img-responsive center-block" />
 							</a>
 						</div>
 					</div>
 					<div class="col-md-2 col-sm-3 col-xs-4 no-padding">
 						<div class="instagram-image">
-							<a href="#" title="Evo Spa" rel="nofollow" target="_blank">
-								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/image_instagram_image_10.jpg?1593142743270" alt="Evo Spa" class="lazy img-responsive center-block" />
+							<a href="#" title="Dental Plus" rel="nofollow" target="_blank">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/image_instagram_image_10.jpg?1593142743270" alt="Dental Plus" class="lazy img-responsive center-block" />
 							</a>
 						</div>
 					</div>
 					<div class="col-md-2 col-sm-3 col-xs-4 no-padding">
 						<div class="instagram-image">
-							<a href="#" title="Evo Spa" rel="nofollow" target="_blank">
-								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/image_instagram_image_11.jpg?1593142743270" alt="Evo Spa" class="lazy img-responsive center-block" />
+							<a href="#" title="Dental Plus" rel="nofollow" target="_blank">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/image_instagram_image_11.jpg?1593142743270" alt="Dental Plus" class="lazy img-responsive center-block" />
 							</a>
 						</div>
 					</div>
 					<div class="col-md-2 col-sm-3 col-xs-4 no-padding">
 						<div class="instagram-image">
-							<a href="#" title="Evo Spa" rel="nofollow" target="_blank">
-								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/image_instagram_image_12.jpg?1593142743270" alt="Evo Spa" class="lazy img-responsive center-block" />
+							<a href="#" title="Dental Plus" rel="nofollow" target="_blank">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/image_instagram_image_12.jpg?1593142743270" alt="Dental Plus" class="lazy img-responsive center-block" />
 							</a>
 						</div>
 					</div>
@@ -850,4 +666,8 @@ index
 			</div>
 		</div>
 	</section>
+	
+@endsection
+@section('js')
+	
 @endsection

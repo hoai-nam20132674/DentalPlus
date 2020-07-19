@@ -1,4 +1,22 @@
 @extends('front-end.layout.default')
+@section('meta')
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">			
+	<title>Evo Spa</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="Evo Team, Evo Spa"/>		
+	<link rel="canonical" href="https://evo-spa.mysapo.net/"/>
+	<meta name='revisit-after' content='1 days' />
+	<meta name="robots" content="noodp,index,follow" />
+	<link rel="icon" href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/favicon.png?1593142743270" type="image/x-icon" />
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Evo Spa">
+	<meta property="og:image" content="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/logo.png?1593142743270">
+	<meta property="og:image:secure_url" content="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/logo.png?1593142743270">
+	<meta property="og:description" content="">
+	<meta property="og:url" content="https://evo-spa.mysapo.net/">
+	<meta property="og:site_name" content="Evo Spa">
+@endsection
 @section('css')
 	<link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/bootstrap.scss.css?1593142743270" rel="stylesheet" type="text/css" />
 	<link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/plugin.scss.css?1593142743270" rel="stylesheet" type="text/css" />							
