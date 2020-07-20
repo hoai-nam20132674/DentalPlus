@@ -20,6 +20,7 @@ use App\Menu;
 use App\BCID;
 use App\PCID;
 use App\SCID;
+use App\Contact;
 
 class Controller extends BaseController
 {
@@ -94,4 +95,14 @@ class Controller extends BaseController
         return $array;
     }
     // ------------------------------------------
+    public function addContact(Request $request){
+        $item = new Contact;
+        $item->add($request);
+        return redirect()->back()->with(['flash_level'=>'success','flash_message'=>'1']);
+
+    }
+    public function contact(){
+        $system = System::where('id',1)->get()->first();
+        return view('front-end.contact',['system'=>$system]);
+    }
 }

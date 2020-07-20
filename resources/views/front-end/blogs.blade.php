@@ -17,15 +17,14 @@
 	<meta property="og:site_name" content="{{$blog_cate->name}}">
 @endsection
 @section('css')
-	<link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/bootstrap.scss.css?1593142743270" rel="stylesheet" type="text/css" />
-	<link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/plugin.scss.css?1593142743270" rel="stylesheet" type="text/css" />							
-	<link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/base.scss.css?1593142743270" rel="stylesheet" type="text/css" />	
-	<link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/evo-main.scss.css?1593142743270" rel="stylesheet" type="text/css" />
-	<link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/slick.scss.css?1593142743270" rel="stylesheet" type="text/css" />
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-	<link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/evo-index.scss.css?1593142743270" rel="stylesheet" type="text/css" />
-	<!-- <link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/evo-dich-vu.scss.css?1593142743270" rel="stylesheet" type="text/css" /> -->
-	<link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/evo-blogs.scss.css?1593142743270" rel="stylesheet" type="text/css" />
+	<link href="{{asset('css/bootstrap.scss.css')}}" rel="stylesheet" type="text/css" />
+	<link href="{{asset('css/plugin.scss.css')}}" rel="stylesheet" type="text/css" />							
+	<link href="{{asset('css/base.scss.css')}}" rel="stylesheet" type="text/css" />	
+	<link href="{{asset('css/evo-main.scss.css')}}" rel="stylesheet" type="text/css" />
+	<link href="{{asset('css/slick.scss.css')}}" rel="stylesheet" type="text/css" />
+	<link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" />
+	<link href="{{asset('css/evo-index.scss.css')}}" rel="stylesheet" type="text/css" />
+	<link href="{{asset('css/evo-blogs.scss.css')}}" rel="stylesheet" type="text/css" />
 @endsection
 @section('body_class')
 bg-body blog
@@ -92,11 +91,7 @@ bg-body blog
 				
 			</div>
 			
-			<div class="col-md-12 margin-top-15">
-				<a href="#" title="Evo Spa" class="single_image_effect">
-					<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/blog_banner.jpg?1593142743270" alt="Evo Spa" class="lazy img-responsive center-block" />
-				</a>
-			</div>
+			
 			
 		</div>
 	</div>

@@ -17,17 +17,17 @@
 	<meta property="og:site_name" content="{{$blog->name}}">
 @endsection
 @section('css')
-	<link href="//bizweb.dktcdn.net/100/359/276/themes/725925/assets/bootstrap.scss.css?1594388769270" rel="stylesheet" type="text/css" />
-	<link href="//bizweb.dktcdn.net/100/359/276/themes/725925/assets/plugin.scss.css?1594388769270" rel="stylesheet" type="text/css" />							
-	<link href="//bizweb.dktcdn.net/100/359/276/themes/725925/assets/base.scss.css?1594388769270" rel="stylesheet" type="text/css" />	
-	<link href="//bizweb.dktcdn.net/100/359/276/themes/725925/assets/evo-main.scss.css?1594388769270" rel="stylesheet" type="text/css" />
-	<link href="//bizweb.dktcdn.net/100/359/276/themes/725925/assets/slick.scss.css?1594388769270" rel="stylesheet" type="text/css" />
-	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+	<link href="{{asset('css/bootstrap.scss.css')}}" rel="stylesheet" type="text/css" />
+	<link href="{{asset('css/plugin.scss.css')}}" rel="stylesheet" type="text/css" />							
+	<link href="{{asset('css/base.scss.css')}}" rel="stylesheet" type="text/css" />	
+	<link href="{{asset('css/evo-main.scss.css')}}" rel="stylesheet" type="text/css" />
+	<link href="{{asset('css/slick.scss.css')}}" rel="stylesheet" type="text/css" />
+	<link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" />
 	
 	
-	<link href="//bizweb.dktcdn.net/100/359/276/themes/725925/assets/evo-article.scss.css?1594388769270" rel="stylesheet" type="text/css" />
-	<link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/evo-collections.scss.css?1593142743270" rel="stylesheet" type="text/css" />
-	<link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/evo-products.scss.css?1594388769270" rel="stylesheet" type="text/css" />
+	<link href="{{asset('css/evo-article.scss.css')}}" rel="stylesheet" type="text/css" />
+	<link href="{{asset('css/evo-collections.scss.css')}}" rel="stylesheet" type="text/css" />
+	<link href="{{asset('css/evo-products.scss.css')}}" rel="stylesheet" type="text/css" />
 @endsection
 @section('body_class')
 bg-body article

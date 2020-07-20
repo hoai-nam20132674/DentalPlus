@@ -7,7 +7,7 @@
 	    @endphp
 		@yield('meta')
 		@yield('css')
-		<link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/evo-dich-vu.scss.css?1593142743270" rel="stylesheet" type="text/css" />
+		<link href="{{asset('css/evo-dich-vu.scss.css')}}" rel="stylesheet" type="text/css" />
 		
 
 		<script>
@@ -26,12 +26,12 @@
 				window.attachEvent ? window.attachEvent('onload', asyncLoad) : window.addEventListener('load', asyncLoad, false);
 			})();
 		</script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" type="text/javascript"></script>
+		<script src="{{asset('js/jquery.min.js')}}" type="text/javascript"></script>
 		
-		<script src="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/option-selectors.js?1593142743270" type="text/javascript"></script>
-		<script src="https://bizweb.dktcdn.net/assets/themes_support/api.jquery.js" type="text/javascript"></script>
-		<script src="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/slick.js?1593142743270" type="text/javascript"></script>
-		<script src="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/flickity.js?1593142743270" type="text/javascript"></script>
+		<script src="{{asset('js/option-selectors.js')}}" type="text/javascript"></script>
+		<script src="{{asset('js/api.jquery.js')}}" type="text/javascript"></script>
+		<script src="{{asset('js/slick.js')}}" type="text/javascript"></script>
+		<script src="{{asset('js/flickity.js')}}" type="text/javascript"></script>
 		
 
 
@@ -39,7 +39,10 @@
 
 
 	</head>
-	<body class=" @yield('body_class')">	
+	<body class=" @yield('body_class')">
+		@if( Session::has('flash_message'))
+			<p style="display: none;" class="contact-success">{{ Session::get('flash_message')}}</p>
+		@endif
 		<div class="evo-search-bar">
 			<form action="/search" method="get">
 				<div class="input-group">
@@ -64,8 +67,8 @@
 		@include('front-end.layout.footer')
 
 		<div class="backdrop__body-backdrop___1rvky"></div>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js" type="text/javascript"></script>
+		<script src="{{asset('js/bootstrap.min.js')}}" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<script src="{{asset('js/jquery.form-validator.min.js')}}" type="text/javascript"></script>
 		<script>$.validate({});</script>	
 		<div class="ajax-load"> 
 			<span class="loading-icon">
@@ -112,77 +115,48 @@
 				</svg>
 			</div>
 		</div>
-		<div class="addcart-popup product-popup awe-popup">
-			<div class="overlay no-background"></div>
-			<div class="content">
-				<div class="row row-noGutter">
-					<div class="col-xl-6 col-xs-12">
-						<div class="btn btn-full btn-primary a-left popup-title"><i class="fa fa-check"></i>Thêm vào giỏ hàng thành công
-						</div>
-						<a href="javascript:void(0)" class="close-window close-popup"><i class="fa fa-close"></i></a>
-						<div class="info clearfix">
-							<div class="product-image margin-top-5"><img alt="popup" src="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/logo.png?1593142743270" style="max-width:150px; height:auto"/></div>
-							<div class="product-info"><p class="product-name"></p><p class="quantity color-main"><span>Số lượng: </span></p><p class="total-money color-main"><span>Tổng tiền: </span></p></div>
-							<div class="actions"><button class="btn  btn-primary  margin-top-5 btn-continue">Tiếp tục mua hàng</button><button class="btn btn-gray margin-top-5" onclick="window.location='/cart'">Kiểm tra giỏ hàng</button></div> 
-						</div>
-					</div>			
-				</div>
-			</div>    
-		</div>
-		<div class="error-popup awe-popup"><div class="overlay no-background"></div><div class="popup-inner content"><div class="error-message"></div></div></div>
-				
-		<div id="popup-cart" class="modal fade" role="dialog">
-			<div id="popup-cart-desktop" class="clearfix">
-				<div class="title-popup-cart"><i class="ion ion-md-notifications-outline" aria-hidden="true"></i> Bạn đã thêm <span class="cart-popup-name"></span> vào giỏ hàng</div>
-				<div class="title-quantity-popup"><a href="/cart" title="Xem giỏ hàng">Xem giỏ hàng</a></div>
-				<div class="content-popup-cart clearfix">
-					<div class="thead-popup"><div style="width: 55%;" class="text-left">Sản phẩm</div><div style="width: 15%;" class="text-center">Đơn giá</div><div style="width: 15%;" class="text-center">Số lượng</div><div style="width: 15%;" class="text-center">Thành tiền</div></div>
-					<div class="tbody-popup"></div>
-					<div class="tfoot-popup">
-						<div class="tfoot-popup-1 clearfix">
-							<div class="pull-left popupcon"><a class="button btn-continue" title="Tiếp tục mua hàng" onclick="$('#popup-cart').modal('hide');"><span><span><i class="fa fa-caret-left" aria-hidden="true"></i> Tiếp tục mua hàng</span></span></a></div>
-							<div class="pull-right popup-total"><p>Thành tiền: <span class="total-price"></span></p></div>
-						</div>
-						<div class="tfoot-popup-2 clearfix"><a class="button btn-proceed-checkout" title="Thanh toán đơn hàng" href="/checkout"><span>Thanh toán đơn hàng</span></a></div>
-					</div>
-				</div>
-				<a class="quickview-close close-window" href="javascript:;" onclick="$('#popup-cart').modal('hide');" title="Đóng"><i class="fa fa-times"></i></a>
-			</div>
-		</div>
+		
+		
+		
 		<div class="callmeback-form modal fade" id="myModalCall" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="myModalLabel">Đăng ký tư vấn dịch vụ</h4>
+						<h4 class="modal-title" style="font-weight: 800;" id="myModalLabel">ĐĂNG KÝ TƯ VẤN DỊCH VỤ</h4>
 					</div>
 					<div class="modal-body">
 						<div class="row">
-							
-							<div class="col-md-12 col-sm-12">
-								<form accept-charset="utf-8" action="/contact" id="contact" method="post">
-		
-								
+							<div class="col-md-6 col-sm-12">
+								<img src="{{asset('uploads/images/systems/contact.png')}}" width="100%">
+							</div>
+							<div class="col-md-6 col-sm-12">
+								<form accept-charset="utf-8" action="{{URL::route('addContact')}}" id="contact" method="post">
+									<input type="hidden" name="_token" value="{{ csrf_token()}}">
 									<div class="form-signup clearfix">
 										<div class="row">
 											<div class="col-xs-12">
 												<fieldset class="form-group">
-													<input placeholder="Họ tên" type="text" name="name" id="name" class="form-control" data-validation-error-msg= "Không được để trống" data-validation="required" required />
-													<input type="hidden" name="name" id="nametour" class="form-control" value="Nâng mũi Model"/>
+													<label>Họ tên *</label>
+													<input placeholder="Nguyễn Văn A" type="text" name="name" id="name" class="form-control" data-validation-error-msg= "Không được để trống" data-validation="required" required />
+													
 												</fieldset>
 											</div>
 											<div class="col-xs-12">
 												<fieldset class="form-group">
-													<input placeholder="Điện thoại" type="text" name="phone" id="phone" class="form-control number-sidebar" data-validation-error-msg= "Không được để trống" data-validation="required" required />
+													<label>Số điện thoại *</label>
+													<input placeholder="0989xxxxxx" type="text" name="phone" id="phone" class="form-control number-sidebar" data-validation-error-msg= "Không được để trống" data-validation="required" required />
 												</fieldset>
 											</div>
 											<div class="col-xs-12">
 												<fieldset class="form-group">
-													<input placeholder="Email" type="email" name="email" id="email" class="form-control" />
+													<label>Email</label>
+													<input placeholder="email@gmail.com" type="email" name="email" id="email" class="form-control" />
 												</fieldset>
 											</div>
 											<div class="col-xs-12">
 												<fieldset class="form-group">
+													<label>Lời nhắn</label>
 													<textarea placeholder="Nội dung" name="message" id="comment" class="form-control" rows="3" data-validation-error-msg= "Không được để trống" ></textarea>
 												</fieldset>
 												<div class="pull-xs-right text-center" style="margin-top:10px;">
@@ -200,11 +174,27 @@
 			</div>
 		</div>
 		<div id="myModal" class="modal fade" role="dialog"></div>
-		<script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.5.1/intersection-observer.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.0.0/dist/lazyload.min.js"></script>
-		<script src="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/cs.script.js?1593142743270" type="text/javascript"></script>
-		<script src="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/main.js?1593142743270" type="text/javascript"></script>				
-		<script src="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/evo-index-js.js?1593142743270" type="text/javascript"></script>
+		<script src="{{asset('js/intersection-observer.js')}}"></script>
+		<script src="{{asset('js/lazyload.min.js')}}"></script>
+		<script src="{{asset('js/cs.script.js')}}" type="text/javascript"></script>
+		<script src="{{asset('js/main.js')}}" type="text/javascript"></script>				
+		<script src="{{asset('js/evo-index-js.js')}}" type="text/javascript"></script>
+		<script src="{{asset('js/sweetalert.min.js')}}"></script>
+		<script type="text/javascript">
+			$(document).ready(function () {
+				var alert = $(".contact-success").length;
+				if(alert != 0){
+					swal({
+					  title: "Gửi yêu cầu thành công",
+					  text: "Chúng tôi sẽ liên hệ với quý sách trong thời gian sớm nhất",
+					  icon: "success",
+					  button: "OK",
+					});
+					
+					
+				}
+			});
+		</script>	
 		@yield('js')
 
 		

@@ -22,7 +22,7 @@ class CreateMenusTable extends Migration
             $table->string('type');
             $table->integer('type_id')->nullable();
             $table->bigInteger('parent_id')->nullable();
-            $table->integer('stt')->->nullable();
+            $table->integer('stt')->nullable();
             $table->timestamps();
         });
     }

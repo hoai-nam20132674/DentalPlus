@@ -18,18 +18,16 @@
 	<meta property="og:site_name" content="{{$service_cate->name}}">
 @endsection
 @section('css')
-	<link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/bootstrap.scss.css?1593142743270" rel="stylesheet" type="text/css" />
-	<link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/plugin.scss.css?1593142743270" rel="stylesheet" type="text/css" />							
-	<link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/base.scss.css?1593142743270" rel="stylesheet" type="text/css" />	
-	<link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/evo-main.scss.css?1593142743270" rel="stylesheet" type="text/css" />
-	<link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/slick.scss.css?1593142743270" rel="stylesheet" type="text/css" />
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-	<link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/evo-index.scss.css?1593142743270" rel="stylesheet" type="text/css" />
-	<!-- <link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/evo-dich-vu.scss.css?1593142743270" rel="stylesheet" type="text/css" /> -->
-	<!-- <link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/evo-blogs.scss.css?1593142743270" rel="stylesheet" type="text/css" /> -->
-	<link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/evo-index.scss.css?1593142743270" rel="stylesheet" type="text/css" />
-	<link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/evo-collections.scss.css?1593142743270" rel="stylesheet" type="text/css" />
-	<link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/evo-products.scss.css?1594388769270" rel="stylesheet" type="text/css" />
+	<link href="{{asset('css/bootstrap.scss.css')}}" rel="stylesheet" type="text/css" />
+	<link href="{{asset('css/plugin.scss.css')}}" rel="stylesheet" type="text/css" />							
+	<link href="{{asset('css/base.scss.css')}}" rel="stylesheet" type="text/css" />	
+	<link href="{{asset('css/evo-main.scss.css')}}" rel="stylesheet" type="text/css" />
+	<link href="{{asset('css/slick.scss.css')}}" rel="stylesheet" type="text/css" />
+	<link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" />
+	<link href="{{asset('css/evo-index.scss.css')}}" rel="stylesheet" type="text/css" />
+	
+	<link href="{{asset('css/evo-collections.scss.css')}}" rel="stylesheet" type="text/css" />
+	<link href="{{asset('css/evo-products.scss.css')}}" rel="stylesheet" type="text/css" />
 @endsection
 @section('body_class')
 bg-body collection
@@ -40,30 +38,6 @@ bg-body collection
 			<section class="main_container collection col-md-9" >
 				<h1 class="col-title">{{$service_cate->name}}</h1>
 				<div class="category-products products category-products-grids">
-						
-					<!-- <div class="sort-cate clearfix margin-bottom-10 hidden-xs">
-						<div class="sort-cate-left hidden-xs">
-							<h3>Xếp theo:</h3>
-							<ul>
-								<li class="btn-quick-sort alpha-asc">
-									<a href="javascript:;" onclick="sortby('alpha-asc')" title="Tên A-Z"><i></i>Tên A-Z</a>
-								</li>
-								<li class="btn-quick-sort alpha-desc">
-									<a href="javascript:;" onclick="sortby('alpha-desc')" title="Tên Z-A"><i></i>Tên Z-A</a>
-								</li>
-								<li class="btn-quick-sort position-desc">
-									<a href="javascript:;" onclick="sortby('created-desc')" title="Hàng mới"><i></i>Hàng mới</a>
-								</li>
-								<li class="btn-quick-sort price-asc">
-									<a href="javascript:;" onclick="sortby('price-asc')" title="Giá thấp đến cao"><i></i>Giá thấp đến cao</a>
-								</li>
-								<li class="btn-quick-sort price-desc">
-									<a href="javascript:;" onclick="sortby('price-desc')" title="Giá cao xuống thấp"><i></i>Giá cao xuống thấp</a>
-								</li>
-							</ul>
-						</div>
-						
-					</div> -->
 					
 					<section class="products-view section_dich_vu row" style="background: #fff">
 		

@@ -2,38 +2,37 @@
 @section('meta')
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">			
-	<title>Evo Spa</title>
+	<title>Liên Hệ</title>
 	<meta name="description" content="">
-	<meta name="keywords" content="Evo Team, Evo Spa"/>		
-	<link rel="canonical" href="https://evo-spa.mysapo.net/"/>
+	<meta name="keywords" content="Dental Plus"/>		
+	<link rel="canonical" href="http://dentalplusvn.com/lien-he"/>
 	<meta name='revisit-after' content='1 days' />
-	<meta name="robots" content="noodp,index,follow" />
-	<link rel="icon" href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/favicon.png?1593142743270" type="image/x-icon" />
+	<link rel="icon" href="{{asset('uploads/images/systems/'.$system->shortcut_logo)}}" type="image/x-icon" />
 	<meta property="og:type" content="website">
-	<meta property="og:title" content="Evo Spa">
-	<meta property="og:image" content="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/logo.png?1593142743270">
-	<meta property="og:image:secure_url" content="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/logo.png?1593142743270">
+	<meta property="og:title" content="Dental Plus">
+	<meta property="og:image" content="">
+	<meta property="og:image:secure_url" content="">
 	<meta property="og:description" content="">
-	<meta property="og:url" content="https://evo-spa.mysapo.net/">
-	<meta property="og:site_name" content="Evo Spa">
+	<meta property="og:url" content="http://dentalplusvn.com/lien-he">
+	<meta property="og:site_name" content="Dental Plus">
 @endsection
 @section('css')
-	<link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/bootstrap.scss.css?1593142743270" rel="stylesheet" type="text/css" />
-	<link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/plugin.scss.css?1593142743270" rel="stylesheet" type="text/css" />							
-	<link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/base.scss.css?1593142743270" rel="stylesheet" type="text/css" />	
-	<link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/evo-main.scss.css?1593142743270" rel="stylesheet" type="text/css" />
-	<link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/slick.scss.css?1593142743270" rel="stylesheet" type="text/css" />
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-	<link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/evo-index.scss.css?1593142743270" rel="stylesheet" type="text/css" />
-	<!-- <link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/evo-dich-vu.scss.css?1593142743270" rel="stylesheet" type="text/css" /> -->
-	<!-- <link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/evo-blogs.scss.css?1593142743270" rel="stylesheet" type="text/css" /> -->
-	<!-- <link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/evo-collections.scss.css?1593142743270" rel="stylesheet" type="text/css" /> -->
-	<link href="https://bizweb.dktcdn.net/100/359/276/themes/725925/assets/evo-contacts.scss.css?1593142743270" rel="stylesheet" type="text/css" />
+	<link href="{{asset('css/bootstrap.scss.css')}}" rel="stylesheet" type="text/css" />
+	<link href="{{asset('css/plugin.scss.css')}}" rel="stylesheet" type="text/css" />							
+	<link href="{{asset('css/base.scss.css')}}" rel="stylesheet" type="text/css" />	
+	<link href="{{asset('css/evo-main.scss.css')}}" rel="stylesheet" type="text/css" />
+	<link href="{{asset('css/slick.scss.css')}}" rel="stylesheet" type="text/css" />
+	<link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" />
+	<link href="{{asset('css/evo-index.scss.css')}}" rel="stylesheet" type="text/css" />
+	<link href="{{asset('css/evo-contacts.scss.css')}}" rel="stylesheet" type="text/css" />
 @endsection
 @section('body_class')
 bg-body page-contact
 @endsection
 @section('content')
+	@if( Session::has('flash_message'))
+		<p style="display: none;" class="contact-success">{{ Session::get('flash_message')}}</p>
+	@endif	
 	<div class="evo-blog-header">
 		<div class="container">
 			<div class="row">
@@ -55,49 +54,42 @@ bg-body page-contact
 						<h2 class="title-head text-center">Gửi thông tin</h2>
 						
 						<span class="text-contact block text-center">Bạn hãy điền nội dung tin nhắn vào form dưới đây và gửi cho chúng tôi. Chúng tôi sẽ trả lời bạn sau khi nhận được.</span>
-						<form accept-charset="utf-8" action="/contact" id="contact" method="post">
-	<input name="FormType" type="hidden" value="contact" />
-	<input name="utf8" type="hidden" value="true" /><input type="hidden" id="Token-7efe7e80b50b4517ba48e1d3b6d0fa9c" name="Token" /><script src="https://www.google.com/recaptcha/api.js?render=6Ldtu4IUAAAAAMQzG1gCw3wFlx_GytlZyLrXcsuK"></script>
-	<script>
-	grecaptcha.ready(function() {
-	grecaptcha.execute("6Ldtu4IUAAAAAMQzG1gCw3wFlx_GytlZyLrXcsuK", {action: "/contact"})
-	.then(function(token) {
-	document.getElementById("Token-7efe7e80b50b4517ba48e1d3b6d0fa9c").value = token
-	});
-	});
-	</script>
+						<form accept-charset="utf-8" action="{{URL::route('addContact')}}" id="contact" method="post">
+							<input type="hidden" name="_token" value="{{ csrf_token()}}">
+	
 						
-						<div class="form-signup clearfix">
-							<div class="row">
-								<div class="col-sm-6 col-xs-12">
-									<fieldset class="form-group">
-										<label>Họ và tên<span class="required">*</span></label>
-										<input placeholder="Nhập họ và tên" type="text" name="contact[name]" id="name" class="form-control  form-control-lg" data-validation-error-msg= "Không được để trống" data-validation="required" required />
-									</fieldset>
-								</div>
-								<div class="col-sm-6 col-xs-12">
-									<fieldset class="form-group">
-										<label>Email<span class="required">*</span></label>
-										<input placeholder="Nhập địa chỉ Email" type="email" name="contact[email]" data-validation="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$" data-validation-error-msg= "Email sai định dạng" id="email" class="form-control form-control-lg" required />
-									</fieldset>
-								</div>
-								<div class="col-sm-12 col-xs-12">
-									<fieldset class="form-group">
-										<label>Điện thoại<span class="required">*</span></label>
-										<input placeholder="Nhập số điện thoại" type="tel" name="contact[phone]" data-validation="tel" data-validation-error-msg= "Không được để trống" id="tel" class="number-sidebar form-control form-control-lg" required />
-									</fieldset>
-								</div>
-								<div class="col-sm-12 col-xs-12">
-									<fieldset class="form-group">
-										<label>Nội dung<span class="required">*</span></label>
-										<textarea placeholder="Nội dung liên hệ" name="contact[body]" id="comment" class="form-control form-control-lg" rows="5" data-validation-error-msg= "Không được để trống" data-validation="required" required></textarea>
-									</fieldset>
-									<div class="pull-xs-left" style="margin-top:20px;">
-										<button type="submit" class="btn btn-blues btn-style btn-style-active">Gửi tin nhắn</button>
-									</div> 
+							<div class="form-signup clearfix">
+								<div class="row">
+									<div class="col-sm-12 col-xs-12">
+										<fieldset class="form-group">
+											<label>Họ và tên<span class="required">*</span></label>
+											<input placeholder="Nhập họ và tên" type="text" name="name" id="name" class="form-control  form-control-lg" data-validation-error-msg= "Không được để trống" data-validation="required" required />
+										</fieldset>
+									</div>
+									<div class="col-sm-12 col-xs-12">
+										<fieldset class="form-group">
+											<label>Điện thoại<span class="required">*</span></label>
+											<input placeholder="Nhập số điện thoại" type="tel" name="phone" data-validation="tel" data-validation-error-msg= "Không được để trống" id="tel" class="number-sidebar form-control form-control-lg" required />
+										</fieldset>
+									</div>
+									<div class="col-sm-12 col-xs-12">
+										<fieldset class="form-group">
+											<label>Email<span class="required">*</span></label>
+											<input placeholder="Nhập địa chỉ Email" type="email" name="email" data-validation="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$" data-validation-error-msg= "Email sai định dạng" id="email" class="form-control form-control-lg" required />
+										</fieldset>
+									</div>
+									
+									<div class="col-sm-12 col-xs-12">
+										<fieldset class="form-group">
+											<label>Nội dung<span class="required">*</span></label>
+											<textarea placeholder="Nội dung liên hệ" name="message" id="comment" class="form-control form-control-lg" rows="5" data-validation-error-msg= "Không được để trống" data-validation="required" required></textarea>
+										</fieldset>
+										<div class="pull-xs-left" style="margin-top:20px; font-weight: 800">
+											<button type="submit" class="btn btn-blues btn-style btn-style-active">GỬI YÊU CẦU</button>
+										</div> 
+									</div>
 								</div>
 							</div>
-						</div>
 						</form>
 					</div>
 				</div>
@@ -106,10 +98,10 @@ bg-body page-contact
 				<div class="col-md-12">
 					<div class="contact-map">
 						<div class="page-login text-center">
-							<h3 class="title-head">Bản đồ cửa hàng</h3>
+							<h3 class="title-head">Bản đồ phòng khám</h3>
 						</div>
 						<div class="box-maps margin-bottom-10">
-							<iframe class="lazy" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.13664580307!2d108.22055691414181!3d16.058397388887613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314219cc2af84105%3A0x9a924a8e9c5e8751!2zMzAgMiBUaMOhbmcgOSwgQsOsbmggSGnDqm4sIEjhuqNpIENow6J1LCDEkMOgIE7hurVuZyA1NTAwMDAsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1558182318368!5m2!1svi!2s" width="600" height="450" style="border:0" allowfullscreen></iframe>
+							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.374855715216!2d105.85193331528276!3d21.017681986004348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abf296660097%3A0x20a4c8a806d50cfc!2zMSBQaOG7kSBUaGkgU8OhY2gsIE5nw7QgVGjDrCBOaOG6rW0sIEhhaSBCw6AgVHLGsG5nLCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1595190130111!5m2!1svi!2s" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 						</div>
 					</div>
 				</div>
